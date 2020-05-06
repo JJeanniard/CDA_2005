@@ -1,0 +1,26 @@
+Chaine text
+Chaine alpha[a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z]
+Entier nbrOc[]
+entier lenghtText
+entier i <-- 0
+entier y <-- 0
+entier x <-- 0
+
+Debut
+    lenghtText <-- |text|
+    Si lenghtText >= 120 Alors
+        TantQue i < lenghtText Faire
+            TantQue y < 23 Faire
+                Si alpha[y] == text'i
+                    nbrOc[y] == nbrOc[y] + 1
+                y <-- i+1
+            Fin TantQue
+            i <-- i+1
+        Fin TantQue
+
+        TantQue x < 23 Faire
+            Ecrire "Nombre de lettre " + nbrOc[x] + " pour " + alpha[x] + " trouver dans le text"
+        Fin TantQue
+
+    Fin Si
+Fin
