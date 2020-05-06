@@ -1,0 +1,17 @@
+entier nbr
+entier nbrT[1,2,3,4,5,6,7,8,9,0]
+entier nbrElemTab <-- 9
+entier i <-- 0
+
+Debut
+    Ecrire "Entrer un nombre :"
+    Lire nbr
+
+    TantQue i < nbrElemTab Faire
+        Si nbr = nbrT[i] Alors
+            Ecrire "Element trouver!"
+        Fin Si
+        i <-- i+1
+    Fin TantQue
+
+Fin
