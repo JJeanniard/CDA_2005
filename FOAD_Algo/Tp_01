@@ -1,6 +1,6 @@
 entier nbr
 entier nbrT[1,2,3,4,5,6,7,8,9,0]
-entier nbrElemTab <-- 9
+entier nbrElemTab <-- 10
 entier i <-- 0
 
 Debut
@@ -9,9 +9,11 @@ Debut
 
     TantQue i < nbrElemTab Faire
         Si nbr = nbrT[i] Alors
-            Ecrire "Element trouver!"
+            Ecrire "Element trouver à l'index !" + i
         Fin Si
         i <-- i+1
     Fin TantQue
-
+    Si i > 9 Alors
+        Ecrire "Non Trouvé"
+    Fin Si
 Fin
