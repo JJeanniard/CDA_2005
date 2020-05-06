@@ -13,6 +13,7 @@ Debut
         Fin Si
         i <-- i+1
     Fin TantQue
+    
     Si i > 9 Alors
         Ecrire "Non Trouvé"
     Fin Si
