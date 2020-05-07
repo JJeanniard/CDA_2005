@@ -11,7 +11,7 @@ Debut
     Si lenghtText >= 120 Alors
         TantQue i < lenghtText Faire
             TantQue y < 23 Faire
-                Si alpha[y] == text'i
+                Si alpha[y] == text[i]
                     nbrOc[y] == nbrOc[y] + 1
                 y <-- i+1
             Fin TantQue

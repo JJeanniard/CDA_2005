@@ -11,7 +11,7 @@ Debut
     taille <-- |mot|
 
     TantQue i < taille Faire
-        Si carat == mot'i Alors
+        Si carat == mot[i] Alors
             nbrOc <-- nbrOc + 1
         Sinon si carat == "."
             Si i == taille Alors
