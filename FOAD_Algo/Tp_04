@@ -1,7 +1,12 @@
-entier nbrs[5,2,6,7,1,8,9]
+Entier nbrs[5,2,6,7,1,8,9]
+Entier i <-- 0, j <-- 0
 
 Debut
-
-
-
+    Pour i De 0 `a Longueur(nbrs) 􀀀 2 Faire
+        Pour j De i + 1 `a Longueur(nbrs) 􀀀 1 Faire
+            Si nbrs[j] < nbrs[i] Alors
+                Permuter(nbrs[i]; nbrs[j])
+            Fin Si
+        Fin Pour
+    Fin Pour
 Fin
