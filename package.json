@@ -1,0 +1,19 @@
+{
+  "name": "cda_2005",
+  "version": "0.0.0",
+  "description": "cours CDA",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JJeanniard/CDA_2005.git"
+  },
+  "author": "jonathan jeanniard",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JJeanniard/CDA_2005/issues"
+  },
+  "homepage": "https://github.com/JJeanniard/CDA_2005#readme"
+}
