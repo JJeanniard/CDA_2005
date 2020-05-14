@@ -9,6 +9,9 @@ const rl = readline.createInterface({
 rl.question("Entrer la lettre, pour retouner le nombre d'occurence: ", answer => {
     let i = 0, nbrOcurence = 0;
 
+    //TODO verifier si c'est bien un caractere
+
+
     while (i < mot.length) {
         if (answer == mot[i]) {
             nbrOcurence = nbrOcurence + 1;
