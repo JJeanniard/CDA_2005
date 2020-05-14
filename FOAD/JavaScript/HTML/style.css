@@ -1,0 +1,28 @@
+body{
+    background-color: darkgreen;
+}
+
+header{
+    margin-top: 0;
+    height: 1rem;
+}
+
+nav li{
+    list-style: none;
+    display: inline-block;
+}
+
+main{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+section{
+    background-color: darkgrey;
+    border: 0.2rem solid bisque;
+}
+
+section:first{
+    width: 35%;
+}
