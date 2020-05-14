@@ -9,7 +9,7 @@ const rl = readline.createInterface({
 
 rl.question("Entrer un nombre?? ", answer => {
     let nbr = answer, i = 0;
-    //DOTO il serai interesent de verifier ce que l'utlisateur rentre comme données
+    //TODO il serai interesent de verifier ce que l'utlisateur rentre comme données
     
     while (i < nbrT.length) {
         if (nbr == nbrT[i]) {
