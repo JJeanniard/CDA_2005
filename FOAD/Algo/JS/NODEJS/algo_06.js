@@ -1,6 +1,7 @@
-var caractfirstPlayer = "anticonstitutionnellement", caratSecondPlayer = "n";
+var alpha = "abcdefghijklmnopqrstuvwxyz";
+var caractfirstPlayer = "anticonstitutionnellement", caratSecondPlayer;
 var trySecondPlayer = 0;
-var temp = [], caratT = [], answer;
+var temp = [], caratT = [], answer = false;
 
 if (caractfirstPlayer.length >= 5) {
     for (var i = 0; i < caractfirstPlayer.length; i++) {
@@ -12,28 +13,29 @@ if (caractfirstPlayer.length >= 5) {
 
     }
 
-    while (trySecondPlayer <= 6) {
+    while (trySecondPlayer < 6) {
 
         //TODO faire une entrée clavier pour une lettre && verifier que soit q'un seul caractere.
+        caratSecondPlayer = alpha[Math.floor(Math.random() * alpha.length)];
+        console.log(caratSecondPlayer);
 
         for(var y = 0; y < caractfirstPlayer.length; y++){
             if(caractfirstPlayer[y] == caratSecondPlayer){
-                console.log('Bingo');
                 temp[y] = caractfirstPlayer[y];
                 answer = true;
-            }else{
-                answer = false;
             }
         }
 
         if(answer){
-            console.log(""+ temp);
+            console.log('Bingo');
+            console.log(""+ temp);3
+            answer = false;
         }else{
-            console.log('Retante ta chance!  ' + trySecondPlayer)
+            answer = false;
+            console.log('Retante ta chance!  ' + (trySecondPlayer + 1))
             trySecondPlayer++;
         }
 
-        
     }
 
 } else {
