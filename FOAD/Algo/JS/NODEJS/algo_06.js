@@ -1,6 +1,6 @@
-var caractfirstPlayer = "laval", caratSecondPlayer = "a";
+var caractfirstPlayer = "anticonstitutionnellement", caratSecondPlayer = "n";
 var trySecondPlayer = 0;
-var temp = [], caratT = [];
+var temp = [], caratT = [], answer;
 
 if (caractfirstPlayer.length >= 5) {
     for (var i = 0; i < caractfirstPlayer.length; i++) {
@@ -20,14 +20,21 @@ if (caractfirstPlayer.length >= 5) {
             if(caractfirstPlayer[y] == caratSecondPlayer){
                 console.log('Bingo');
                 temp[y] = caractfirstPlayer[y];
-            } else {
-                console.log('Retant ta chance!')
-                trySecondPlayer++;
+                answer = true;
+            }else{
+                answer = false;
             }
         }
-    }
 
-    console.log(temp);
+        if(answer){
+            console.log(""+ temp);
+        }else{
+            console.log('Retante ta chance!  ' + trySecondPlayer)
+            trySecondPlayer++;
+        }
+
+        
+    }
 
 } else {
     console.log("Le mot est trot court!")
