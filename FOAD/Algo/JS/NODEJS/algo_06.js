@@ -28,7 +28,7 @@ if (caractfirstPlayer.length >= 5) {
 
         if(answer){
             console.log('Bingo');
-            console.log(""+ temp);3
+            console.log(""+ temp);
             answer = false;
         }else{
             answer = false;
