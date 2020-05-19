@@ -15,6 +15,7 @@ function rec(tab, val, a, b){
         if(a > 0 && val.localeCompare(tab[a-1]) == 0){
             return a - 1;
         }
+        
         return -1;
     }
 
