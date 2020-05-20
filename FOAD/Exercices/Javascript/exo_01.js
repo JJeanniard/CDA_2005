@@ -30,7 +30,7 @@
  * Tutoriel Javascript: https://www.pierre-giraud.com/javascript-apprendre-coder-cours/introduction/ 
  */
 
-
+//TODO: QTM Commenter les consoles du patron 
 
 /* COMPLÉTEZ LE PROGRAMME... */
 
@@ -45,8 +45,7 @@ class Employee {
         this.email = (_firstname[0] + _lastname).toLowerCase() + "@arfp.asso.fr";
         this.role = _role;
         this.salaryBt = _salaryBt;
-        this.hiredate = _hiredate.getFullYear() + "-" + (_hiredate.getMonth() + 1) + "-" + _hiredate.getDate();
-        this.hiredateObj = _hiredate; 
+        this.hiredate = _hiredate.getFullYear() + "-" + (_hiredate.getMonth() + 1) + "-" + _hiredate.getDate();//TODO: il manque le 0 quand il y a qu'une unité
     }
 
     getMonthlySalary = function () {
@@ -55,11 +54,13 @@ class Employee {
     }
 
     getSeniority = function () {
+        //TODO: le systeme de date me convient pas
         this.dateDay = new Date();
+        this.StringToDate = new Date(this.hiredate);
 
-        this.yearOfBirt = this.dateDay.getFullYear() - this.hiredateObj.getFullYear();
-        this.monthOfBirt = this.dateDay.getMonth() + 1 - this.hiredateObj.getMonth();
-        this.dayOfBirt = this.dateDay.getDate() - this.hiredateObj.getDate();
+        this.yearOfBirt = this.dateDay.getFullYear() - this.StringToDate.getFullYear();
+        this.monthOfBirt = (this.dateDay.getMonth() + 1) - this.StringToDate.getMonth();
+        this.dayOfBirt = this.dateDay.getDate() - this.StringToDate.getDate();
 
         if (this.yearOfBirt >= 2) {
             return this.yearOfBirt + " ans " + this.monthOfBirt + " mois " + this.dayOfBirt + " jours";
@@ -71,15 +72,13 @@ class Employee {
     }
 }
 
-
-
 /** DÉBUT ZONE NON EDITABLE (Ne pas modifier les lignes suivantes) */
 
 
 /** @var Employee employee1 */
-var employee1 = new Employee(1, 'Doe', 'John', 'manager', 82000, new Date('2020-12-28')); // création d'un nouvel employé
+var employee1 = new Employee(1, 'Doe', 'John', 'manager', 82000, new Date('2020-05-01')); // création d'un nouvel employé
 var employee2 = new Employee(2, 'Amza', 'Red', 'ouvrier', 21000, new Date('2016-03-02'));
-var employee3 = new Employee(3, 'tarat', 'Blue', 'sous-fifre', 18000, new Date('2016-03-02'));
+var employee3 = new Employee(3, 'tarat', 'Blue', 'sous-fifre', 18000, new Date('2020-03-02'));
 var employee4 = new Employee(4, 'Turit', 'Yellow', 'boss', 150000, new Date('1990-05-31'));
 var employee5 = new Employee(5, 'Lomol', 'Brown', 'stagiaire', 9000, new Date('1998-03-02'));
 /** @var array employees */
@@ -96,4 +95,46 @@ console.log(employees); // export des employés dans la console
 
 // Écrivez votre code à partir de la ligne suivante...
 
-console.log(employee5.getSeniority());
+for (let index = 0; index < employees.length; index++) {
+    const element = employees[index];
+    console.log("########################")
+    console.log("nom: " + element.lastname);
+    console.log("Prénom: " + element.firstname);
+    console.log("Email: " + element.email);
+    console.log("Role: " + element.role);
+    console.log("Salaire Net: " + element.getMonthlySalary());
+    console.log("Anciennete: " + element.getSeniority() + "");
+}
+
+//traitement pour le salaire
+let tempT = 0;
+
+for (let index = 0; index < employees.length; index++) {
+    for (let j = 0; j < employees.length; j++) {
+        if(employees[j].getSeniority() < employees[index].getSeniority()){
+            tempT = employees[index];
+            employees[index] = employees[j];
+            employees[j] = tempT;
+        }
+    }
+}
+
+console.log(employees[0].firstname + " est le plus encien de la societe")
+
+
+//traitement pour le salaire
+let tempSl = 0;
+
+for (let index = 0; index < employees.length; index++) {
+    for (let j = 0; j < employees.length; j++) {
+        if(employees[j].salaryBt < employees[index].salaryBt){
+            tempSl = employees[index];
+            employees[index] = employees[j];
+            employees[j] = tempSl;
+        }
+    }
+}
+
+console.log(employees);
+
+console.log("La difference entre le plus bas salaire et le plus haut est de", (employees[0].salaryBt - employees[employees.length-1].salaryBt));
