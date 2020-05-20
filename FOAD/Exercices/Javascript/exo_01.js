@@ -58,9 +58,10 @@ class Employee {
         this.dateDay = new Date();
         this.StringToDate = new Date(this.hiredate);
 
+
         this.yearOfBirt = this.dateDay.getFullYear() - this.StringToDate.getFullYear();
-        this.monthOfBirt = (this.dateDay.getMonth() + 1) - this.StringToDate.getMonth();
-        this.dayOfBirt = this.dateDay.getDate() - this.StringToDate.getDate();
+        this.monthOfBirt = this.dateDay.getMonth() - this.StringToDate.getMonth();
+        this.dayOfBirt = this.dateDay.getDate() - this.StringToDate.getDate()?this.StringToDate.getDate():this.dateDay.getDate() -this.StringToDate.getDate();
 
         if (this.yearOfBirt >= 2) {
             return this.yearOfBirt + " ans " + this.monthOfBirt + " mois " + this.dayOfBirt + " jours";
@@ -79,7 +80,7 @@ class Employee {
 var employee1 = new Employee(1, 'Doe', 'John', 'manager', 82000, new Date('2020-05-01')); // création d'un nouvel employé
 var employee2 = new Employee(2, 'Amza', 'Red', 'ouvrier', 21000, new Date('2016-03-02'));
 var employee3 = new Employee(3, 'tarat', 'Blue', 'sous-fifre', 18000, new Date('2020-03-02'));
-var employee4 = new Employee(4, 'Turit', 'Yellow', 'boss', 150000, new Date('1990-05-31'));
+var employee4 = new Employee(4, 'Turit', 'Yellow', 'boss', 150000, new Date('1990-05-30'));
 var employee5 = new Employee(5, 'Lomol', 'Brown', 'stagiaire', 9000, new Date('1998-03-02'));
 /** @var array employees */
 const employees = [employee1, employee2, employee3, employee4, employee5]; // tableau contenant les employés
@@ -106,7 +107,7 @@ for (let index = 0; index < employees.length; index++) {
     console.log("Anciennete: " + element.getSeniority() + "");
 }
 
-//traitement pour le salaire
+//traitement pour le plus vieux
 let tempT = 0;
 
 for (let index = 0; index < employees.length; index++) {
@@ -134,7 +135,7 @@ for (let index = 0; index < employees.length; index++) {
         }
     }
 }
-
-console.log(employees);
-
-console.log("La difference entre le plus bas salaire et le plus haut est de", (employees[0].salaryBt - employees[employees.length-1].salaryBt));
+console.log("#############################");
+console.log("Le bas salaire est de", employees[employees.length-1].getMonthlySalary() ,"€");
+console.log("Le haut salaire est de", employees[0].getMonthlySalary() ,"€");
+console.log("La difference entre le plus bas salaire et le plus haut est de", (employees[0].salaryBt - employees[employees.length-1].salaryBt) ,"€");
