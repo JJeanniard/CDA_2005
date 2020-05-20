@@ -54,21 +54,23 @@ class Employee {
     }
 
     getSeniority = function () {
-        //TODO: le systeme de date me convient pas
+        //TODO: le systeme de date me convenais pas
         this.dateDay = new Date();
         this.StringToDate = new Date(this.hiredate);
 
+        this.diff = Math.abs(this.dateDay.getTime() - this.StringToDate.getTime());
 
-        this.yearOfBirt = this.dateDay.getFullYear() - this.StringToDate.getFullYear();
-        this.monthOfBirt = this.dateDay.getMonth() - this.StringToDate.getMonth();
-        this.dayOfBirt = this.dateDay.getDate() - this.StringToDate.getDate()?this.StringToDate.getDate():this.dateDay.getDate() -this.StringToDate.getDate();
+        //milli 1000 seconde 60 minute 60 day 24 m
+        this.yearsDurant = this.diff/(1000*60*60*24*365);
+        this.monthDurant = this.diff/(1000*60*60*24*7*4);
+        this.dayDurant = this.diff/24;
 
-        if (this.yearOfBirt >= 2) {
-            return this.yearOfBirt + " ans " + this.monthOfBirt + " mois " + this.dayOfBirt + " jours";
-        } else if (this.yearOfBirt < 2 && this.monthOfBirt >= 3) {
-            return this.monthOfBirt + " mois " + this.dayOfBirt + " jours";
+        if (this.yearsDurant >= 2) {
+            return Math.round(this.yearsDurant) + " ans " + Math.round(this.monthDurant) + " mois " + Math.round(this.dayDurant) + " jours";
+        } else if (this.yearsDurant < 2 && this.monthDurant >= 3) {
+            return Math.round(this.monthDurant) + " mois " + Math.round(this.dayDurant) + " jours";
         } else {
-            return this.dayOfBirt + " jours";
+            return Math.round(this.dayDurant) + " jours";
         }
     }
 }
