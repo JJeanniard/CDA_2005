@@ -4,6 +4,7 @@
   "description": "cours CDA",
   "main": "index.js",
   "scripts": {
+    "exo": "node FOAD\\Exercices\\Javascript\\exo_01.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
