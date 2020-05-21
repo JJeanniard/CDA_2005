@@ -349,9 +349,7 @@ MigrationBackup/
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
 
-<<<<<<< HEAD
-.vscode
-=======
 
 *.workspace
->>>>>>> feature/Tp_06
+
+.idea/

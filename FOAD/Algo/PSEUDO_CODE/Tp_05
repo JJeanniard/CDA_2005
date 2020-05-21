@@ -1,1 +1,38 @@
-exercise 3.5
+Caractère mot
+vecteur de Caractère motTab
+Entier i, j, k, tailleMot, tailleMotDiv, nbrPoint
+Booléen palinBl
+
+Début
+    palinBl <-- True
+    Lire mot
+    vecteur de Caractère MotTab(Longueur(mot), mot)
+
+    tailleMot <-- Longueur(motTab)
+    tailleMotDiv <-- Round(Longueur(motTab)/2)
+
+    Pour i de 0 à tailleMot Faire
+        Si MotTab[i] == "." Alors
+            nbrPoint <-- + 1
+        Fin Si
+        i <-- + 1
+    Fin Pour
+
+    Si nbrPoint == tailleMot Alors
+        Ecrire "LA CHAINE EST VIDE"
+    Sinon
+        Pour j de 0 à tailleMotDiv Faire
+            Si mot[j] != mot[k] Alors
+                palinBl <-- False
+            Fin Si
+            j <-- i+1
+            k <-- k-1
+        Fin Pour
+        
+        Si palinBl Alors
+            Ecrire "La chaîne de caractères est un palindrome"
+        Sinon
+            Ecrire "La chaîne de caractères n'est pas un palindrome"
+        Fin Si
+    Fin Si
+Fin
