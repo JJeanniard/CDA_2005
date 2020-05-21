@@ -78,7 +78,7 @@ class Employee {
         
     }
 
-    getTimestamp = function(){
+    timesForSenior = function(){
         return this.diff;
     }
 }
@@ -122,7 +122,7 @@ let tempT = 0;
 
 for (let index = 0; index < employees.length; index++) {
     for (let j = 0; j < employees.length; j++) {
-        if (employees[j].getTimestamp() < employees[index].getTimestamp()) {
+        if (employees[j].timesForSenior() < employees[index].timesForSenior()) {
             tempT = employees[index];
             employees[index] = employees[j];
             employees[j] = tempT;
