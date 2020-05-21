@@ -55,23 +55,31 @@ class Employee {
 
     getSeniority = function () {
         //TODO: le systeme de date me convenais pas
-        this.dateDay = new Date();
+        this.dateToDay = new Date();
         this.StringToDate = new Date(this.hiredate);
 
-        this.diff = Math.abs(this.dateDay.getTime() - this.StringToDate.getTime());
+        this.diff = this.dateToDay.getTime() - this.StringToDate.getTime();
 
-        //milli 1000 seconde 60 minute 60 day 24 m
-        this.yearsDurant = this.diff/(1000*60*60*24*365);
-        this.monthDurant = this.diff/(1000*60*60*24*7*4);
-        this.dayDurant = this.diff/24;
+        this.yearsD = this.dateToDay.getFullYear() - this.StringToDate.getFullYear();
 
-        if (this.yearsDurant >= 2) {
-            return Math.round(this.yearsDurant) + " ans " + Math.round(this.monthDurant) + " mois " + Math.round(this.dayDurant) + " jours";
-        } else if (this.yearsDurant < 2 && this.monthDurant >= 3) {
-            return Math.round(this.monthDurant) + " mois " + Math.round(this.dayDurant) + " jours";
+        this.monthD = ((this.dateToDay.getMonth() + 12 * this.dateToDay.getFullYear()) - (this.StringToDate.getMonth() + 12 * this.StringToDate.getFullYear())) - (this.yearsD*12);
+
+        this.dayD = Math.round((this.diff / (24 * 3600 * 1000))-(this.yearsD*365.25+this.monthD*30));
+
+        if (this.yearsD >= 2) {
+
+            return this.yearsD + " ans " + this.monthD + " mois " + (this.dayD>-1?this.dayD:0) + " jours";
+        } else if (this.yearsD < 2 && this.monthD >= 3) {
+
+            return this.monthD + " mois " + this.dayD + " jours";
         } else {
-            return Math.round(this.dayDurant) + " jours";
+            return this.dayD + " jours";
         }
+        
+    }
+
+    getTimestamp = function(){
+        return this.diff;
     }
 }
 
@@ -114,7 +122,7 @@ let tempT = 0;
 
 for (let index = 0; index < employees.length; index++) {
     for (let j = 0; j < employees.length; j++) {
-        if(employees[j].getSeniority() < employees[index].getSeniority()){
+        if (employees[j].getTimestamp() < employees[index].getTimestamp()) {
             tempT = employees[index];
             employees[index] = employees[j];
             employees[j] = tempT;
@@ -130,7 +138,7 @@ let tempSl = 0;
 
 for (let index = 0; index < employees.length; index++) {
     for (let j = 0; j < employees.length; j++) {
-        if(employees[j].salaryBt < employees[index].salaryBt){
+        if (employees[j].salaryBt < employees[index].salaryBt) {
             tempSl = employees[index];
             employees[index] = employees[j];
             employees[j] = tempSl;
@@ -138,6 +146,6 @@ for (let index = 0; index < employees.length; index++) {
     }
 }
 console.log("#############################");
-console.log("Le bas salaire est de", employees[employees.length-1].getMonthlySalary() ,"€");
-console.log("Le haut salaire est de", employees[0].getMonthlySalary() ,"€");
-console.log("La difference entre le plus bas salaire et le plus haut est de", (employees[0].salaryBt - employees[employees.length-1].salaryBt) ,"€");
+console.log("Le bas salaire est de", employees[employees.length - 1].getMonthlySalary(), "€");
+console.log("Le haut salaire est de", employees[0].getMonthlySalary(), "€");
+console.log("La difference entre le plus bas salaire et le plus haut est de", (employees[0].salaryBt - employees[employees.length - 1].salaryBt), "€");
