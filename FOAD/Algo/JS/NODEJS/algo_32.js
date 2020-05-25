@@ -6,7 +6,7 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
-if (mot.length === 1) {
+if (mot.length < 1) {
     console.log("Pas de mot!");
     return false;
 }
