@@ -7,18 +7,29 @@ const rl = readline.createInterface({
     output: process.stdout,
 });
 
-rl.question("Entrer un nombre?? ", answer => {
-    let nbr = answer, i = 0;
-    //TODO il serai interesent de verifier ce que l'utlisateur rentre comme données
-    
-    while (i < nbrT.length) {
-        if (nbr == nbrT[i]) {
-            return console.log("Element trouve à l'index: " + i);
-        }
-        i++;
+const searchElement = function (element){
+
+    if(element === null || element === undefined || element === ""){
+        console.error("Champs vide ou invalide");
+        return false;
     }
 
-    if (i > 9) {
+    /* if(!Number.isNaN(element) ){
+        console.error("Le champs doit contenir un nombre!");
+        return false;
+    } */
+
+    for(let i = 0; i < nbrT.length-1; i++){
+        if (element == nbrT[i]) {
+            return console.log("Element trouve à l'index: " + i);
+        }
+    }
+
+    if (element > nbrT.length - 1) {
         return console.error("Element non trouvé");
     }
+}
+
+rl.question("Entrer un nombre?? ", answer => {
+    searchElement(answer);
 });
