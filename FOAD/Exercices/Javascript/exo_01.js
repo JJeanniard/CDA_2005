@@ -38,6 +38,7 @@
  * @class Employee
  */
 class Employee {
+    
     constructor(_id, _lastname, _firstname, _role, _salaryBt, _hiredate) {
         this.id = _id;
         this.lastname = _lastname;
@@ -67,10 +68,8 @@ class Employee {
         this.dayD = Math.round((this.diff / (24 * 3600 * 1000))-(this.yearsD*365.25+this.monthD*30));
 
         if (this.yearsD >= 2) {
-
             return this.yearsD + " ans " + this.monthD + " mois " + (this.dayD>-1?this.dayD:0) + " jours";
         } else if (this.yearsD < 2 && this.monthD >= 3) {
-
             return this.monthD + " mois " + this.dayD + " jours";
         } else {
             return this.dayD + " jours";
@@ -146,6 +145,6 @@ for (let index = 0; index < employees.length; index++) {
     }
 }
 console.log("#############################");
-console.log("Le bas salaire est de", employees[employees.length - 1].getMonthlySalary(), "€");
-console.log("Le haut salaire est de", employees[0].getMonthlySalary(), "€");
+console.log("Le plus bas salaire est de", employees[employees.length - 1].getMonthlySalary(), "€");
+console.log("Le plsu haut salaire est de", employees[0].getMonthlySalary(), "€");
 console.log("La difference entre le plus bas salaire et le plus haut est de", (employees[0].salaryBt - employees[employees.length - 1].salaryBt), "€");
