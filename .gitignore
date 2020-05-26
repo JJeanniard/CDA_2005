@@ -353,3 +353,5 @@ MigrationBackup/
 *.workspace
 
 .idea/
+
+.vscode/
