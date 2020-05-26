@@ -1,44 +1,64 @@
 const readline = require('readline');
+<<<<<<< HEAD
 var mot = "anticonstitutionnellement.";
+=======
+let mot = "anticonstitutionnellement.";
+>>>>>>> aalgo_32
 
 const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
 });
 
-if (mot.length < 1) {
-    console.log("Pas de mot!");
-    return false;
-}
+isOccMot = function(chaineStr){
 
-if(mot === '.'){
-    console.log("Ceci est pas un mot!")
-    return false;
-}
-
-if ("." !== mot[mot.length - 1]) {
-    console.log("Le mot finit pas part un point!");
-    return false;
-}
-
-rl.question("Entrer la lettre, pour retouner le nombre d'occurence: ", answer => {
-
-    let i = 0, nbrOcurence = 0;
-
-    //TODO verifier si c'est bien un caractere
-
-    while (i < mot.length) {
-        if (answer === mot[i]) {
-            nbrOcurence++;
-        }
-        i++;
+    if(chaineStr === ""){
+        console.error("L'entrer est vide ou il y a que des points ou il y a une erreur.");
+        return false;
     }
 
-    if (nbrOcurence >= 1) {
-        return console.info("La lettre est présente ",nbrOcurence," fois!");
+    if(chaineStr[chaineStr.length-1] !== "."){
+        console.error("La phrase ou le mot ne finit pas part un point.")
+        return false;
+    }
+
+    if((chaineStr.split('.').length-1) > 1){
+        console.error("La phrase ou le mot comporte que des points.");
+        return false;
+    }
+
+    /* if(typeof(chaineStr) !== "string"){
+        console.error("Ceci n'est pas un mot ou une phrase.");
+        return false;
+    } */
+}
+
+isInputStr = function(str){
+    if(str === ""){
+        console.error("L'entrer est vide ou il y a que des points ou il y a une erreur.");
+        return false;
+    }
+    if(str.length > 1){
+        console.error("On a demandé une lettre.")
+        return false;
+    }
+}
+
+isOccMot(mot);
+
+occuStr = function(str){
+    isInputStr(str);
+    resultat = mot.split(str).length - 1;
+
+    if (resultat >= 1) {
+        return console.info("La lettre est présente ",resultat," fois!");
     } else {
         return console.info("La lettre n'est pas présente!");
     }
+}
 
+rl.question("Entrer la lettre, pour retouner le nombre d'occurence: ", answer => {
+    occuStr(answer);
+    rl.close();
 });
 
