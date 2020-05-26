@@ -1,9 +1,5 @@
 const readline = require('readline');
-<<<<<<< HEAD
-var mot = "anticonstitutionnellement.";
-=======
 let mot = "anticonstitutionnellement.";
->>>>>>> aalgo_32
 
 const rl = readline.createInterface({
     input: process.stdin,
