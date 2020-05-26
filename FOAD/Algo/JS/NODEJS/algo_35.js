@@ -1,16 +1,33 @@
 //palindrome
-var mot = "laval";
-var j = 0;
-j = mot.length -1;
+let mot = "LAVAL A ETE A LAVAL.", temp, j, i = 0;
 
-//TODO testé si la phrase est vide
-//TODO renvoyer un message si c'est un palindrome ou pas
+if(mot.length < 1){
+    console.log("Veillez entrer un mot de plus d'un caractére.");
+    return false;
+}
 
-for (var index = 0; index < mot.length; index++) {
-    console.log(mot[index] + " " + mot[j]);
-    if(mot[index] == mot[j]){
-        console.log('ok');
+if(mot[mot.length-1] !== "."){
+    console.log("Veillez inserer un point en de mot ou de phrase.");
+    return false;
+}
+
+if(mot.split(".").length > mot.length){
+    console.log("LA CHAINE EST VIDE");
+    return false;
+}
+
+temp = mot.split(".")[0];
+j = temp.length-1;
+
+for (var index = 0; index < j; index++) {
+    if(temp[index] == temp[j]){
+        i++;
     }
     j--;
 }
 
+if(i>j/2){
+    return console.log("la chaîne de caractères est un palindrome");
+} else {
+    return console.log("la chaîne de caractères n'est pas un palindrome");
+}
