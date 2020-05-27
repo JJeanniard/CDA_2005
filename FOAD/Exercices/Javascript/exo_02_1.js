@@ -27,7 +27,7 @@ class Point {
      * @param int _x Coordonnée horizontale du point (abscisse). Valeur négative acceptée
      * @param int _y Coordonnée verticale du point (ordonnée). Valeur négative acceptée
      */
-    
+
     constructor(_x, _y) {
         this.x = parseFloat(_x || 0);
         this.y = parseFloat(_y || 0);
@@ -46,15 +46,15 @@ class Point {
      * @param float _x 
      * @param float _y 
      */
-    move(_x, _y){
-        this.x = _x; 
-        this.y = _y; 
+    move(_x, _y) {
+        this.x = _x;
+        this.y = _y;
     }
 
     /**
      * @returns Objet Nouvelle objet avec les valeurs d'un autre objet
      */
-    duplicate(){
+    duplicate() {
         return new Point(this.x, this.y);
     }
 
@@ -62,25 +62,19 @@ class Point {
      * 
      * @param float _point Copy les coordonnées d'une classe passée en paramètre
      */
-    copy(_point){
+    copy(_point) {
         this.x = _point.x;
         this.y = _point.y;
     }
 
-    lolilol(_point){
-        let tmp = this
-        this.copy(_point)
-        _point.copy(tmp)
-    }
+    rabbit(_point) {
+        this.temp = _point;
 
-    rabbit(_point){
+        _point.move(this.x, this.y);
         
-        lolilol(_point);
-
-       /* let temp = _point;
-        _pointT.move(this.x, this.y);
-        this.copy(temp); */
+        this.copy(this.temp);
     }
+
 }
 
 
