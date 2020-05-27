@@ -60,19 +60,29 @@ class Point {
 
     /**
      * 
-     * @param float _point Copy les coordonnées d'une classe passée en paramètre
+     * @param Objet _point Copy les coordonnées d'une classe passée en paramètre
      */
     copy(_point) {
         this.x = _point.x;
         this.y = _point.y;
     }
-
+    /**
+     * 
+     * @param Objet _point 
+     */
     rabbit(_point) {
-        this.temp = _point;
-
-        _point.move(this.x, this.y);
-        
-        this.copy(this.temp);
+        /**
+        * On voulais pas l'acces a une valeur par reference
+        * (ce qui ecrase les valeurs),
+        * let a = 1;
+        * let b = a; b -> a -> 1
+        * a = 2;
+        * b -> 2  
+        * mais les valeurs de cette reference 
+        */ 
+        let temp = _point.duplicate();
+        _point.copy(this);
+        this.copy(temp);
     }
 
 }
