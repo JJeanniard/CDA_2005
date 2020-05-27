@@ -38,46 +38,45 @@
  * @class Employee
  */
 class Employee {
-    
+
     constructor(_id, _lastname, _firstname, _role, _salaryBt, _hiredate) {
         this.id = _id;
         this.lastname = _lastname;
         this.firstname = _firstname;
-        this.email = (_firstname[0] + _lastname).toLowerCase() + "@arfp.asso.fr";
+        this.email = this.firstname[0].concat(this.lastname).toLowerCase().concat("@email.fr");
         this.role = _role;
         this.salaryBt = _salaryBt;
-        this.hiredate = _hiredate.getFullYear() + "-" + (_hiredate.getMonth() + 1) + "-" + _hiredate.getDate();//TODO: il manque le 0 quand il y a qu'une unité
+        this.hiredate = _hiredate;//TODO: il manque le 0 quand il y a qu'une unité
     }
 
-    getMonthlySalary = function () {
+    getMonthlySalary() {
         // (salaire_mensuel = salaire_annuel / 12 * 0.75)
         return Math.round(this.salaryBt / 12 * 0.75);
     }
 
-    getSeniority = function () {
+    getSeniority() {
         //TODO: le systeme de date me convenais pas
         this.dateToDay = new Date();
-        this.StringToDate = new Date(this.hiredate);
 
-        this.diff = this.dateToDay.getTime() - this.StringToDate.getTime();
+        let diff = this.dateToDay.getTime() - this.hiredate.getTime();
 
-        this.yearsD = this.dateToDay.getFullYear() - this.StringToDate.getFullYear();
+        let yearsD = this.dateToDay.getFullYear() - this.hiredate.getFullYear();
 
-        this.monthD = ((this.dateToDay.getMonth() + 12 * this.dateToDay.getFullYear()) - (this.StringToDate.getMonth() + 12 * this.StringToDate.getFullYear())) - (this.yearsD*12);
+        let monthD = ((this.dateToDay.getMonth() + 12 * this.dateToDay.getFullYear()) - (this.hiredate.getMonth() + 12 * this.hiredate.getFullYear())) - (yearsD * 12);
 
-        this.dayD = Math.round((this.diff / (24 * 3600 * 1000))-(this.yearsD*365.25+this.monthD*30));
+        let dayD = Math.round((diff / (24 * 3600 * 1000)) - (yearsD * 365.25 + monthD * 30));
 
-        if (this.yearsD >= 2) {
-            return this.yearsD + " ans " + this.monthD + " mois " + (this.dayD>-1?this.dayD:0) + " jours";
-        } else if (this.yearsD < 2 && this.monthD >= 3) {
-            return this.monthD + " mois " + this.dayD + " jours";
+        if (yearsD >= 2) {
+            return yearsD + " ans " + monthD + " mois " + (dayD > -1 ? dayD : 0) + " jours";
+        } else if (yearsD < 2 && monthD >= 3) {
+            return monthD + " mois " + dayD + " jours";
         } else {
-            return this.dayD + " jours";
+            return dayD + " jours";
         }
-        
+
     }
 
-    timesForSenior = function(){
+    timesForSenior = function () {
         return this.diff;
     }
 }
@@ -90,7 +89,7 @@ var employee1 = new Employee(1, 'Doe', 'John', 'manager', 82000, new Date('2020-
 var employee2 = new Employee(2, 'Amza', 'Red', 'ouvrier', 21000, new Date('2016-03-02'));
 var employee3 = new Employee(3, 'tarat', 'Blue', 'sous-fifre', 18000, new Date('2020-03-02'));
 var employee4 = new Employee(4, 'Turit', 'Yellow', 'boss', 150000, new Date('1990-05-30'));
-var employee5 = new Employee(5, 'Lomol', 'Brown', 'stagiaire', 9000, new Date('1998-03-02'));
+var employee5 = new Employee(5, 'Lomol', 'Brown', 'stagiaire', 9000, new Date('1520-05-27'));
 /** @var array employees */
 const employees = [employee1, employee2, employee3, employee4, employee5]; // tableau contenant les employés
 
@@ -105,6 +104,14 @@ console.log(employees); // export des employés dans la console
 
 // Écrivez votre code à partir de la ligne suivante...
 
+
+
+let f = function(a, b){
+    return a.hiredate - b.hiredate;
+}
+
+employees.sort(f);
+
 for (let index = 0; index < employees.length; index++) {
     const element = employees[index];
     console.log("########################")
@@ -116,8 +123,10 @@ for (let index = 0; index < employees.length; index++) {
     console.log("Anciennete: " + element.getSeniority() + "");
 }
 
+
+
 //traitement pour le plus vieux
-let tempT = 0;
+/* let tempT = 0;
 
 for (let index = 0; index < employees.length; index++) {
     for (let j = 0; j < employees.length; j++) {
@@ -147,4 +156,4 @@ for (let index = 0; index < employees.length; index++) {
 console.log("#############################");
 console.log("Le plus bas salaire est de", employees[employees.length - 1].getMonthlySalary(), "€");
 console.log("Le plsu haut salaire est de", employees[0].getMonthlySalary(), "€");
-console.log("La difference entre le plus bas salaire et le plus haut est de", (employees[0].salaryBt - employees[employees.length - 1].salaryBt), "€");
+console.log("La difference entre le plus bas salaire et le plus haut est de", (employees[0].salaryBt - employees[employees.length - 1].salaryBt), "€"); */
