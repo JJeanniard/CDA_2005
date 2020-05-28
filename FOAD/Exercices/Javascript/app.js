@@ -12,5 +12,6 @@ empl.create(new Employee(idObj++, 'tarat', 'Blue', 'sous-fifre', 18000, new Date
 empl.create(new Employee(idObj++, 'Turit', 'Yellow', 'boss', 150000, new Date('1990-05-30')));
 empl.create(new Employee(idObj++, 'Lomol', 'Brown', 'stagiaire', 9000, new Date('1520-05-27')));
 
-console.log(empl.readAll(Employee.salary));
+console.log(empl.readAll('salary'));
 
+console.log(empl.read(4));

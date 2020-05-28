@@ -7,8 +7,6 @@ const Employee = require('./Employee.js');
 class Enterprise {
     constructor() {
         this.employees = [];
-
-
     }
 
     /**
@@ -16,14 +14,19 @@ class Enterprise {
      * @param  _filter 
      */
     readAll(_filter) {
-        //rechercher par filtre
 
-        let search = function(a,b){
-            return a._filter - b._filter;
+        let empl = function (a, b){
+            switch (_filter) {
+                case "hiredate":
+                    return a.hiredate - b.hiredate;
+                case "salary":
+                    return a.salary - b.salary;
+                default:
+                    return a.id - b.id;
+            }
         }
-        
-  
-        return this.employees.sort(search);
+
+        return this.employees.sort(empl);
     }
 
     /**
@@ -39,7 +42,10 @@ class Enterprise {
      * @param int _id 
      */
     read(_id) {
-
+        let empl = function (emp){
+            return emp.id === _id;
+        }
+        return this.employees.find(empl);
     }
 
     /**
@@ -55,7 +61,10 @@ class Enterprise {
      * @param int _id 
      */
     delete(_id) {
-
+        let empl = function (emp){
+            return emp.id === _id;
+        }
+        return this.employees.find(empl);
     }
 
 
