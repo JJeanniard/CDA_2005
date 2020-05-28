@@ -41,7 +41,7 @@ class Employee {
         this.id = parseInt(_id || 0);
         this.lastname = _lastname;
         this.firstname = _firstname;
-        this.email = this.firstname[0].concat(this.lastname).toLowerCase().concat("@email.fr");
+        this.email = (this.firstname[0].concat(this.lastname)).toLowerCase().concat("@email.fr");
         this.role = _role;
         this.salary = _salary;
         this.hiredate = _hiredate;
