@@ -14,7 +14,8 @@ empl.create(new Employee(idObj++, 'Lomol', 'Brown', 'stagiaire', 9000, new Date(
 
 
 
-empl.update(new Employee(8, 'Purple', 'Platon', 'manager', 20000, new Date('2001-05-01')));
+empl.update(new Employee(4, 'Purple', 'Platon', 'tata', 20000, new Date('2001-05-01')));
 
-console.log(empl.getHigherSalary())
-console.log(empl.getLowerSalary())
+
+
+console.log(empl.readAll('salary'));

@@ -48,6 +48,7 @@ class Enterprise {
             return emp.id === id;
         }
         resultat = this.employees.find(empl);
+
         if(resultat === undefined){
             resultat = false;
         }
@@ -60,12 +61,17 @@ class Enterprise {
      * @param Employee _employee 
      */
     update(_employee) {
-        let resultat;
-        resultat = this.delete(_employee.id);
-        if(resultat){
-            this.create(_employee);
+        let index = 0;
+
+        let empl = function (emp){
+            return emp.id === _employee.id;
         }
-        return resultat;
+        index = this.employees.findIndex(empl);
+        if(index === -1){
+            return false;
+        }
+        this.employees.splice(index, 1, _employee);
+        return true;
     }
 
     /**
@@ -86,7 +92,6 @@ class Enterprise {
         return true;
     }
 
-
     /**
      * return l'objet employee avec le plus gros salaires
      */
@@ -104,13 +109,11 @@ class Enterprise {
     }
 
     /**
-     * 
+     * return la diff entre low et higher salary
      */
     getSalaryGap() {
-
+        return this.getHigherSalary().salary - this.getLowerSalary().salary;
     }
-
-
 }
 
 module.exports = Enterprise;
