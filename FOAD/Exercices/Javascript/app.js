@@ -12,6 +12,9 @@ empl.create(new Employee(idObj++, 'tarat', 'Blue', 'sous-fifre', 18000, new Date
 empl.create(new Employee(idObj++, 'Turit', 'Yellow', 'boss', 150000, new Date('1990-05-30')));
 empl.create(new Employee(idObj++, 'Lomol', 'Brown', 'stagiaire', 9000, new Date('1520-05-27')));
 
-console.log(empl.readAll('salary'));
 
-console.log(empl.read(4));
+
+empl.update(new Employee(8, 'Purple', 'Platon', 'manager', 20000, new Date('2001-05-01')));
+
+console.log(empl.getHigherSalary())
+console.log(empl.getLowerSalary())
