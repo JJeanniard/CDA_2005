@@ -10,7 +10,7 @@ class Enterprise {
     }
 
     /**
-     * 
+     * Affichage de tout les employés par un ordre de filtrage 
      * @param  _filter 
      */
     readAll(_filter) {
@@ -34,7 +34,9 @@ class Enterprise {
      * @param Employee _employee 
      */
     create(_employee) {
-        this.employees.push(_employee);
+        if((_employee instanceof Employee))
+            this.employees.push(_employee);
+        return false;
     }
 
     /**
@@ -49,9 +51,8 @@ class Enterprise {
         }*/
         resultat = this.employees.find(emp => emp.id === id);
 
-        if(resultat === undefined){
+        if(resultat === undefined)
             resultat = false;
-        }
 
         return resultat;
     }
@@ -116,4 +117,4 @@ class Enterprise {
     }
 }
 
-module.exports = Enterprise;
+module.exports = Enterprise;//Attention au retour obligatoire en JS
