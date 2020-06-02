@@ -44,10 +44,10 @@ class Enterprise {
     read(_id) {
         let id = parseInt(_id), resultat;
 
-        let empl = function (emp){
+        /*let empl = function (emp){
             return emp.id === id;
-        }
-        resultat = this.employees.find(empl);
+        }*/
+        resultat = this.employees.find(emp => emp.id === id);
 
         if(resultat === undefined){
             resultat = false;
@@ -63,10 +63,10 @@ class Enterprise {
     update(_employee) {
         let index = 0;
 
-        let empl = function (emp){
+        /*let empl = function (emp){
             return emp.id === _employee.id;
-        }
-        index = this.employees.findIndex(empl);
+        }*/
+        index = this.employees.findIndex(emp => emp.id === _employee.id);
         if(index === -1){
             return false;
         }
@@ -81,10 +81,10 @@ class Enterprise {
     delete(_id) {
         let index = 0, id = parseInt(_id);
 
-        let empl = function (emp){
+        /*let empl = function (emp){
             return emp.id === _id;
-        }
-        index = this.employees.findIndex(empl);
+        }*/
+        index = this.employees.findIndex(emp => emp.id === _id);
         if(index === -1){
             return false;
         }
