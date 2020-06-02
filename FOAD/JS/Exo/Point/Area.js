@@ -1,4 +1,3 @@
-  
 /**
  * JAVASCRIPT:  Exercices
  * 
@@ -36,6 +35,8 @@
  * - Les "Point" situés sur la limite de la zone sont considérés "dans les limites de la zone" 
  * Aidez-vous des images "02_Points_***" présentes dans ce dossier pour vous faire une réprésentation
  */
+const Point = require('Point.js');
+
 class Area
 {
     /**
@@ -46,6 +47,9 @@ class Area
      */
     constructor(_width, _height) {
         // A vous de jouer
+        pointOrigin = ["0","0"];
+        this.areSize = [_width, _height];
+        this.points = [];
     }
 
     /**
@@ -58,9 +62,8 @@ class Area
         if((typeof _point) !== 'Point') {
             return false;
         }
-
         // A vous de jouer
-
+        this.points.push(_point);
         return true;
     }
 
@@ -71,5 +74,25 @@ class Area
      */
     needAllInside() {
 
+    }
+
+    update(_point){
+        let index = 0;
+        if((typeof _point) !== Point)
+            return false;
+        index = this.points.findIndex(po => po === _point);
+        if(index === -1)
+            return false;
+        this.points.splice(index, 1, _point);
+        return true;
+    }
+
+    delete(_point){
+        let index = 0;
+        index = this.points.findIndex(po => po === _point);
+        if(index === -1)
+            return false;
+        this.points.splice(index, 1, _point);
+        return true;
     }
 }
