@@ -78,7 +78,8 @@ class Area
         if (!_point instanceof Point) {
             return false;
         }
-        //TODO: verifier que le point ne va pas ce trouver sur un autre
+        
+        //TODO: verifier le nombre de point par zone et limitée les entrées
         let result = this.points.find(poit => (poit.x === _point.x && poit.y === _point.y));
         if(result === true)
             return false;
