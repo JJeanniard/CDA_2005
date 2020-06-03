@@ -14,6 +14,8 @@ empl.create(new Employee(idObj++, 'Lomol', 'Brown', 'stagiaire', 9000, new Date(
 //mise à jour de l'employé
 empl.update(new Employee(4, 'Purple', 'Platon', 'tata', 20000, new Date('2001-05-01')));
 //affiché les employés par ordre de salaire
-console.log(empl.readAll('salary'));
+console.log(empl.readAll(emp => emp.hiredate < new Date()));
 //affichage d'un employé
-console.log(empl.read(8)); 
+console.log("retrouner l'employée demander", empl.read(2));
+//getHigherSalary
+console.log(empl.getHigherSalary());
