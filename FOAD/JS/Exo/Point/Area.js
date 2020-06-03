@@ -79,8 +79,8 @@ class Area
             return false;
         }
         //TODO: verifier que le point ne va pas ce trouver sur un autre
-        let result = this.points.find(pts => pts.x === _point.x);
-        if(result == 1)
+        let result = this.points.find(poit => (poit.x === _point.x && poit.y === _point.y));
+        if(result === true)
             return false;
         // A vous de jouer
         this.points.push(_point);

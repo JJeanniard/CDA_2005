@@ -26,4 +26,4 @@ area2.addPoint(new Point(12,10));
 area2.addPoint(new Point(13,11));
 area2.addPoint(new Point(14,12));
 
-area1.addPoint(new Point(0,4));
+console.log(area1.addPoint(new Point(0,4)));
