@@ -11,7 +11,8 @@ class Enterprise {
 
     /**
      * Affichage de tout les employés par un ordre de filtrage 
-     * @param  _filter 
+     * @param  _filter
+     * @returns Employee
      */
     readAll(_filter) {
 
@@ -31,17 +32,18 @@ class Enterprise {
 
     /**
      * Créer un employé
-     * @param Employee _employee 
+     * @param Employee _employee
+     * @returns void
      */
     create(_employee) {
-        if((_employee instanceof Employee))
+        if((typeof _employee) !== Employee)
             this.employees.push(_employee);
-        return false;
     }
 
     /**
      * 
      * @param int _id 
+     * @returns Employee
      */
     read(_id) {
         let id = parseInt(_id), resultat;
@@ -52,32 +54,38 @@ class Enterprise {
         resultat = this.employees.find(emp => emp.id === id);
 
         if(resultat === undefined)
-            resultat = false;
+            resultat = undefined;
 
         return resultat;
     }
 
     /**
      * Met à jour un employé
-     * @param Employee _employee 
+     * @param Employee _employee
+     * @returns boolean
      */
     update(_employee) {
         let index = 0;
+
+        if((typeof _employee) !== Employee)
+            return false;
 
         /*let empl = function (emp){
             return emp.id === _employee.id;
         }*/
         index = this.employees.findIndex(emp => emp.id === _employee.id);
-        if(index === -1){
+        
+        if(index === -1)
             return false;
-        }
+        
         this.employees.splice(index, 1, _employee);
         return true;
     }
 
     /**
      * Supprime un employé
-     * @param int _id 
+     * @param int _id
+     * @returns boolean
      */
     delete(_id) {
         let index = 0, id = parseInt(_id);
@@ -95,6 +103,7 @@ class Enterprise {
 
     /**
      * return l'objet employee avec le plus gros salaires
+     * @returns Employee
      */
     getHigherSalary() {
         let result = this.readAll("salary");
@@ -103,6 +112,7 @@ class Enterprise {
 
     /**
      * return l'objet employee avec le plus petit salaires
+     * @returns Employee
      */
     getLowerSalary() {
         let result = this.readAll("salary");
@@ -111,6 +121,7 @@ class Enterprise {
 
     /**
      * return la diff entre low et higher salary
+     * @returns Employee
      */
     getSalaryGap() {
         return this.getHigherSalary().salary - this.getLowerSalary().salary;
