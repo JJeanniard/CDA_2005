@@ -10,13 +10,24 @@ class Enterprise {
     }
 
     /**
+     * @returns boolean
+     * @param _employee Employee 
+     */
+    isValid(_employee){
+        if(!_employee instanceof Employee)
+            return false;
+
+        return true;
+    }
+
+    /**
      * Affichage de tout les employés par un ordre de filtrage 
      * @param  _filter
      * @returns Employee
      */
     readAll(_filter) {
 
-        let empl = function (a, b){
+        /* let empl = function (a, b){
             switch (_filter) {
                 case "hiredate":
                     return a.hiredate - b.hiredate;
@@ -25,19 +36,21 @@ class Enterprise {
                 default:
                     return a.id - b.id;
             }
-        }
+        } */
 
-        return this.employees.sort(empl);
+        return this.employees.filter(_filter);
     }
 
     /**
-     * Créer un employé
+     * Créer un employée
      * @param Employee _employee
-     * @returns void
+     * @returns Employee
      */
     create(_employee) {
-        if((typeof _employee) !== Employee)
+        if(this.isValid(_employee))
             this.employees.push(_employee);
+
+        return _employee;
     }
 
     /**
@@ -46,17 +59,23 @@ class Enterprise {
      * @returns Employee
      */
     read(_id) {
-        let id = parseInt(_id), resultat;
+        /* let id = parseInt(_id), resultat;
 
-        /*let empl = function (emp){
+        let empl = function (emp){
             return emp.id === id;
-        }*/
+        
         resultat = this.employees.find(emp => emp.id === id);
 
         if(resultat === undefined)
             resultat = undefined;
 
-        return resultat;
+        return resultat; */
+        let emp = this.employees.find(emp => emp.id === _id);
+        if(emp !== undefined){
+            let result = Object.assign(emp, this.employees.id);
+            return result;
+        }
+        return result;
     }
 
     /**
@@ -67,7 +86,7 @@ class Enterprise {
     update(_employee) {
         let index = 0;
 
-        if((typeof _employee) !== Employee)
+        if(!this.isValid(_employee))
             return false;
 
         /*let empl = function (emp){
@@ -106,7 +125,7 @@ class Enterprise {
      * @returns Employee
      */
     getHigherSalary() {
-        let result = this.readAll("salary");
+        let result = this.employees.sort((a, b) => (a.salary-b.salary));
         return result[this.employees.length-1];
     }
 
@@ -115,7 +134,7 @@ class Enterprise {
      * @returns Employee
      */
     getLowerSalary() {
-        let result = this.readAll("salary");
+        let result = this.employees.sort((b, a) => (a.salary-b.salary));
         return result[0];
     }
 
