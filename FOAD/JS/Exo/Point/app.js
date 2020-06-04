@@ -7,7 +7,8 @@ let incrt = 1;
 //Area 1
 let area1 = new Area(4,4);
 //point first area
-area1.addPoint(new Point(2,0));
+let a1p1 = new Point(2,0);
+area1.addPoint(a1p1);
 area1.addPoint(new Point(1,2));
 area1.addPoint(new Point(0,4));
 area1.addPoint(new Point(4,2));
@@ -26,7 +27,11 @@ area2.addPoint(new Point(12,10));
 area2.addPoint(new Point(13,11));
 area2.addPoint(new Point(14,12));
 
-console.log(area1.addPoint(new Area(4,4)));
 console.log(area2.addPoint(new Point(12,10)));
-console.log(area2.cordZone)
-console.log(area1.cordZone)
+console.log(area1.addPoint(new Area(4,4)));
+
+let ex = a1p1.duplicate();
+a1p1.move(9,4);
+area1.update(a1p1, ex);
+
+console.log(area1.points)

@@ -21,9 +21,6 @@
  *          - Afficher tous les points
  *          - Afficher le nombre d'emplacements libres
  * 
- */
-
-/**
  * Class Area
  * Un "Point" est un objet représentant des coordonnées (x,y) dans un espace à 2 dimensions
  * Une "Area" est un objet représentant une zone à 2 dimensions (coïncidence?)
@@ -50,9 +47,7 @@
  * 3) Enregistrer le "Point" dans la zone
  * 
  * 4) Renvoyer true
- */
-/**
- * 
+ *
  * @package CRM
  * @author jjeanniard
  * @version 0.0.1
@@ -68,9 +63,9 @@ class Area {
      */
     constructor(_width, _height) {
         // A vous de jouer
-        this.pointOrigin = {w: 0, h: 0};
+        this.pointOrigin = { w: 0, h: 0 };
         this.nrbPt = 0; //incrementation par ajout de point
-        this.areSize = {w: _width,h: _height };
+        this.areSize = { w: _width, h: _height };
         this.points = [];
         this.cordZone = [];
         this.initAreaZ();
@@ -87,13 +82,17 @@ class Area {
         return true;
     }
 
-    initAreaZ(){
+    /**
+     * creation de la liste propre à chaque instance de Area
+     * avec les coordonnées possible dans la zone definie
+     * @returns array
+     */
+    initAreaZ() {
         let i, y;
-        //TODO: chercher tout les points dispo dans la zone
-        for(i = this.pointOrigin.w; i < this.areSize.w; i++){
-            for(y = this.pointOrigin.h; y < this.areSize.h; y++){
+        for (i = this.pointOrigin.w; i < this.areSize.w; i++) {
+            for (y = this.pointOrigin.h; y < this.areSize.h; y++) {
                 //3 valeur dans le tableau les cords (2 valeur) et si il est disp
-                this.cordZone.push({w: i, h: y, dispo:true});
+                this.cordZone.push({ w: i, h: y, dispo: true });
             }
         }
         return this.cordZone;
@@ -106,7 +105,6 @@ class Area {
      * @returns Boolean true en cas de succès, false si l'ajout est impossible 
      */
     addPoint(_point) {
-        let rslt;
         if (!this.isValid(_point))
             return false;
 
@@ -119,17 +117,11 @@ class Area {
         //TODO: ajout du point meme si il comporte les mêmes coordonner d'un autre point
         //TODO: rechercher le point "dispo" le plus proche (preference sur le bord superieur)
         //TODO: et mettre à jour les "cords" du point
-        
+
         this.points.push(_point);
 
-        //recherche les cordonnées dans la zone (si point dans la zone) et change la valeur de dispo
-        let index = this.cordZone.findIndex(pnt => (pnt.w === _point.x && pnt.h === _point.y && pnt.dispo === true))
-        
-        if(index != -1)
-            this.cordZone.splice(index, 1, {w:_point.x, h:_point.y, dispo: false});
-    
-        // A vous de jouer
-        
+        this.addPtInZn(_point);
+
         this.nrbPt++;
         return true;
     }
@@ -137,14 +129,39 @@ class Area {
     /**
      * recherche un point disponible, qui est le plus proche du point passée en paramètre.
      * @param Point _point
-     * @returns Array [x,y]
+     * @returns boolean
      */
-    schPtDispInZn(_point) {
-        let i, y;
-        if (this.isValid(_point))
-            return false;
+    addPtInZn(_point) {
+        let index;
+        //recherche les cordonnées dans la zone (si point dispo dans la zone) et change la valeur de dispo
+        index = this.cordZone.findIndex(pnt => (pnt.w === _point.x && pnt.h === _point.y && pnt.dispo === true))
 
-        return;
+        if (index !== -1) {
+            this.cordZone.splice(index, 1, { w: _point.x, h: _point.y, dispo: false });
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    upPtInZn(_point, _exPoint) {
+        let index, exIndex;
+        exIndex = this.cordZone.findIndex(pnt => (pnt.w === _exPoint.x && pnt.h === _exPoint.y && pnt.dispo === false));
+
+        //nouvelle coordonnée
+        index = this.cordZone.findIndex(pnt => (pnt.w === _point.x && pnt.h === _point.y && pnt.dispo === true))
+
+        if (exIndex !== -1) {
+            this.cordZone.splice(exIndex, 1, { w: _exPoint.x, h: _exPoint.y, dispo: true });
+            return true;
+        }
+
+        if (index !== -1) {
+            this.cordZone.splice(index, 1, { w: _point.x, h: _point.y, dispo: false });
+            return true;
+        }
+
+        return false;
     }
 
     /**
@@ -152,23 +169,33 @@ class Area {
      * Les nouvelles coordonnées peuvent se trouver hors limites
      * @returns Boolean true en cas de succès, false en cas d'échec
      */
-    movePoint(/* déterminer les paramètres */) {
+    movePoint(_point, _exPoint) {
         // implémenter la méthode
+        this.update(_point, _exPoint);
     }
 
     /**
      * TODO: Mettre à jour avec la methode "assign de l'objet Object".
+     * TODO: Verifier si le point est noté comme étant dans la zone et le mettre à jour
+     * 
      * Mets l'objet à jour avec de nouvelles valeurs.
      * @param Point _point
      */
-    update(_point) {
+    update(_point, _exPoint) {
         let index = 0;
-        if (this.isValid(_point))
+        if (!this.isValid(_point))
             return false;
+        if (!this.isValid(_exPoint))
+            return false;
+
         index = this.points.findIndex(po => po === _point);
+
         if (index === -1)
             return false;
+
+        this.upPtInZn(_point, _exPoint);
         this.points.splice(index, 1, _point);
+
         return true;
     }
 
@@ -190,7 +217,7 @@ class Area {
 
     /**
     * TODO: prendre le premier point(hors zone) qui est le plus proche de 0,0
-    * TODO: (si 2 point execo random), trouver ensuite un point "dispo" le plus proche
+    * TODO: (si 2 point execo bord sup ou rd), trouver ensuite un point "dispo" le plus proche
     * TODO: dans la zone
     * TODO: Recuperer tout les points "dispo" dans un tableau et faire une "oper" 
     * TODO: pour savoir quel point est le plus proche et le deplacer 
