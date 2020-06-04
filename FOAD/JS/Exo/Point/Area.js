@@ -23,7 +23,6 @@
  * 
  */
 
-
 /**
  * Class Area
  * Un "Point" est un objet représentant des coordonnées (x,y) dans un espace à 2 dimensions
@@ -52,9 +51,15 @@
  * 
  * 4) Renvoyer true
  */
+/**
+ * 
+ * @package CRM
+ * @author jjeanniard
+ * @version 0.0.1
+ * @license unlicense
+ */
 const Point = require('./Point.js');
-class Area 
-{
+class Area {
     /**
      * Constructeur: Initialise une nouvelle instance de la classe "Area"
      * La largeur et la hauteur définissent respectivement le nombre de colonnes et de lignes. 
@@ -63,9 +68,21 @@ class Area
      */
     constructor(_width, _height) {
         // A vous de jouer
-        let pointOrigin = ["0","0"];
-        this.areSize = [_width, _height];
+        let pointOrigin = ["0", "0"];
+        this.nrbPt = 0; //incrementation par ajout de point
+        this.areSize = {w: _width, h: _height};
         this.points = [];
+    }
+
+    /**
+     * Verifie si c'est bien une instance de l'objet Point
+     * @returns boolean
+     * @param Point _point
+     */
+    isValid(_point) {
+        if (!(_point instanceof Point))
+            return false;
+        return true;
     }
 
     /**
@@ -75,19 +92,28 @@ class Area
      * @returns Boolean true en cas de succès, false si l'ajout est impossible 
      */
     addPoint(_point) {
-        if (!_point instanceof Point) {
+        if(this.isValid(_point))
             return false;
-        }
-        
-        //TODO: verifier le nombre de point par zone et limitée les entrées
+
+        if (this.nrbPt > (this.areSize.h * this.areSize.w))
+            return false;
+        //TODO: ajout du point meme si il comporte les mêmes coordonner d'un autre point
+        //TODO: rechercher le point "dispo" le plus proche (preference sur le bord superieur)
+        //TODO: et mettre à jour les "cords" du point
         let result = this.points.find(poit => (poit.x === _point.x && poit.y === _point.y));
-        if(result === true)
+        if (result !== undefined)
             return false;
         // A vous de jouer
+
         this.points.push(_point);
+        this.nrbPt++;
         return true;
     }
 
+    /**
+     * recherche un point disponible, qui est le plus proche du point passée en paramètre.
+     * @
+     */
 
     /**
      * Déplace un point existant dans la zone vers de nouvelles coordonnées
@@ -98,32 +124,52 @@ class Area
         // implémenter la méthode
     }
 
-    update(_point){
+    /**
+     * TODO: Mettre à jour avec la methode "assign de l'objet Object".
+     * Mets l'objet à jour avec les nouvelles valeurs.
+     * @param Point _point
+     */
+    update(_point) {
         let index = 0;
-        if((typeof _point) !== Point)
+        if (this.isValid(_point))
             return false;
         index = this.points.findIndex(po => po === _point);
-        if(index === -1)
-            return false;
-        this.points.splice(index, 1, _point);
-        return true;
-    }
-
-    delete(_point){
-        let index = 0;
-        index = this.points.findIndex(po => po === _point);
-        if(index === -1)
+        if (index === -1)
             return false;
         this.points.splice(index, 1, _point);
         return true;
     }
 
     /**
+     * Supprime le point 
+     * @param Point _point
+     * @returns boolean 
+     */
+    delete(_point) {
+        let index = 0;
+        if (this.isValid(_point))
+            return false;
+        index = this.points.findIndex(po => po === _point);
+        if (index === -1)
+            return false;
+        this.points.splice(index, 1);
+        return true;
+    }
+
+    /**
+    * TODO: prendre le premier point(hors zone) qui est le plus proche de 0,0
+    * TODO: (si 2 point execo random), trouver ensuite un point "dispo" le plus proche
+    * TODO: dans la zone
+    * TODO: Recuperer tout les points "dispo" dans un tableau et faire une "oper" 
+    * TODO: pour savoir quel point est le plus proche et le deplacer 
+    */
+    /**
      * Vérifie la position de chaque "Point" existant dans la zone
      * Chaque Point hors des limites est automatiquement déplacé dans les limites vers la position libre la plus proche
      * @returns int le nombre de points déplacés
      */
     needAllInside(/* déterminer les paramètres */) {
+
         // implémenter la méthode
     }
 }
