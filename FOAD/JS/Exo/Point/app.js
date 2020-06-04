@@ -28,3 +28,5 @@ area2.addPoint(new Point(14,12));
 
 console.log(area1.addPoint(new Area(4,4)));
 console.log(area2.addPoint(new Point(12,10)));
+console.log(area2.cordZone)
+console.log(area1.cordZone)

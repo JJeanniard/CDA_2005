@@ -123,9 +123,9 @@ class Area {
         this.points.push(_point);
 
         let index = this.cordZone.findIndex(pnt => (pnt.w === _point.x && pnt.h === _point.y && pnt.dispo === true))
-       
+        
         if(index != -1){
- 
+            this.cordZone.splice(index, 1, {w:_point.x, h:_point.y, dispo: false});
         }
         
         // A vous de jouer
