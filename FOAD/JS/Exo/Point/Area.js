@@ -112,7 +112,7 @@ class Area {
 
         if (this.nrbPt > (this.areSize.h * this.areSize.w))
             return false;
-        
+        //si il y a déja un point au même endroit
         let result = this.points.find(poit => (poit.x === _point.x && poit.y === _point.y));
         if (result !== undefined)
             return false;
@@ -122,12 +122,12 @@ class Area {
         
         this.points.push(_point);
 
+        //recherche les cordonnées dans la zone (si point dans la zone) et change la valeur de dispo
         let index = this.cordZone.findIndex(pnt => (pnt.w === _point.x && pnt.h === _point.y && pnt.dispo === true))
         
-        if(index != -1){
+        if(index != -1)
             this.cordZone.splice(index, 1, {w:_point.x, h:_point.y, dispo: false});
-        }
-        
+    
         // A vous de jouer
         
         this.nrbPt++;
