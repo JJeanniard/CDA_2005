@@ -68,10 +68,12 @@ class Area {
      */
     constructor(_width, _height) {
         // A vous de jouer
-        let pointOrigin = ["0", "0"];
+        this.pointOrigin = {w: 0, h: 0};
         this.nrbPt = 0; //incrementation par ajout de point
-        this.areSize = {w: _width, h: _height};
+        this.areSize = {w: _width,h: _height };
         this.points = [];
+        this.cordZone = [];
+        this.initAreaZ();
     }
 
     /**
@@ -85,6 +87,18 @@ class Area {
         return true;
     }
 
+    initAreaZ(){
+        let i, y;
+        //TODO: chercher tout les points dispo dans la zone
+        for(i = this.pointOrigin.w; i < this.areSize.w; i++){
+            for(y = this.pointOrigin.h; y < this.areSize.h; y++){
+                //3 valeur dans le tableau les cords (2 valeur) et si il est disp
+                this.cordZone.push({w: i, h: y, dispo:true});
+            }
+        }
+        return this.cordZone;
+    }
+
     /**
      * Ajoute un "Point" dans la zone
      * Le "Point" peut se trouver hors des limites de la zone
@@ -92,28 +106,46 @@ class Area {
      * @returns Boolean true en cas de succès, false si l'ajout est impossible 
      */
     addPoint(_point) {
-        if(this.isValid(_point))
+        let rslt;
+        if (!this.isValid(_point))
             return false;
 
         if (this.nrbPt > (this.areSize.h * this.areSize.w))
             return false;
-        //TODO: ajout du point meme si il comporte les mêmes coordonner d'un autre point
-        //TODO: rechercher le point "dispo" le plus proche (preference sur le bord superieur)
-        //TODO: et mettre à jour les "cords" du point
+        
         let result = this.points.find(poit => (poit.x === _point.x && poit.y === _point.y));
         if (result !== undefined)
             return false;
-        // A vous de jouer
-
+        //TODO: ajout du point meme si il comporte les mêmes coordonner d'un autre point
+        //TODO: rechercher le point "dispo" le plus proche (preference sur le bord superieur)
+        //TODO: et mettre à jour les "cords" du point
+        
         this.points.push(_point);
+
+        let index = this.cordZone.findIndex(pnt => (pnt.w === _point.x && pnt.h === _point.y && pnt.dispo === true))
+       
+        if(index != -1){
+ 
+        }
+        
+        // A vous de jouer
+        
         this.nrbPt++;
         return true;
     }
 
     /**
      * recherche un point disponible, qui est le plus proche du point passée en paramètre.
-     * @
+     * @param Point _point
+     * @returns Array [x,y]
      */
+    schPtDispInZn(_point) {
+        let i, y;
+        if (this.isValid(_point))
+            return false;
+
+        return;
+    }
 
     /**
      * Déplace un point existant dans la zone vers de nouvelles coordonnées
@@ -126,7 +158,7 @@ class Area {
 
     /**
      * TODO: Mettre à jour avec la methode "assign de l'objet Object".
-     * Mets l'objet à jour avec les nouvelles valeurs.
+     * Mets l'objet à jour avec de nouvelles valeurs.
      * @param Point _point
      */
     update(_point) {
