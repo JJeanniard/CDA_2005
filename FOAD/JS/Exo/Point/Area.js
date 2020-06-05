@@ -168,24 +168,25 @@ class Area {
      * @returns boolean 
      */
     delete(_point) {
-        let index = 0;
+        this.zone.points.splice(_point, 1);
         return true;
     }
-
-    /**
-    * TODO: prendre le premier point(hors zone) qui est le plus proche de 0,0
-    * TODO: (si 2 point execo bord sup ou rd), trouver ensuite un point "dispo" le plus proche
-    * TODO: dans la zone
-    * TODO: Recuperer tout les points "dispo" dans un tableau et faire une "oper" 
-    * TODO: pour savoir quel point est le plus proche et le deplacer 
-    */
     /**
      * Vérifie la position de chaque "Point" existant dans la zone
      * Chaque Point hors des limites est automatiquement déplacé dans les limites vers la position libre la plus proche
      * @returns int le nombre de points déplacés
      */
-    needAllInside(/* déterminer les paramètres */) {
+    needAllInside() {
+        //TODO: prendre tout les points hors zone
+        //TODO: trie par odre croissant
+        //TODO: prendre le premier point dispose et deplacer
 
+        let tri = function(a, b){
+            let rslt = a.x - b.x;
+            return (rslt === 0)? a.y - b.y : rslt;
+        }
+        return this.zone.pointsOutZn.sort(tri);
+        //
         // implémenter la méthode
     }
 }

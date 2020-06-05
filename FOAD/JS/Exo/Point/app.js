@@ -55,3 +55,4 @@ console.log("##### in zone #####");
 console.log("##### out zone #####");
 //console.log(area1.readAllOutZone());
 //console.log(area1.nrbPt);
+console.log(area1.needAllInside())
