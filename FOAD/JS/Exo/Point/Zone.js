@@ -28,12 +28,15 @@ class Zone {
         if (_point.x > this.limit.w && _point.y > this.limit.h) {
             if(this.pointsOutZn.findIndex(pts => (pts.x === _point.x && pts.y === _point.y)) === -1)
                 this.pointsOutZn.push(_point);
-            return rslt = false;
+            else    
+                rslt = false;
         } else {
             if(this.pointsInZn.findIndex(pts => (pts.x === _point.x && pts.y === _point.y)) === -1)
                 this.pointsInZn.push(_point);
-            return rslt = false;
+            else    
+                rslt = false;
         }
+        return rslt;
     }
 
     update(_point) {

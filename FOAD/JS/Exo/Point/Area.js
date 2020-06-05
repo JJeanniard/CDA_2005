@@ -122,10 +122,10 @@ class Area {
         //TODO: rechercher le point "dispo" le plus proche (preference sur le bord superieur)
         //TODO: et mettre à jour les "cords" du point
         //TODO: condition que le point depasse pas la zone 
-        if(this.zone.add(_point))
+        if(!this.zone.add(_point))
             console.log('return false');
 
-            
+
         this.nrbPt++;
         return true;
     }
