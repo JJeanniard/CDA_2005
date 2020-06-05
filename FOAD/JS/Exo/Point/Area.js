@@ -54,6 +54,7 @@
  * @license unlicense
  */
 const Point = require('./Point.js');
+const Zone = require('./Zone.js');
 class Area {
     /**
      * Constructeur: Initialise une nouvelle instance de la classe "Area"
@@ -65,10 +66,7 @@ class Area {
         // A vous de jouer
         this.pointOrigin = { w: 0, h: 0 };
         this.nrbPt = 0; //incrementation par ajout de point
-        this.areSize = { w: _width, h: _height };
-        this.points = [];
-        this.cordZone = [];
-        this.initAreaZ();
+        this.zone = new Zone(_width, _height); 
     }
 
     /**
@@ -83,19 +81,25 @@ class Area {
     }
 
     /**
-     * creation de la liste propre à chaque instance de Area
-     * avec les coordonnées possible dans la zone definie
-     * @returns array
+     * verifie si le point existe et retourne l'index ou -1
+     * @param Point _point
+     * @returns index
      */
-    initAreaZ() {
-        let i, y;
-        for (i = this.pointOrigin.w; i < this.areSize.w; i++) {
-            for (y = this.pointOrigin.h; y < this.areSize.h; y++) {
-                //3 valeur dans le tableau les cords (2 valeur) et si il est disp
-                this.cordZone.push({ w: i, h: y, dispo: true });
-            }
-        }
-        return this.cordZone;
+    srcPoint(_point){
+        let index;
+        index = this.zone.points.findIndex(po => po === _point);
+        return index;
+    }
+
+    /**
+     * 
+     * @param _index element trouve par srcPoint()
+     * @returns boolean
+     */
+    isPoint(_index){
+        if(_index === -1)
+            return false;
+        return true;
     }
 
     /**
@@ -105,63 +109,33 @@ class Area {
      * @returns Boolean true en cas de succès, false si l'ajout est impossible 
      */
     addPoint(_point) {
+        if (!(_point instanceof Point))
+            return false;
+
         if (!this.isValid(_point))
             return false;
 
-        if (this.nrbPt > (this.areSize.h * this.areSize.w))
+        if (this.nrbPt > this.zone.size)
             return false;
-        //si il y a déja un point au même endroit
-        let result = this.points.find(poit => (poit.x === _point.x && poit.y === _point.y));
-        if (result !== undefined)
-            return false;
+        
         //TODO: ajout du point meme si il comporte les mêmes coordonner d'un autre point
         //TODO: rechercher le point "dispo" le plus proche (preference sur le bord superieur)
         //TODO: et mettre à jour les "cords" du point
+        //TODO: condition que le point depasse pas la zone 
+        if(this.zone.add(_point))
+            console.log('return false');
 
-        this.points.push(_point);
-
-        this.addPtInZn(_point);
-
+            
         this.nrbPt++;
         return true;
     }
 
-    /**
-     * recherche un point disponible, qui est le plus proche du point passée en paramètre.
-     * @param Point _point
-     * @returns boolean
-     */
-    addPtInZn(_point) {
-        let index;
-        //recherche les cordonnées dans la zone (si point dispo dans la zone) et change la valeur de dispo
-        index = this.cordZone.findIndex(pnt => (pnt.w === _point.x && pnt.h === _point.y && pnt.dispo === true))
-
-        if (index !== -1) {
-            this.cordZone.splice(index, 1, { w: _point.x, h: _point.y, dispo: false });
-            return true;
-        } else {
-            return false;
-        }
+    readAll(){
+        return this.zone.points;
     }
 
-    upPtInZn(_point, _exPoint) {
-        let index, exIndex;
-        exIndex = this.cordZone.findIndex(pnt => (pnt.w === _exPoint.x && pnt.h === _exPoint.y && pnt.dispo === false));
-
-        //nouvelle coordonnée
-        index = this.cordZone.findIndex(pnt => (pnt.w === _point.x && pnt.h === _point.y && pnt.dispo === true))
-
-        if (exIndex !== -1) {
-            this.cordZone.splice(exIndex, 1, { w: _exPoint.x, h: _exPoint.y, dispo: true });
-            return true;
-        }
-
-        if (index !== -1) {
-            this.cordZone.splice(index, 1, { w: _point.x, h: _point.y, dispo: false });
-            return true;
-        }
-
-        return false;
+    readAllOutZone(){
+        return this.zone.pointsOutZn;
     }
 
     /**
@@ -176,25 +150,22 @@ class Area {
 
     /**
      * TODO: Mettre à jour avec la methode "assign de l'objet Object".
-     * TODO: Verifier si le point est noté comme étant dans la zone et le mettre à jour
-     * 
      * Mets l'objet à jour avec de nouvelles valeurs.
      * @param Point _point
+     * @returns Boolean
      */
     update(_point, _exPoint) {
-        let index = 0;
         if (!this.isValid(_point))
             return false;
         if (!this.isValid(_exPoint))
             return false;
 
-        index = this.points.findIndex(po => po === _point);
-
-        if (index === -1)
-            return false;
-
-        this.upPtInZn(_point, _exPoint);
-        this.points.splice(index, 1, _point);
+        //mise à jour dans la zone
+        if(_point.x > this.zone.limit.w && _point.y > this.zone.limit.h){
+            this.zone.update(_point);
+        }else{
+            Object.assign(_point, this.points);
+        }
 
         return true;
     }
@@ -206,12 +177,6 @@ class Area {
      */
     delete(_point) {
         let index = 0;
-        if (this.isValid(_point))
-            return false;
-        index = this.points.findIndex(po => po === _point);
-        if (index === -1)
-            return false;
-        this.points.splice(index, 1);
         return true;
     }
 
