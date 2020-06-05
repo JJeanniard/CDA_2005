@@ -81,25 +81,19 @@ class Area {
     }
 
     /**
-     * verifie si le point existe et retourne l'index ou -1
-     * @param Point _point
-     * @returns index
-     */
-    srcPoint(_point){
-        let index;
-        index = this.zone.points.findIndex(po => po === _point);
-        return index;
-    }
-
-    /**
      * 
-     * @param _index element trouve par srcPoint()
-     * @returns boolean
+     * @param Point _point
+     * @returns Array 
      */
-    isPoint(_index){
-        if(_index === -1)
-            return false;
-        return true;
+    pointDispo(){
+        let i, y;
+        for(i = 0; i < this.zone.limit.w; i++){
+            for(y = 0; y < this.zone.limit.h; y++){
+                if(this.zone.pointsInZn.find(po => (po.x === i && po.y === y)) === undefined){
+                    return {w: i, h: y};
+                }
+            }
+        }
     }
 
     /**
@@ -117,14 +111,16 @@ class Area {
 
         if (this.nrbPt > this.zone.size)
             return false;
-        
-        //TODO: ajout du point meme si il comporte les mêmes coordonner d'un autre point
+    
         //TODO: rechercher le point "dispo" le plus proche (preference sur le bord superieur)
         //TODO: et mettre à jour les "cords" du point
-        //TODO: condition que le point depasse pas la zone 
-        if(!this.zone.add(_point))
-            console.log('return false');
-
+        if(!this.zone.add(_point)){
+            let coord = this.pointDispo();
+            console.log(coord)
+            
+            _point.move(coord.w, coord.h);
+            this.zone.add(_point);
+        }
 
         this.nrbPt++;
         return true;
@@ -143,9 +139,9 @@ class Area {
      * Les nouvelles coordonnées peuvent se trouver hors limites
      * @returns Boolean true en cas de succès, false en cas d'échec
      */
-    movePoint(_point, _exPoint) {
+    movePoint(_point) {
         // implémenter la méthode
-        this.update(_point, _exPoint);
+        this.update(_point);
     }
 
     /**

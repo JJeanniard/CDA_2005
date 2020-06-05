@@ -29,8 +29,9 @@ area2.addPoint(new Point(13,11));
 area2.addPoint(new Point(14,12));
 
 console.log(area2.addPoint(new Point(12,10)));
-console.log(area1.addPoint(new Point(1,2)));
 
+console.log(area1.addPoint(new Point(1,2)));
+console.log(area1.addPoint(new Point(0,0)));
 console.log(area1.readAll());
 console.log(area1.readAllOutZone());
 /* let ex = a1p1.duplicate();
