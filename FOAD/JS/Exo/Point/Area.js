@@ -66,7 +66,7 @@ class Area {
         // A vous de jouer
         this.pointOrigin = { w: 0, h: 0 };
         this.nrbPt = 0; //incrementation par ajout de point
-        this.zone = new Zone(_width, _height); 
+        this.zone = new Zone(_width, _height);
     }
 
     /**
@@ -85,12 +85,12 @@ class Area {
      * @param Point _point
      * @returns Array 
      */
-    pointDispo(){
+    pointDispo() {
         let i, y;
-        for(i = 0; i < this.zone.limit.w; i++){
-            for(y = 0; y < this.zone.limit.h; y++){
-                if(this.zone.pointsInZn.find(po => (po.x === i && po.y === y)) === undefined){
-                    return {w: i, h: y};
+        for (i = 0; i < this.zone.limit.w; i++) {
+            for (y = 0; y < this.zone.limit.h; y++) {
+                if (this.zone.pointsInZn.find(po => (po.x === i && po.y === y)) === undefined) {
+                    return { w: i, h: y };
                 }
             }
         }
@@ -109,15 +109,11 @@ class Area {
         if (!this.isValid(_point))
             return false;
 
-        if (this.nrbPt > this.zone.size)
+        if (this.nrbPt > this.zone.size-1)
             return false;
-    
-        //TODO: rechercher le point "dispo" le plus proche (preference sur le bord superieur)
-        //TODO: et mettre à jour les "cords" du point
-        if(!this.zone.add(_point)){
+
+        if (!this.zone.add(_point)) {
             let coord = this.pointDispo();
-            console.log(coord)
-            
             _point.move(coord.w, coord.h);
             this.zone.add(_point);
         }
@@ -126,11 +122,11 @@ class Area {
         return true;
     }
 
-    readAll(){
+    readAll() {
         return this.zone.points;
     }
 
-    readAllOutZone(){
+    readAllOutZone() {
         return this.zone.pointsOutZn;
     }
 
@@ -157,9 +153,9 @@ class Area {
             return false;
 
         //mise à jour dans la zone
-        if(_point.x > this.zone.limit.w && _point.y > this.zone.limit.h){
+        if (_point.x > this.zone.limit.w && _point.y > this.zone.limit.h) {
             this.zone.update(_point);
-        }else{
+        } else {
             Object.assign(_point, this.points);
         }
 

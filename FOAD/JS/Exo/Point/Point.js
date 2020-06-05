@@ -29,8 +29,8 @@ class Point {
      */
 
     constructor(_x, _y) {
-        this.x = parseFloat(_x || 0);
-        this.y = parseFloat(_y || 0);
+        this.x = parseInt(_x || 0);
+        this.y = parseInt(_y || 0);
     }
 
     /**
