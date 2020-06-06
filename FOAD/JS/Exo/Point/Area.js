@@ -109,13 +109,13 @@ class Area {
         if (!this.isValid(_point))
             return false;
 
-        if (this.nrbPt > this.zone.size-1)
+        if (this.nrbPt > this.zone.size - 1)
             return false;
 
-        if (!this.zone.add(_point)) {
+        if (!this.zone.setPointZn(_point)) {
             let coord = this.pointDispo();
             _point.move(coord.w, coord.h);
-            this.zone.add(_point);
+            this.zone.setPointZn(_point);
         }
 
         this.nrbPt++;
@@ -146,17 +146,25 @@ class Area {
      * @param Point _point
      * @returns Boolean
      */
-    update(_point, _exPoint) {
+    update(_point) {
+        let inZn, outZn;
         if (!this.isValid(_point))
             return false;
-        if (!this.isValid(_exPoint))
-            return false;
 
-        //mise à jour dans la zone
-        if (_point.x > this.zone.limit.w && _point.y > this.zone.limit.h) {
-            this.zone.update(_point);
+        inZn = this.zone.pointsInZn.findIndex(pnt => pnt === _point);
+        outZn = this.zone.pointsOutZn.findIndex(pnt => pnt === _point);
+        if (inZn !== -1) {
+            this.zone.pointsInZn.splice(inZn, 1);
+        } else if (outZn !== -1) {
+            this.zone.pointsOutZn.splice(outZn, 1);
         } else {
-            Object.assign(_point, this.points);
+            return false;
+        }
+
+        if (!this.zone.setPointZn(_point)) {
+            let coord = this.pointDispo();
+            _point.move(coord.w, coord.h);
+            this.zone.setPointZn(_point);
         }
 
         return true;
@@ -168,26 +176,46 @@ class Area {
      * @returns boolean 
      */
     delete(_point) {
-        this.zone.points.splice(_point, 1);
+        let elem, intZn, outZn;
+        if (!this.isValid(_point))
+            return false;
+
+        intZn = this.zone.pointsInZn.findIndex(pnt => pnt === _point);
+        outZn = this.zone.pointsOutZn.findIndex(pnt => pnt === _point);
+        if (intZn !== -1) {
+            elem = this.zone.pointsInZn.splice(intZn, 1);
+        } else if (outZn !== -1) {
+            elem = this.zone.pointsOutZn.splice(outZn, 1);
+        } else {
+            return false;
+        }
+
+        if (elem === undefined)
+            return false;
         return true;
     }
+
     /**
      * Vérifie la position de chaque "Point" existant dans la zone
      * Chaque Point hors des limites est automatiquement déplacé dans les limites vers la position libre la plus proche
      * @returns int le nombre de points déplacés
      */
     needAllInside() {
-        //TODO: prendre tout les points hors zone
-        //TODO: trie par odre croissant
-        //TODO: prendre le premier point dispose et deplacer
+        let i;
 
-        let tri = function(a, b){
+        let tri = function (a, b) {
             let rslt = a.x - b.x;
-            return (rslt === 0)? a.y - b.y : rslt;
+            return (rslt === 0) ? a.y - b.y : rslt;
         }
-        return this.zone.pointsOutZn.sort(tri);
-        //
-        // implémenter la méthode
+
+        this.zone.pointsOutZn.sort(tri);
+        for(i = 0; i < this.zone.pointsOutZn.length; i++){
+            let coord = this.pointDispo();
+            this.zone.pointsOutZn[i].move(coord.w, coord.h);
+            this.zone.setPointZn(this.zone.pointsOutZn[i]);
+            
+        }
+        this.zone.pointsOutZn.splice(0, i);
     }
 }
 

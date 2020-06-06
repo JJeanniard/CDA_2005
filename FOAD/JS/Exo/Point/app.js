@@ -10,7 +10,7 @@ let area1 = new Area(4, 4);
 let a1p1 = new Point(2, 0);
 let a1p4 = new Point(4, 2);
 area1.addPoint(a1p1);
-area1.addPoint(new Point(1, 2));
+area1.addPoint(new Point(0, 0));
 area1.addPoint(new Point(0, 4));
 area1.addPoint(a1p4);
 area1.addPoint(new Point(3, 1));
@@ -41,18 +41,14 @@ for (let i = 0; i < 100; i++) {
     area1.addPoint(new Point(rd1, rd2));
 }
 
-/* let ex = a1p1.duplicate();
-a1p1.move(3,3);
-area1.movePoint(a1p1, ex);
-
-area1.delete(a1p1);
-
-console.log(area1.points)
-console.log(area1.cordZone) */
 console.log("############## after for")
 console.log(area1.readAll());
 console.log("##### in zone #####");
 console.log("##### out zone #####");
-//console.log(area1.readAllOutZone());
-//console.log(area1.nrbPt);
-console.log(area1.needAllInside())
+console.log(area1.readAllOutZone());
+console.log("################# after")
+//area1.needAllInside();
+//console.log(area1.readAll())
+a1p4.move(1,2)
+area1.movePoint(a1p4)
+console.log(area1.readAll())
