@@ -91,10 +91,10 @@ class Enterprise {
         /*let empl = function (emp){
             return emp.id === _employee.id;
         }*/        
-        if(this.read(_employee.id) !== undefined)
+        if(this.read(_employee.id) === undefined)
             return false;
         
-        this.employees.splice(index, 1, _employee);
+        this.employees.splice(this.read(_employee.id), 1, _employee);
         return true;
     }
 
