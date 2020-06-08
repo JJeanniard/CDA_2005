@@ -2,7 +2,6 @@ const Point = require('./Point.js');
 
 const Area = require('./Area.js');
 
-let incrt = 1;
 
 //Area 1
 let area1 = new Area(4, 4);
@@ -44,11 +43,10 @@ for (let i = 0; i < 100; i++) {
 console.log("############## after for")
 console.log(area1.readAll());
 console.log("##### in zone #####");
+
 console.log("##### out zone #####");
 console.log(area1.readAllOutZone());
 console.log("################# after")
-//area1.needAllInside();
+console.log(area1.needAllInside());
 //console.log(area1.readAll())
-a1p4.move(1,2)
-area1.movePoint(a1p4)
 console.log(area1.readAll())

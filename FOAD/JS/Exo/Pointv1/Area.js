@@ -201,7 +201,7 @@ class Area {
      * @returns int le nombre de points déplacés
      */
     needAllInside() {
-        let i;
+        let i, nbrMovePr;
 
         let tri = function (a, b) {
             let rslt = a.x - b.x;
@@ -209,13 +209,14 @@ class Area {
         }
 
         this.zone.pointsOutZn.sort(tri);
+        nbrMovePr = this.zone.pointsOutZn.length;
         for(i = 0; i < this.zone.pointsOutZn.length; i++){
             let coord = this.pointDispo();
             this.zone.pointsOutZn[i].move(coord.w, coord.h);
             this.zone.setPointZn(this.zone.pointsOutZn[i]);
-            
         }
         this.zone.pointsOutZn.splice(0, i);
+        return nbrMovePr;
     }
 }
 
