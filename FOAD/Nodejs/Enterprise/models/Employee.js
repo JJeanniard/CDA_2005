@@ -39,12 +39,12 @@ class Employee {
 
     constructor(_id, _lastname, _firstname, _role, _salary, _hiredate) {
         this.id = parseInt(_id || 0);
-        this.lastname = _lastname;
-        this.firstname = _firstname;
+        this.lastname = _lastname || "anonyme";
+        this.firstname = _firstname || "anonyme";
         this.email = (this.firstname[0].concat(this.lastname)).toLowerCase().concat("@email.fr");
-        this.role = _role;
-        this.salary = _salary;
-        this.hiredate = _hiredate;
+        this.role = _role || "noob";
+        this.salary = parseFloat(_salary || 0);
+        this.hiredate = _hiredate || new Date();
     }
 
     getMonthlySalary() {
