@@ -84,17 +84,14 @@ class Enterprise {
      * @returns boolean
      */
     update(_employee) {
-        let index = 0;
 
         if(!this.isValid(_employee))
             return false;
 
         /*let empl = function (emp){
             return emp.id === _employee.id;
-        }*/
-        index = this.employees.findIndex(emp => emp.id === _employee.id);
-        
-        if(index === -1)
+        }*/        
+        if(this.read(_employee.id) !== undefined)
             return false;
         
         this.employees.splice(index, 1, _employee);
@@ -112,11 +109,10 @@ class Enterprise {
         /*let empl = function (emp){
             return emp.id === _id;
         }*/
-        index = this.employees.findIndex(emp => emp.id === _id);
-        if(index === -1){
+        if(this.read(_id) !== undefined)
             return false;
-        }
-        this.employees.splice(index, 1);
+
+        this.employees.splice(this.read(_id), 1);
         return true;
     }
 

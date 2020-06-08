@@ -1,8 +1,6 @@
 const Employee = require("./models/Employee.js");
 const Enterprise = require("./models/Enterprise.js");
 
-
-
 let empl = new Enterprise();
 let idObj = 1;
 
