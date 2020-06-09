@@ -1,20 +1,24 @@
 const Employee = require("./models/Employee.js");
 const Enterprise = require("./models/Enterprise.js");
 
-let empl = new Enterprise();
+let enter1ple1 = new Enterprise('DEV2005');
+
 let idObj = 1;
+emp1 = {
+    id: idObj++, 
+    lastname: 'Doe', 
+    firtname: 'John', 
+    role: 'manager', 
+    salary: 82000, 
+    hiredate: new Date('2020-05-01')}
 
-empl.create(new Employee(idObj++, 'Doe', 'John', 'manager', 82000, new Date('2020-05-01')))
-empl.create(new Employee(idObj++, 'Amza', 'Red', 'ouvrier', 21000, new Date('2016-03-02')));
-empl.create(new Employee(idObj++, 'tarat', 'Blue', 'sous-fifre', 18000, new Date('2020-03-02')));
-empl.create(new Employee(idObj++, 'Turit', 'Yellow', 'boss', 150000, new Date('1990-05-30')));
-empl.create(new Employee(idObj++, 'Lomol', 'Brown', 'stagiaire', 9000, new Date('1520-05-27')));
-//mise à jour de l'employé
-empl.update(new Employee(4, 'Turit', 'Yellow', 'boss', 1000, new Date('1990-05-30')));
-//affiché les employés par ordre de salaire
-console.log(empl.readAll(emp => emp.hiredate < new Date()));
-//affichage d'un employé
-console.log("retrouner l'employée demander", empl.read(2));
+emp1 = new Employee(emp1)
 
-//getHigherSalary
-console.log(empl.getHigherSalary());
+enter1ple1.create(new Employee(emp1));
+
+/* enter1ple1.create(new Employee(idObj++, 'Amza', 'Red', 'ouvrier', 21000, new Date('2016-03-02')));
+enter1ple1.create(new Employee(idObj++, 'tarat', 'Blue', 'sous-fifre', 18000, new Date('2020-03-02')));
+enter1ple1.create(new Employee(idObj++, 'Turit', 'Yellow', 'boss', 150000, new Date('1990-05-30')));
+enter1ple1.create(new Employee(idObj++, 'Lomol', 'Brown', 'stagiaire', 9000, new Date('1520-05-27')));
+ */
+enter1ple1.save();

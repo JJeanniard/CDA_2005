@@ -37,14 +37,24 @@
  */
 class Employee {
 
-    constructor(_id, _lastname, _firstname, _role, _salary, _hiredate) {
-        this.id = parseInt(_id || 0);
-        this.lastname = _lastname || "anonyme";
-        this.firstname = _firstname || "anonyme";
+    constructor(_employee) {
+        _employee = _employee || {};
+        if(_employee !== undefined)
+            this.copy(_employee);
+    }
+
+    copy(_employee){
+        _employee = _employee || {};
+
+        this.id = parseInt(_employee.id || 0);
+        this.lastname = _employee.lastname || "anonyme";
+        this.firstname = _employee.firstname || "anonyme";
+        
+        this.role = _employee.role || "noob";
+        this.salary = parseFloat(_employee.salary || 0);
+        this.hiredate = _employee.hiredate || new Date();
+
         this.email = (this.firstname[0].concat(this.lastname)).toLowerCase().concat("@email.fr");
-        this.role = _role || "noob";
-        this.salary = parseFloat(_salary || 0);
-        this.hiredate = _hiredate || new Date();
     }
 
     getMonthlySalary() {
@@ -53,7 +63,6 @@ class Employee {
     }
 
     getSeniority() {
-        //TODO: Corrigée le calcule de date dégative
         const dateToDay = new Date();
         let date;
         
