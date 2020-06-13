@@ -14,8 +14,8 @@ Coordonnées dans un espace à 2 dimensions type "fenêtre"
 
 * b) Dans la 1ère "Area", ajouter 8 "Point" (coordonnées au choix, 5 dans les limites de la zone et 3 hors limites) [x]
 * c) Dans la 2nde "Area", ajouter 6 "Point" (coordonnées au choix, tous en dehors des limites) [x]
-* d) Créer ensuite 2 "Point" distincts ayant les mêmes coordonnées
-* e) Les ajouter dans chacune des zones (1 "Point" par zone)
+* d) Créer ensuite 2 "Point" distincts ayant les mêmes coordonnées [x]
+* e) Les ajouter dans chacune des zones (1 "Point" par zone) [x]
 * f) Pour chaque zone : - Afficher tous les points qui se trouvent hors des limites de la zone - Exécuter la méthode "needAllInside" - Afficher tous les points - Afficher le nombre d'emplacements libres
 
 ### consigne suplementaire

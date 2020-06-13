@@ -62,8 +62,10 @@ class Area {
     if (!this.isPoint(_point)) return false;
 
     if (this.max === this.width * this.height) return false;
+    //TODO: si point deja existent,
+    //TODO: faire en sorte que le point change de place (listée autour et si pas de place le placé au plus proche de zero et sur l'abscisse)
 
-    if(this.isPtExist(_point)) return false;//TODO: en sorte que le point change
+    if (this.isPointExeco(_point)) return false;
 
     this.points.push(_point);
     this.max++;
@@ -74,9 +76,20 @@ class Area {
    * Déplace un point existant dans la zone vers de nouvelles coordonnées
    * Les nouvelles coordonnées peuvent se trouver hors limites
    * @returns Boolean true en cas de succès, false en cas d'échec
+   * x --------->
+   * y
+   * |
+   * |
+   * |
+   * v
    */
-  movePoint(_point) {
-    return;
+  movePoint(_point, _x, _y) {
+    if (!this.isPoint(_point)) return false; //si c'est un objet Point
+    if (!this.isPtExist(_point)) return false; //si le existe
+    if (_x === Number.NaN || _y === Number.NaN) return false;
+    //_point.move(_x, _y)//! il faut verifier que le point existe pas deja avec les même coordonées
+    if (this.isPointExeco(_point)) return false;
+    return true;
   }
 
   /**
@@ -89,17 +102,42 @@ class Area {
   }
 
   /**
-   * Si le point est deja present dans le table returne "true", sinon "false"
+   * Si le point est deja present dans Area returne "true", sinon "false"
    * @param Point _point
    * @return Boolean
    */
   isPtExist(_point) {
+    if (this.points.find((pnt) => pnt === _point) === undefined) return false;
+    return true;
+  }
+
+  /**
+   * Cherche s'il y a un point execo dans la collection est retourne "true" si trouvé
+   * @param Point _point
+   * @returns boolean
+   */
+  isPointExeco(_point) {
     if (
-      this.points.find((pnt) => pnt.x === _point.x && pnt.y === _point.y) ===
-      undefined
+      this.points.findIndex((pt) => pt.x === _point.x && pt.y === _point.y) ===
+      -1
     )
       return false;
     return true;
+  }
+
+  moveClandestin(_point){
+    if(!this.isPoint(_point)) return false;
+    if(!this.isPtExist(_point)) return false;
+    /**
+     * Nous voulons testé si le point qui est le plus pres de l'abscisse est libre et le deplacer desssus
+     * 
+     * Si aucune point disponible le deplacé dans la zone en partent du point d'origine
+     */
+    if(_point.x === sinombrenegatif){
+      //test de dispo
+    }else{
+      //test de dispo
+    }
   }
 }
 

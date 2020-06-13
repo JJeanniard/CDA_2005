@@ -19,7 +19,7 @@ p13 = new Point(-9,-5);
 /**
  * Test unitaire sur la zone 1
  */
-const area1 = new Area(4,4);
+/* const area1 = new Area(4,4);
 
 area1.addPoint(p1);
 area1.addPoint(p2);
@@ -29,6 +29,7 @@ area1.addPoint(p5);
 area1.addPoint(p6);
 area1.addPoint(p7);
 area1.addPoint(p8);
+area1.addPoint(p12);
 
 let area1Size = area1.height * area1.width;
 
@@ -39,7 +40,7 @@ for (let index = 0; index < area1Size; index++) {
     area1.addPoint(val);
 }
 
-console.log(area1.points);
+console.log(area1.points); */
 
 /**
  * Test unitaire sur la zone2
@@ -51,7 +52,7 @@ area2.addPoint(p7);
 area2.addPoint(p8);
 area2.addPoint(p9);
 area2.addPoint(p10);
-area2.addPoint(p12);
+area2.addPoint(p13);
 
 let area2Size = area2.height * area2.width;
 for (let index = 0; index < area2Size; index++) {
@@ -60,5 +61,8 @@ for (let index = 0; index < area2Size; index++) {
     let val = new Point(rd1,rd2);
     area2.addPoint(val);
 }
+//p9 = -30,60
+
+area2.movePoint(p9, -9, -5);
 
 console.log(area2.points);
