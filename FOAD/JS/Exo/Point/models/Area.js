@@ -62,10 +62,9 @@ class Area {
     if (!this.isPoint(_point)) return false;
 
     if (this.max === this.width * this.height) return false;
-    //TODO: si point deja existent,
-    //TODO: faire en sorte que le point change de place (listée autour et si pas de place le placé au plus proche de zero et sur l'abscisse)
-
-    if (this.isPointExeco(_point)) return false;
+    if (this.isPointExeco(_point)){
+        this.moveClandestin(_point);
+    };
 
     this.points.push(_point);
     this.max++;
@@ -87,7 +86,7 @@ class Area {
     if (!this.isPoint(_point)) return false; //si c'est un objet Point
     if (!this.isPtExist(_point)) return false; //si le existe
     if (_x === Number.NaN || _y === Number.NaN) return false;
-    //_point.move(_x, _y)//! il faut verifier que le point existe pas deja avec les même coordonées
+     
     if (this.isPointExeco(_point)) return false;
     return true;
   }
@@ -125,18 +124,32 @@ class Area {
     return true;
   }
 
+  /**
+   * 
+   * @param Point _point
+   * @returns Point 
+   */
   moveClandestin(_point){
     if(!this.isPoint(_point)) return false;
-    if(!this.isPtExist(_point)) return false;
     /**
      * Nous voulons testé si le point qui est le plus pres de l'abscisse est libre et le deplacer desssus
      * 
      * Si aucune point disponible le deplacé dans la zone en partent du point d'origine
      */
-    if(_point.x === sinombrenegatif){
-      //test de dispo
+    if(_point.x < -0){
+      _point.move(_point.x + 1, _point.y)
+      if(!this.isPointExeco(_point)){
+        console.log('tu peu le deplacer')
+      }else{
+        console.log("point d'origin")
+      }
     }else{
-      //test de dispo
+      _point.move(_point.x - 1, _point.y)
+      if(!this.isPointExeco(_point)){
+        console.log('tu peu le deplacer')
+      }else{
+        console.log("point d'origin")
+      }
     }
   }
 }

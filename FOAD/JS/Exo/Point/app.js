@@ -63,6 +63,6 @@ for (let index = 0; index < area2Size; index++) {
 }
 //p9 = -30,60
 
-area2.movePoint(p9, -9, -5);
+//area2.movePoint(p9, -9, -5);
 
 console.log(area2.points);
