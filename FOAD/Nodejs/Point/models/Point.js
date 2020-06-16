@@ -1,18 +1,17 @@
-
-
 /**
  * La classe "Point" représente les coordonnées d'un point dans une zone à 2 dimensions
  */
 class Point {
+    #x; //attr pivate
+    #y;
     /**
      * Constructeur: Initialise une nouvelle instance de la classe "Point"
      * @param int _x Coordonnée horizontale du point (abscisse). Valeur négative acceptée
      * @param int _y Coordonnée verticale du point (ordonnée). Valeur négative acceptée
      */
-
     constructor(_x, _y) {
-        this.x = parseInt(_x || 0);
-        this.y = parseInt(_y || 0);
+        this.#x = parseInt(_x || 0);
+        this.#y = parseInt(_y || 0);
     }
 
     /**
@@ -20,7 +19,7 @@ class Point {
      * @return string Les coordonnées du Point
      */
     toString() {
-        return "(" + this.x + "," + this.y + ")";
+        return "(" + this.#x + "," + this.#y + ")";
     }
 
     /**
@@ -29,8 +28,8 @@ class Point {
      * @param float _y 
      */
     move(_x, _y) {
-        this.x = _x;
-        this.y = _y;
+        this.#x = _x;
+        this.#y = _y;
     }
 
     /**
@@ -38,7 +37,7 @@ class Point {
      * @returns Objet 
      */
     duplicate() {
-        return new Point(this.x, this.y);
+        return new Point(this.#x, this.#y);
     }
 
     /**
@@ -46,8 +45,8 @@ class Point {
      * @param Objet _point Copy les coordonnées d'une classe passée en paramètre
      */
     copy(_point) {
-        this.x = _point.x;
-        this.y = _point.y;
+        this.#x = _point.x;
+        this.#y = _point.y;
     }
     /**
      * 
