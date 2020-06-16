@@ -19,4 +19,4 @@ p12 = new Point(1,4);
 p13 = new Point(-9,-5);
 
 
-console.log(p1.toString());
+console.log(p13.toString());
