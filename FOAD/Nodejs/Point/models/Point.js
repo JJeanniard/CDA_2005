@@ -45,8 +45,8 @@ class Point {
      * @param Objet _point Copy les coordonnées d'une classe passée en paramètre
      */
     copy(_point) {
-        this.#x = _point.x;
-        this.#y = _point.y;
+        this.#x = _point.#x;
+        this.#y = _point.#y;
     }
     /**
      * 

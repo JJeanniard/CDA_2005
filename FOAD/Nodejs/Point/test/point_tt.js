@@ -18,5 +18,25 @@ p11 = new Point(12, 12);
 p12 = new Point(1,4);
 p13 = new Point(-9,-5);
 
-
+//affichage
 console.log(p13.toString());
+//deplacement d'un point, puis affichage
+console.log("move");
+p13.move(8,6);
+console.log(p13.toString());
+//dupliquer un point
+console.log("duplicate");
+const dudu = p13.duplicate();
+console.log(dudu.toString());
+//copy
+console.log("copy");
+p3.copy(p12);
+console.log(p3.toString());
+//rabbit
+console.log("rabbit");
+console.log(p4.toString());
+console.log(p2.toString())
+p4.rabbit(p2);
+console.log(p3.toString());
+console.log(p2.toString());
+//fin du test unitaire
