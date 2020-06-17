@@ -57,14 +57,11 @@ area2.addPoint(p10);
 area2.addPoint(p13);
 
 let area2Size = area2.height * area2.width;
+//generation des points suplemenetaires pour le test de limite(mode fainiant et alors)
 for (let index = 0; index < area2Size; index++) {
     rd1 = Math.round(Math.random()*(-area2Size - area2Size));
     rd2 = Math.round(Math.random()*(area2Size - -area2Size)+-area2Size);
     let val = new Point(rd1,rd2);
     area2.addPoint(val);
 }
-//p9 = -30,60
 
-//area2.movePoint(p9, -9, -5);
-
-console.log(area2.points);
