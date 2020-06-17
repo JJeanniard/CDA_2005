@@ -36,7 +36,7 @@
  * @class Employee
  */
 class Employee {
-
+    //TODO: passer les attrs en privé
     constructor(_employee) {
         _employee = _employee || {};
         if(_employee !== undefined)

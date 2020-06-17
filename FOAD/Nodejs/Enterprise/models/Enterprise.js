@@ -1,11 +1,13 @@
-const fs = require('fs');
+const fs = require('fs');//chargement du module pour créé un fichier json et le lire
+const patch = require('path');//module pour resoudre un probléme de chemin relatif
+
 const Employee = require('./Employee.js');
-const patch = require('path');
 
 /**
- * Gestion d'employés
+ * Gestion d'employés par crud
  */
 class Enterprise {
+
     constructor(_name) {
         this.employees = [];
         this.name = _name || "fantome";
@@ -14,14 +16,14 @@ class Enterprise {
     }
 
     /**
-     * Attention ce si n'est pas de la svg en bdd,
+     * Attention ceci n'est pas de la svg en bdd,
      * mais sur un fichier json.
      * verification et ouverture du fichier,
      * pour recuperer des données et les svgs par la suite sur le même fch.
      * @param string _file chemin du fichier 
      */
     bdd(_file){
-        if (fs.existsSync(_name)) {
+        if (fs.existsSync(_file)) {
             let row = fs.readFileSync(this.file);
 
             let data = JSON.parse(row);//convertion du json en objet
@@ -35,9 +37,9 @@ class Enterprise {
             });
             
         } else {
-            //si fichier non existent creation de celui ci est demande à l'utlisateur de reload.
+            //si fichier non existent creation de celui ci et demande à l'utilisateur de reload.
             fs.writeFileSync(_name, "[]");
-            console.log('file created, please relaod program!');
+            console.log('file created, please reload program!');
         }
     }
 

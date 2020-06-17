@@ -1,7 +1,7 @@
-const Employee = require("./models/Employee.js");
-const Enterprise = require("./models/Enterprise.js");
+const Enterprise = require('../models/Enterprise.js');
+const Employee = require('../models/Employee.js');
 
-let enter1ple1 = new Enterprise('DEV2005');
+let enter1ple1 = new Enterprise('DEV2005');//creation de l'instance enterprise avec un parametre
 
 let idObj = 1;
 emp1 = {
