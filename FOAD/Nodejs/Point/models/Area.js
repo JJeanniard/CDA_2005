@@ -17,7 +17,6 @@ const Point = require("./Point.js");
  * @requires Point
  * @package CRM
  * @license unlicense
- * @copyright 2020
  * @class Area
  */
 class Area {
@@ -62,13 +61,50 @@ class Area {
     if (!this.isPoint(_point)) return false;
 
     if (this.max === this.width * this.height) return false;
-    if (this.isPointExeco(_point)){
-        this.moveClandestin(_point);
-    };
+    if (this.isPointExeco(_point)) {
+      //this.moveClandestin(_point);
+    }
 
     this.points.push(_point);
     this.max++;
     return true;
+  }
+  /**
+   * Affiche tout les points d'une instance
+   * 
+   */
+  readAll() {
+    this.points.forEach((point) => {
+      console.log("x:" + point.getX() + " y:" + point.getY());
+    });
+  }
+
+  /**
+   * Affiche tout les points qui sont à l'exterieur de la zone
+   * 
+   */
+  readOut() {
+    this.points.forEach((point) => {
+      if (point.getX() > this.width || point.getY() > this.height && point.getX() < 0 || point.getY() < 0) {
+        console.log("x:" + point.getX() + " y:" + point.getY());
+      }
+    });
+  }
+
+  /**
+   * compte le nombre de point disponible dans la zone
+   * @returns int 
+   */
+  countInt() {
+    let i, y;
+    y = this.width * this.height;
+    for(i = 0; i < this.points.length; i++){
+      if (this.points[i].getX() <= this.width && this.points[i].getX() >= 0 && this.points[i].getY() <= this.height  && this.points[i].getY() >= 0) {
+        y--;
+      }
+    }
+
+    return y;
   }
 
   /**
@@ -86,7 +122,7 @@ class Area {
     if (!this.isPoint(_point)) return false; //si c'est un objet Point
     if (!this.isPtExist(_point)) return false; //si le existe
     if (_x === Number.NaN || _y === Number.NaN) return false;
-     
+
     if (this.isPointExeco(_point)) return false;
     return true;
   }
@@ -125,30 +161,30 @@ class Area {
   }
 
   /**
-   * 
+   *
    * @param Point _point
-   * @returns Point 
+   * @returns Point
    */
-  moveClandestin(_point){
-    if(!this.isPoint(_point)) return false;
+  moveClandestin(_point) {
+    if (!this.isPoint(_point)) return false;
     /**
      * Nous voulons testé si le point qui est le plus pres de l'abscisse est libre et le deplacer desssus
-     * 
+     *
      * Si aucune point disponible le deplacé dans la zone en partent du point d'origine
      */
-    if(_point.x < -0){
-      _point.move(_point.x + 1, _point.y)
-      if(!this.isPointExeco(_point)){
-        console.log('tu peu le deplacer')
-      }else{
-        console.log("point d'origin")
+    if (_point.x < -0) {
+      _point.move(_point.x + 1, _point.y);
+      if (!this.isPointExeco(_point)) {
+        console.log("tu peu le deplacer");
+      } else {
+        console.log("point d'origin");
       }
-    }else{
-      _point.move(_point.x - 1, _point.y)
-      if(!this.isPointExeco(_point)){
-        console.log('tu peu le deplacer')
-      }else{
-        console.log("point d'origin")
+    } else {
+      _point.move(_point.x - 1, _point.y);
+      if (!this.isPointExeco(_point)) {
+        console.log("tu peu le deplacer");
+      } else {
+        console.log("point d'origin");
       }
     }
   }

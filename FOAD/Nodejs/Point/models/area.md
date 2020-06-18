@@ -18,7 +18,11 @@ c) Dans la 2nde "Area", ajouter 6 "Point" (coordonnées au choix, tous en dehors
 d) Créer ensuite 2 "Point" distincts ayant les mêmes coordonnées [x]
 e) Les ajouter dans chacune des zones (1 "Point" par zone) [x]
 
-f) Pour chaque zone : - Afficher tous les points qui se trouvent hors des limites de la zone - Exécuter la méthode "needAllInside" - Afficher tous les points - Afficher le nombre d'emplacements libres
+f) Pour chaque zone :
+    - Afficher tous les points qui se trouvent hors des limites de la zone [x]
+    - Exécuter la méthode "needAllInside"
+    - Afficher tous les points [x]
+    - Afficher le nombre d'emplacements libres [x]
 
 ### consigne suplementaire
 

@@ -11,7 +11,7 @@ class Point {
    */
   constructor(_x, _y) {
     this.setX(_x);
-    this.getX(_y);
+    this.setY(_y);
   }
 
   /**
@@ -27,7 +27,7 @@ class Point {
   }
 
   /**
-   * return int
+   * @returns int
    */
   getX() {
     return this.#x;
@@ -35,14 +35,14 @@ class Point {
 
   /**
    *
-   * @param int _x
+   * @param int _y
    */
   setY(_y) {
     this.#y = parseInt(_y || 0);
   }
 
   /**
-   * return int
+   * @returns int
    */
   getY() {
     return this.#y;
