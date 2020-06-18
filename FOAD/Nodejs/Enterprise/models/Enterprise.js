@@ -1,20 +1,66 @@
+const fs = require('fs');//chargement du module pour créé un fichier json et le lire
+const patch = require('path');//module pour resoudre un probléme de chemin relatif
 
 const Employee = require('./Employee.js');
 
 /**
- * Gestion d'employés
+ * Gestion d'employés par crud
  */
 class Enterprise {
-    constructor() {
+
+    constructor(_name) {
         this.employees = [];
+        this.name = _name || "fantome";
+        this.file = patch.resolve(__dirname, '../data/' + _name + '.json');
+        this.bdd(this.file);//appeler l'hors de l'instance enterprise
+    }
+
+    /**
+     * Attention ceci n'est pas de la svg en bdd,
+     * mais sur un fichier json.
+     * verification et ouverture du fichier,
+     * pour recuperer des données et les svgs par la suite sur le même fch.
+     * @param string _file chemin du fichier 
+     */
+    bdd(_file){
+        if (fs.existsSync(_file)) {
+            let row = fs.readFileSync(this.file);
+
+            let data = JSON.parse(row);//convertion du json en objet
+
+            /**
+             * creation de chaque emplois qui ce trouve dans le fichier.
+             * Qui est en suite disponible dans une collection   
+            */
+            data.forEach(empl => {
+                this.create(new Employee(empl));
+            });
+            
+        } else {
+            //si fichier non existent creation de celui ci et demande à l'utilisateur de reload.
+            fs.writeFileSync(_file, "[]");
+            console.log('file created, please reload program!');
+        }
+    }
+
+    /**
+     * svg les données dans un fichier json
+     */
+    save(){
+        fs.writeFileSync(this.file, JSON.stringify(this.employees));
+    }
+
+    //cette methode delete les données dans le fichier
+    rez(){
+        fs.writeFileSync(this.file, "[]")
     }
 
     /**
      * @returns boolean
      * @param _employee Employee 
      */
-    isValid(_employee){
-        if(!_employee instanceof Employee)
+    isValid(_employee) {
+        if (!_employee instanceof Employee)
             return false;
 
         return true;
@@ -26,20 +72,10 @@ class Enterprise {
      * @returns Employee
      */
     readAll(_filter) {
-
-        /* let empl = function (a, b){
-            switch (_filter) {
-                case "hiredate":
-                    return a.hiredate - b.hiredate;
-                case "salary":
-                    return a.salary - b.salary;
-                default:
-                    return a.id - b.id;
-            }
-        } */
-
-        return this.employees.filter(_filter);
+        return this.employees.sort(_filter);
     }
+
+
 
     /**
      * Créer un employée
@@ -47,9 +83,8 @@ class Enterprise {
      * @returns Employee
      */
     create(_employee) {
-        if(this.isValid(_employee))
+        if (this.isValid(_employee))
             this.employees.push(_employee);
-
         return _employee;
     }
 
@@ -59,21 +94,10 @@ class Enterprise {
      * @returns Employee
      */
     read(_id) {
-        /* let id = parseInt(_id), resultat;
-
-        let empl = function (emp){
-            return emp.id === id;
-        
-        resultat = this.employees.find(emp => emp.id === id);
-
-        if(resultat === undefined)
-            resultat = undefined;
-
-        return resultat; */
+        let result;
         let emp = this.employees.find(emp => emp.id === _id);
-        if(emp !== undefined){
-            let result = Object.assign(emp, this.employees.id);
-            return result;
+        if (emp !== undefined) {
+            result = Object.assign(emp, this.employees);
         }
         return result;
     }
@@ -84,19 +108,15 @@ class Enterprise {
      * @returns boolean
      */
     update(_employee) {
-        let index = 0;
 
-        if(!this.isValid(_employee))
+        if (!this.isValid(_employee))
             return false;
 
         /*let empl = function (emp){
             return emp.id === _employee.id;
         }*/
-        index = this.employees.findIndex(emp => emp.id === _employee.id);
-        
-        if(index === -1)
-            return false;
-        
+
+        let index = this.employees.find(emp => emp === _employee);
         this.employees.splice(index, 1, _employee);
         return true;
     }
@@ -112,11 +132,10 @@ class Enterprise {
         /*let empl = function (emp){
             return emp.id === _id;
         }*/
-        index = this.employees.findIndex(emp => emp.id === _id);
-        if(index === -1){
+        if (this.read(_id) !== undefined)
             return false;
-        }
-        this.employees.splice(index, 1);
+
+        this.employees.splice(this.read(_id), 1);
         return true;
     }
 
@@ -125,8 +144,8 @@ class Enterprise {
      * @returns Employee
      */
     getHigherSalary() {
-        let result = this.employees.sort((a, b) => (a.salary-b.salary));
-        return result[this.employees.length-1];
+        let result = this.employees.sort((a, b) => (a.salary - b.salary));
+        return result[this.employees.length - 1];
     }
 
     /**
@@ -134,7 +153,7 @@ class Enterprise {
      * @returns Employee
      */
     getLowerSalary() {
-        let result = this.employees.sort((b, a) => (a.salary-b.salary));
+        let result = this.employees.sort((b, a) => (a.salary - b.salary));
         return result[0];
     }
 
