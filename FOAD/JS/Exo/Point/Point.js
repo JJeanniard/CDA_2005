@@ -52,7 +52,8 @@ class Point {
     }
 
     /**
-     * @returns Objet Nouvelle objet avec les valeurs d'un autre objet
+     * Nouvelle instance d'objet avec les valeurs des attribues de l'instance actuel
+     * @returns Objet 
      */
     duplicate() {
         return new Point(this.x, this.y);
