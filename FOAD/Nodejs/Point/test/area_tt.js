@@ -3,7 +3,7 @@
 const Point = require('../models/Point.js');
 const Area = require('../models/Area.js');
 
-p1 = new Point(0,0);
+p1 = new Point(1,1);
 p2 = new Point(1,4);
 p3 = new Point(2,1);
 p4 = new Point(3,2);
@@ -35,12 +35,12 @@ area1.addPoint(p12);
 
 let area1Size = area1.height * area1.width;
 
-/* for (let index = 0; index < area1Size; index++) {
+for (let index = 0; index < area1Size; index++) {
     rd1 = Math.round(Math.random()*(-area1Size - area1Size));
     rd2 = Math.round(Math.random()*(area1Size - -area1Size)+-area1Size);
     let val = new Point(rd1,rd2);
     area1.addPoint(val);
-} */
+}
 
 /**
  * Test unitaire sur la zone2
@@ -65,12 +65,12 @@ let area2Size = area2.height * area2.width;
 /**
  * test des affichages
  */
-//console.log("######### Affichage de tout les points ########");
-//area1.readAll();
-//area2.readAll();
-console.log("###################Affichage de tout les points exterieures #####################");
+/* console.log("###################Affichage de tout les points exterieures #####################");
 area1.readOut();
-/* console.log("# area2 #")
-area2.readOut(); */
+console.log("# area2 #")
+area2.readOut();
 console.log(area1.countInt());
-console.log(area2.countInt());
+console.log(area2.countInt()); */
+console.log("######### Affichage de tout les points ########");
+area1.readAll();
+//area2.readAll();
