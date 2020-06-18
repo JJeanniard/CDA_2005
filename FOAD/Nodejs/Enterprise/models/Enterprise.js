@@ -33,14 +33,26 @@ class Enterprise {
              * Qui est en suite disponible dans une collection   
             */
             data.forEach(empl => {
-                this.create(empl);
+                this.create(new Employee(empl));
             });
             
         } else {
             //si fichier non existent creation de celui ci et demande à l'utilisateur de reload.
-            fs.writeFileSync(_name, "[]");
+            fs.writeFileSync(_file, "[]");
             console.log('file created, please reload program!');
         }
+    }
+
+    /**
+     * svg les données dans un fichier json
+     */
+    save(){
+        fs.writeFileSync(this.file, JSON.stringify(this.employees));
+    }
+
+    //cette methode delete les données dans le fichier
+    rez(){
+        fs.writeFileSync(this.file, "[]")
     }
 
     /**
@@ -60,12 +72,10 @@ class Enterprise {
      * @returns Employee
      */
     readAll(_filter) {
-        return this.employees.filter(_filter);
+        return this.employees.sort(_filter);
     }
 
-    save(){
-        fs.writeFileSync(this.file, JSON.stringify(this.employees));
-    }
+
 
     /**
      * Créer un employée
