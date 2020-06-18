@@ -1,6 +1,6 @@
 # Pratique et exercice pour les cours en CDA
 
-[Document](/docs)
+[Document](https://jjeanniard.github.io/CDA_2005)
 
 ## License
 
