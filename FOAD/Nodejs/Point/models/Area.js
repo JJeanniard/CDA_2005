@@ -31,8 +31,9 @@ class Area {
     this.points = [];
     this.width = parseInt(_width || 0);
     this.height = parseInt(_height || 0);
-    this.max = 0;
-    // A vous de jouer
+    this.size = this.width * this.height; //calcul la taille
+    this.max = 0; //nombre de point possible
+    this.pointsZnDisp = [];
   }
 
   /**
@@ -46,12 +47,21 @@ class Area {
   }
 
   /**
-   * !la limite de point est le nombre possible dans la zone
-   * !il ne peut avoir 1 point par coordonner,
-   * !mais, si il y deja un point,
-   * !le deplacer au plus proche emplacement libre
-   * !5 point possible autour du point deja pris
-   * ! ou partir du point 0,0 (préferé les abscisses)
+   * Si le point est deja present dans Area returne "true", sinon "false"
+   * @param Point _point
+   * @return Boolean
+   */
+  isPtExist(_point) {
+    if (
+      this.points.find(
+        (pnt) => pnt.getX() === _point.getX() && pnt.getY() === _point.getY()
+      )
+    )
+      return false;
+    return true;
+  }
+
+  /**
    * Ajoute un "Point" dans la zone
    * Le "Point" peut se trouver hors des limites de la zone
    * @param Point _point
@@ -59,14 +69,13 @@ class Area {
    */
   addPoint(_point) {
     if (!this.isPoint(_point)) return false;
-
-    if (this.max === this.width * this.height) return false;
-    this.max > 1 ? "" : this.moveClandestin(_point);
-
+    if (this.max === this.size) return false;
+    if (!this.isPtExist(_point)) this.move(_point);
     this.points.push(_point);
     this.max++;
     return true;
   }
+
   /**
    * Affiche tout les points d'une instance
    *
@@ -97,7 +106,7 @@ class Area {
    * compte le nombre de point disponible dans la zone
    * @returns int
    */
-  countInt() {
+  count() {
     let i, y;
     y = this.width * this.height;
     for (i = 0; i < this.points.length; i++) {
@@ -110,7 +119,6 @@ class Area {
         y--;
       }
     }
-
     return y;
   }
 
@@ -125,12 +133,12 @@ class Area {
    * |
    * v
    */
-  movePoint(_point, _x, _y) {
+  movePoint(_exPoint, _point) {
+    if (!this.isPoint(_exPoint)) return false; //si c'est un objet Point
+    if (this.isPtExist(_exPoint)) return false; //si le p existe
     if (!this.isPoint(_point)) return false; //si c'est un objet Point
-    if (!this.isPtExist(_point)) return false; //si le existe
-    if (_x === Number.NaN || _y === Number.NaN) return false;
-
-    if (this.isPointExeco(_point)) return false;
+    if (!this.isPtExist(_point)) return false; //si le p existe
+    _exPoint.move(_point.getX(), _point.getY());
     return true;
   }
 
@@ -144,26 +152,12 @@ class Area {
   }
 
   /**
-   * Si le point est deja present dans Area returne "true", sinon "false"
-   * @param Point _point
-   * @return Boolean
-   */
-  isPtExist(_point) {
-    if (
-      this.points.find(
-        (pnt) => pnt.getX() === _point.getX() && pnt.getY() === _point.getY()
-      )
-    )
-      return false;
-    return true;
-  }
-
-  /**
    * Ceci est pour un point deja existent est à place n'importe ou!
    * @param Point _point
    * @returns Point
+   * @private
    */
-  moveClandestin(_point) {
+  move(_point) {
     if (this.isPtExist(_point)) return false;
     /**
      * Nous voulons testé si le point qui est le plus pres de l'abscisse est libre et le deplacer desssus
@@ -175,17 +169,19 @@ class Area {
         Object.assign(_point, this.points);
       } else {
         //si la place est pas dispo, le place au niveau de 0,0
-        console.log("autre emplacement");
+        console.log("le point existe deja");
+        return false;
+        //this.moveZero(_point); //TODO deplacer les points du plus de zero en fonction de la dispo
       }
     }
-
     if (_point.getX() > 0) {
       _point.move(_point.getX() - 1, _point.getY());
       if (!this.isPtExist(_point)) {
         Object.assign(_point, this.points);
       } else {
         //si la place est pas dispo, le place au niveau de 0,0
-        console.log("autre emplacement");
+        console.log("le point existe deja");
+        return false;
       }
     }
   }

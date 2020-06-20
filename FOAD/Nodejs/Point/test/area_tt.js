@@ -35,12 +35,12 @@ area1.addPoint(p12);
 
 let area1Size = area1.height * area1.width;
 
-for (let index = 0; index < area1Size; index++) {
+/* for (let index = 0; index < area1Size; index++) {
     rd1 = Math.round(Math.random()*(-area1Size - area1Size));
     rd2 = Math.round(Math.random()*(area1Size - -area1Size)+-area1Size);
     let val = new Point(rd1,rd2);
     area1.addPoint(val);
-}
+} */
 
 /**
  * Test unitaire sur la zone2
@@ -56,12 +56,12 @@ area2.addPoint(p13);
 
 let area2Size = area2.height * area2.width;
 //generation des points suplemenetaires pour le test de limite(mode fainiant et alors)
-/* for (let index = 0; index < area2Size; index++) {
+for (let index = 0; index < area2Size; index++) {
     rd1 = Math.round(Math.random()*(-area2Size - area2Size));
     rd2 = Math.round(Math.random()*(area2Size - -area2Size)+-area2Size);
     let val = new Point(rd1,rd2);
     area2.addPoint(val);
-} */
+}
 /**
  * test des affichages
  */
@@ -72,5 +72,10 @@ area2.readOut();
 console.log(area1.countInt());
 console.log(area2.countInt()); */
 console.log("######### Affichage de tout les points ########");
+
+console.log(area1.pointsZnDisp);
 area1.readAll();
-//area2.readAll();
+let px = new Point(3,1);
+area1.movePoint(p4, px);
+console.log("wwwww")
+area1.readAll();
