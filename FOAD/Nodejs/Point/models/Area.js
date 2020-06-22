@@ -185,6 +185,10 @@ class Area {
       }
     }
   }
+
+  pointZnDis(){
+    
+  }
 }
 
 module.exports = Area;
