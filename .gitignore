@@ -356,6 +356,6 @@ MigrationBackup/
 
 .vscode/
 
-bin
+FOAD/C#/bin
 
 .vs
