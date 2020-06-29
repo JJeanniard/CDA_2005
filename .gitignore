@@ -355,3 +355,7 @@ MigrationBackup/
 .idea/
 
 .vscode/
+
+bin
+
+.vs
