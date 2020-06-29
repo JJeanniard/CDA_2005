@@ -6,14 +6,15 @@ namespace Base
     {
         static void Main(string[] args)
         {
-            String welcom;
-            String firstname;
-
-            welcom = "Bonjour";
-            firstname = "jonas";
+            String welcom = "Bonjour";
+            String firstname = "Jonas";
 
             Console.WriteLine("Hello World!");
             Console.WriteLine($"{welcom} à {firstname}");
+        }
+
+        public void Hello()
+        {
 
         }
     }
