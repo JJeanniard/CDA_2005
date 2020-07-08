@@ -21,9 +21,21 @@ namespace Bank
             compte2.Crediter(50);
             Console.WriteLine(compte2.ToString() + "\n");
 
-            Console.WriteLine(compte3.Debiter(500));
+            Console.WriteLine(compte3.Debiter(600));
             Console.WriteLine(compte3.ToString() + "\n");
 
+            Console.WriteLine(compte3.Debiter(150));
+            Console.WriteLine(compte3.ToString() + "\n");
+
+            Console.WriteLine(compte3.Debiter(40));
+            Console.WriteLine(compte3.ToString() + "\n");
+
+            Console.WriteLine(compte1.Virement(1000, compte3));
+
+            Console.WriteLine(compte1.ToString() + "\n");
+            Console.WriteLine(compte3.ToString() + "\n");
+
+            Console.WriteLine(compte3.Compare(compte2));
         }
     }
 }

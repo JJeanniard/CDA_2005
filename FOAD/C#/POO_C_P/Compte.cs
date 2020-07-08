@@ -49,14 +49,14 @@ namespace Bank
         {
             bool isAccepter;
             isAccepter = true;
-
-            if (solde - _somme < decouvert + solde)//300 - 500 (100)
+            int toto = (solde + Math.Abs(decouvert));
+            if (_somme < toto)//300 - 500 (100)
             {
-                isAccepter = false;
+                solde = solde - _somme;
             }
             else
             {
-                solde = solde - _somme;
+                isAccepter = false;
             }
 
             return isAccepter;
