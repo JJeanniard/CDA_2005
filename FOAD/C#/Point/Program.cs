@@ -33,6 +33,7 @@ namespace Point
                 i++;
             }
 
+            Console.WriteLine("\n");
             coord5.DeplacePoint(60, 60);
             UpdateInCollecPoint(coords, coord5);
 
@@ -43,6 +44,16 @@ namespace Point
                 i++;
             }
 
+            Console.WriteLine("\n");
+            coord2.MirroirOrDon(coord2);
+            UpdateInCollecPoint(coords, coord2);
+
+            i = 1;
+            foreach (Point _point in coords)
+            {
+                Console.WriteLine("Point: " + i + " coordonnée: " + _point.ToString());
+                i++;
+            }
         }
 
         public static bool UpdateInCollecPoint(List<Point> _collection ,Point _points)
