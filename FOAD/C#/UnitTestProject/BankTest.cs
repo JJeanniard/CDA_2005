@@ -4,7 +4,7 @@ using Bank;
 namespace UnitTestProject
 {
     [TestClass]
-    class BankCompteTest
+    public class CompteTest
     {
         [TestMethod]
         public void Affichage_Compte()
