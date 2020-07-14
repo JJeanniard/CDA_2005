@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Point
+namespace PointSpace
 {
-    class Point
+    public class Point
     {
         private int x;
         private int y;

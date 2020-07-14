@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Point
+namespace PointSpace
 {
     class Program
     {
@@ -29,7 +29,7 @@ namespace Point
             i = 1;
             foreach (Point _point in coords)
             {
-                Console.WriteLine("Point: "+i+" coordonnée: " + _point.ToString());
+                Console.WriteLine("PointSpace: "+i+" coordonnée: " + _point.ToString());
                 i++;
             }
 
@@ -40,7 +40,7 @@ namespace Point
             i = 1;
             foreach (Point _point in coords)
             {
-                Console.WriteLine("Point: " + i + " coordonnée: " + _point.ToString());
+                Console.WriteLine("PointSpace: " + i + " coordonnée: " + _point.ToString());
                 i++;
             }
 
@@ -51,7 +51,7 @@ namespace Point
             i = 1;
             foreach (Point _point in coords)
             {
-                Console.WriteLine("Point: " + i + " coordonnée: " + _point.ToString());
+                Console.WriteLine("PointSpace: " + i + " coordonnée: " + _point.ToString());
                 i++;
             }
         }
