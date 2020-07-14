@@ -13,27 +13,31 @@ namespace Fraction
 
         public Fraction()
         {
-            devision(0, 1);
+            numerateur = 0;
+            denominateur = 1;
+        }
+
+        public Fraction(Fraction _fraction)
+        {
+            numerateur = _fraction.numerateur;
+            denominateur = _fraction.denominateur;
+        }
+
+        public Fraction(int _numerateur)
+        {
+            numerateur = _numerateur;
+            denominateur = 1;
         }
 
         public Fraction(int _numerateur, int _denominateur)
         {
-            devision(_numerateur, _denominateur);
+            numerateur = _numerateur;
+            denominateur = _denominateur;
         }
 
-        private float devision(int _numerateur, int _denominateur)
+        public override string ToString()
         {
-            float resultat;
-            if (_numerateur == null)
-            {
-                resultat = 0;
-            }
-            else
-            {
-                resultat = _numerateur / _denominateur;
-            }
-
-            return resultat;
+            return "resultat: " + (numerateur/denominateur);
         }
     }
 }
