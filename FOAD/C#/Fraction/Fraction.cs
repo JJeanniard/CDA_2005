@@ -36,45 +36,45 @@ namespace Fraction
 
         public override string ToString()
         {
-            switch (numerateur)
-            {
-                default:
-            }
-
-            return $"numérateur {numerateur} et le dénominateur {denominateur}";
+            return $"le numérateur est {numerateur} et le dénominateur est {denominateur}";
         }
 
         public string ToDiplay()
         {
-            return $"{numerateur}/{denominateur}";
-        }
+            switch (denominateur)
+            {
+                case 1:
+                    return $"{numerateur}";
+                default:
+                    return $"{numerateur}/{denominateur}";
+            }
 
-        public Fraction Division(Fraction _fraction)
-        {
-            return this;
         }
 
         public void Oppose()
         {
-
+            numerateur = -numerateur;
         }
 
         public void Inverse()
         {
-
+            int temp;
+            temp = numerateur;
+            numerateur = denominateur;
+            denominateur = temp;
         }
 
         public bool SuperieurA(Fraction _fraction)
         {
-            float quotient, quotient2;
             bool resultat;
+            int num, den;
 
             resultat = true;
 
-            quotient = numerateur / denominateur;
-            quotient2 = _fraction.numerateur / _fraction.denominateur;
+            num = numerateur / _fraction.numerateur;
+            den = denominateur / _fraction.denominateur;
 
-            if (quotient<quotient2)
+            if (num == den)
                 resultat = false;
 
             return resultat;
@@ -82,11 +82,14 @@ namespace Fraction
 
         public bool EgaleA(Fraction _fraction)
         {
-            float quotient;
             bool resultat;
+            float num, den;
             resultat = false;
-            quotient = numerateur / denominateur;
-            if (quotient < (_fraction.numerateur/_fraction.denominateur))
+
+            num = numerateur / _fraction.numerateur;
+            den = denominateur / _fraction.denominateur;
+
+            if (num == den && (num != 0 && den != 0))
                 resultat = true;
 
             return resultat;
@@ -94,32 +97,60 @@ namespace Fraction
 
         private void Reduire()
         {
-
+            GetPgcd();
         }
 
         private int GetPgcd()
         {
-
+            int a = numerateur;
+            int b = denominateur;
+            int pgcd = -1;
+            if (a != 0 && b != 0)
+            {
+                if (a < 0) a = -a;
+                if (b < 0) b = -b;
+                while (a != b)
+                {
+                    if (a < b)
+                    {
+                        b = b - a;
+                    }
+                    else
+                    {
+                        a = a - b;
+                    }
+                }
+            }
+            return pgcd;
         }
-        
+
         public Fraction Plus(Fraction _fraction)
         {
-
+            numerateur = numerateur + _fraction.numerateur;
+            denominateur = denominateur + _fraction.denominateur;
+            return this;
         }
 
         public Fraction Moins(Fraction _fraction)
         {
-
+            numerateur = numerateur + _fraction.numerateur;
+            denominateur = denominateur + _fraction.denominateur;
+            return this;
         }
 
         public Fraction Multiple(Fraction _fraction)
         {
-
+            numerateur = numerateur * _fraction.numerateur;
+            denominateur = denominateur * _fraction.denominateur;
+            return this;
         }
 
         public Fraction Division(Fraction _fraction)
         {
-
+            numerateur = numerateur / _fraction.numerateur;
+            denominateur = denominateur / _fraction.denominateur;
+            Reduire();
+            return this;
         }
     }
 }
