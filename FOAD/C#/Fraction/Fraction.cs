@@ -13,7 +13,6 @@ namespace Fraction
 
         public Fraction()
         {
-            numerateur = 0;
             denominateur = 1;
         }
 
@@ -37,7 +36,90 @@ namespace Fraction
 
         public override string ToString()
         {
-            return "resultat: " + (numerateur/denominateur);
+            switch (numerateur)
+            {
+                default:
+            }
+
+            return $"numérateur {numerateur} et le dénominateur {denominateur}";
+        }
+
+        public string ToDiplay()
+        {
+            return $"{numerateur}/{denominateur}";
+        }
+
+        public Fraction Division(Fraction _fraction)
+        {
+            return this;
+        }
+
+        public void Oppose()
+        {
+
+        }
+
+        public void Inverse()
+        {
+
+        }
+
+        public bool SuperieurA(Fraction _fraction)
+        {
+            float quotient, quotient2;
+            bool resultat;
+
+            resultat = true;
+
+            quotient = numerateur / denominateur;
+            quotient2 = _fraction.numerateur / _fraction.denominateur;
+
+            if (quotient<quotient2)
+                resultat = false;
+
+            return resultat;
+        }
+
+        public bool EgaleA(Fraction _fraction)
+        {
+            float quotient;
+            bool resultat;
+            resultat = false;
+            quotient = numerateur / denominateur;
+            if (quotient < (_fraction.numerateur/_fraction.denominateur))
+                resultat = true;
+
+            return resultat;
+        }
+
+        private void Reduire()
+        {
+
+        }
+
+        private int GetPgcd()
+        {
+
+        }
+        
+        public Fraction Plus(Fraction _fraction)
+        {
+
+        }
+
+        public Fraction Moins(Fraction _fraction)
+        {
+
+        }
+
+        public Fraction Multiple(Fraction _fraction)
+        {
+
+        }
+
+        public Fraction Division(Fraction _fraction)
+        {
+
         }
     }
 }
