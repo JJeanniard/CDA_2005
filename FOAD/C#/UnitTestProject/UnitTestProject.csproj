@@ -15,7 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Point\Point.csproj" />
-    <ProjectReference Include="..\POO_C_P\Bank.csproj" />
+    <ProjectReference Include="..\POO_C_P\GstBancaire.csproj" />
   </ItemGroup>
 
 </Project>
