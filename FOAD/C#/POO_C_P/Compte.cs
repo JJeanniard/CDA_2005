@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Bank
+namespace GstBancaire
 {
     public class Compte
     {
@@ -22,6 +22,8 @@ namespace Bank
             solde = _solde;
             decouvert = _decouvert;
         }
+
+        public int Id { get => id; }
 
         /// <summary>
         /// Retourne les informations du compte client.
