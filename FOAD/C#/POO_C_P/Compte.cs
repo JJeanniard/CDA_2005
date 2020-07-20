@@ -31,7 +31,7 @@ namespace GstBancaire
         /// <returns></returns>
         public override string ToString()
         {
-            return "Id: " + id + "\nLastname: " + lastname + "\nSolde: " + solde + "\nDecouvert autoriser: " + decouvert;
+            return "numéro: " + id + ", Lastname: " + lastname + ", Solde: " + solde + ", Decouvert autoriser: " + decouvert;
         }
         /// <summary>
         /// Action qui permet de crediter le compte
@@ -51,7 +51,7 @@ namespace GstBancaire
         {
             bool isAccepter;
             isAccepter = true;
-            int toto = (solde + Math.Abs(decouvert));
+            int toto = solde + decouvert;
             if (_somme < toto)//300 - 500 (100)
             {
                 solde = solde - _somme;

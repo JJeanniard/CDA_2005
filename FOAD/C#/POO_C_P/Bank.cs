@@ -50,7 +50,7 @@ namespace GstBancaire
 
         public Compte showCompte(int _num)
         {
-
+            return comptes.Find(x => x.Id == _num);
         }
 
         public bool Switch(int _num1, int _num2, int somme)
