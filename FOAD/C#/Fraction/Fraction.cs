@@ -67,14 +67,14 @@ namespace Fraction
         public bool SuperieurA(Fraction _fraction)
         {
             bool resultat;
-            int num, den;
+            float somme1, somme2;
 
             resultat = true;
 
-            num = numerateur / _fraction.numerateur;
-            den = denominateur / _fraction.denominateur;
+            somme1 = (float)numerateur / (float)denominateur;
+            somme2 = (float)_fraction.numerateur / (float)_fraction.denominateur;
 
-            if (num == den)
+            if (somme1 > somme2)
                 resultat = false;
 
             return resultat;
@@ -83,13 +83,13 @@ namespace Fraction
         public bool EgaleA(Fraction _fraction)
         {
             bool resultat;
-            float num, den;
+            float quotient1, quotient2;
             resultat = false;
 
-            num = numerateur / _fraction.numerateur;
-            den = denominateur / _fraction.denominateur;
+            quotient1 = (float)numerateur/ (float)denominateur;
+            quotient2 = (float)_fraction.numerateur/ (float)_fraction.denominateur;
 
-            if (num == den && (num != 0 && den != 0))
+            if (quotient1 == quotient2)
                 resultat = true;
 
             return resultat;
@@ -126,8 +126,17 @@ namespace Fraction
 
         public Fraction Plus(Fraction _fraction)
         {
-            numerateur = numerateur + _fraction.numerateur;
-            denominateur = denominateur + _fraction.denominateur;
+            int product1, product2, product3;
+            
+            product1 = numerateur * _fraction.denominateur;
+            product2 = denominateur * _fraction.denominateur;
+
+            product3 = _fraction.numerateur * denominateur;
+
+            numerateur = product1 + product3;
+
+            denominateur = product2;
+
             return this;
         }
 
