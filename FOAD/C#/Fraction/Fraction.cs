@@ -165,8 +165,8 @@ namespace Fraction
 
         public Fraction Division(Fraction _fraction)
         {
-            numerateur = numerateur / _fraction.numerateur;
-            denominateur = denominateur / _fraction.denominateur;
+            numerateur = numerateur * _fraction.denominateur;
+            denominateur = denominateur * _fraction.numerateur;
             Reduire();
             return this;
         }

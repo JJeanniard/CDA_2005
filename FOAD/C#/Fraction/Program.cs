@@ -37,7 +37,15 @@ namespace Fraction
             fraction2.Moins(fraction3);
             Console.WriteLine(fraction2.ToDiplay());
 
+            Console.WriteLine("\nMultiple");
+            fraction2 = new Fraction(24, 4);//192/32
+            fraction3 = new Fraction(5, 8);
+            fraction2.Multiple(fraction3);
+            Console.WriteLine(fraction2.ToDiplay());
+
             Console.WriteLine("\nDivision");
+            fraction2 = new Fraction(24, 4);//192/32
+            fraction3 = new Fraction(5, 8);
             fraction2.Division(fraction3);
             Console.WriteLine(fraction2.ToDiplay());
             /* Console.WriteLine(fraction4.EgaleA(fraction3));
