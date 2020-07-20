@@ -142,8 +142,17 @@ namespace Fraction
 
         public Fraction Moins(Fraction _fraction)
         {
-            numerateur = numerateur + _fraction.numerateur;
-            denominateur = denominateur + _fraction.denominateur;
+            int product1, product2, product3;
+
+            product1 = numerateur * _fraction.denominateur;
+            product2 = denominateur * _fraction.denominateur;
+
+            product3 = _fraction.numerateur * denominateur;
+
+            numerateur = product1 - product3;
+
+            denominateur = product2;
+            
             return this;
         }
 
