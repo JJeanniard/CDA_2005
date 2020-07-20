@@ -48,7 +48,7 @@ namespace PointSpace
         /// <returns></returns>
         public override string ToString()
         {
-            return "x: " + x + " y: " + y;
+            return "x: " + x + ", y: " + y;
         }
 
         /// <summary>
@@ -67,7 +67,7 @@ namespace PointSpace
         /// </summary>
         /// <param name="_point"></param>
         /// <returns></returns>
-        public Point MirroirOrDon(Point _point)
+        public Point MiroirOrDon(Point _point)
         {
             _point.x = -_point.x;
             //x
@@ -78,9 +78,9 @@ namespace PointSpace
         /// </summary>
         /// <param name="_point"></param>
         /// <returns></returns>
-        public Point MirroirAbscis(Point _point)
+        public Point MiroirAbscis(Point _point)
         {
-            _point.x = -_point.x;
+            _point.y = -_point.y;
             //y
             return _point;
         }
@@ -89,7 +89,7 @@ namespace PointSpace
         /// deplace le point de ça possition 
         /// </summary>
         /// <param name="_point"></param>
-        public void MirroirOrigin(Point _point)
+        public void MiroirOrigin(Point _point)
         {
             _point.x = -_point.x;
             _point.y = -_point.y;

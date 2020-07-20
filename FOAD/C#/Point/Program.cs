@@ -14,7 +14,7 @@ namespace PointSpace
             Point coord3 = new Point();
             Point coord4 = new Point(-11, 30);
             Point coord5 = new Point(10, 5);
-            Point coord6 = new Point(coord3);
+            Point coord6 = new Point(coord4);
             
             coords.Add(coord1);
             coords.Add(coord2);
@@ -29,31 +29,41 @@ namespace PointSpace
             i = 1;
             foreach (Point _point in coords)
             {
-                Console.WriteLine("PointSpace: "+i+" coordonnée: " + _point.ToString());
+                Console.WriteLine("PointSpace: "+i+" coordonnée: " + _point);
                 i++;
             }
 
-            Console.WriteLine("\n");
+            Console.WriteLine($"\nDeplacement du point {coord5}");
             coord5.DeplacePoint(60, 60);
             UpdateInCollecPoint(coords, coord5);
 
             i = 1;
             foreach (Point _point in coords)
             {
-                Console.WriteLine("PointSpace: " + i + " coordonnée: " + _point.ToString());
+                Console.WriteLine("PointSpace: " + i + " coordonnée: " + _point);
                 i++;
             }
 
-            Console.WriteLine("\n");
-            coord2.MirroirOrDon(coord2);
+            Console.WriteLine($"\nDéplacement du point {coord2} en mirroire sur l'ordonnée");
+            coord2.MiroirOrDon(coord2);
+            Console.WriteLine($"Nouvelle coordonée du point {coord2}");
+
+            Console.WriteLine($"\nDéplacement du point {coord2} en mirroire sur l'abscisse");
+            coord2.MiroirAbscis(coord2); //TODO: à corriger, si le nombre est en négative le passer en possitive et vice versa. 
+            Console.WriteLine($"Nouvelle coordonée du point {coord2}\n");
+
             UpdateInCollecPoint(coords, coord2);
 
             i = 1;
             foreach (Point _point in coords)
             {
-                Console.WriteLine("PointSpace: " + i + " coordonnée: " + _point.ToString());
+                Console.WriteLine("PointSpace: " + i + " coordonnée: " + _point);
                 i++;
             }
+
+            Console.WriteLine($"\nDéplacement du point {coord6} en mirroire sur l'ordonnée");
+            coord2.MiroirOrigin(coord6);
+            Console.WriteLine($"Nouvelle coordonée du point {coord6}");
         }
 
         public static bool UpdateInCollecPoint(List<Point> _collection ,Point _points)
