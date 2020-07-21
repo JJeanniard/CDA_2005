@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -24,6 +25,7 @@ namespace GstBancaire
         }
 
         public int Id { get => id; }
+        public int Solde { get => solde; }
 
         /// <summary>
         /// Retourne les informations du compte client.
@@ -33,6 +35,7 @@ namespace GstBancaire
         {
             return "numéro: " + id + ", Lastname: " + lastname + ", Solde: " + solde + ", Decouvert autoriser: " + decouvert;
         }
+
         /// <summary>
         /// Action qui permet de crediter le compte
         /// </summary>
@@ -41,6 +44,7 @@ namespace GstBancaire
         {
             solde += _somme;
         }
+
         /// <summary>
         /// Actino qui permet de debiter sur le compte,
         /// avec verification de decouvert autoriser
@@ -52,7 +56,7 @@ namespace GstBancaire
             bool isAccepter;
             isAccepter = true;
             int toto = solde + decouvert;
-            if (_somme < toto)//300 - 500 (100)
+            if (_somme <= toto)//300 - 500 (100)
             {
                 solde = solde - _somme;
             }
@@ -63,6 +67,7 @@ namespace GstBancaire
 
             return isAccepter;
         }
+
         /// <summary>
         /// Action de virement d'une somme à sur un autre compte 
         /// </summary>
@@ -72,9 +77,16 @@ namespace GstBancaire
         public bool Virement(int _somme, Compte _compteD)
         {
             bool isAccepter;
-            isAccepter = Debiter(_somme);
-
-            _compteD.Crediter(_somme);
+            if (Debiter(_somme))
+            {
+                _compteD.Crediter(_somme);
+                isAccepter = true;
+            }
+            else
+            {
+                isAccepter = false;
+            }
+                
 
             return isAccepter;
         }

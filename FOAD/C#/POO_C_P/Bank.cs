@@ -41,22 +41,43 @@ namespace GstBancaire
         private void AddCompte(Compte _compte)
         {
             comptes.Add(_compte);
+            nbComptes++;
         }
 
-        public void HideCompte()
+        public void CompteSup()
         {
-            //regarder le sytéme de trie sur List
+            comptes.Sort(delegate (Compte a, Compte b)
+            {
+                if (a.Solde == null && b.Solde == null) return 0;
+                else if (a.Solde == null) return -1;
+                else if (b.Solde == null) return 1;
+                else return a.Solde.CompareTo(b.Solde);
+            });
+
+            Console.WriteLine(comptes[comptes.Count - 1]);
         }
 
-        public Compte showCompte(int _num)
+        public Compte RendCompte(int _num)
         {
-            return comptes.Find(x => x.Id == _num);
+            Compte aneswer;
+            aneswer = comptes.Find(x => x.Id == _num);
+            if (aneswer == null)
+                aneswer = null;
+            return aneswer;
         }
 
-        public bool Switch(int _num1, int _num2, int somme)
+        public bool Transfere(int _num1, int _num2, int somme)
         {
             bool isValid;
             isValid = false;
+            Compte anwerSchCpt1, anwerSchCpt2;
+
+            anwerSchCpt1 = comptes.Find(x => x.Id == _num1);
+            anwerSchCpt2 = comptes.Find(x => x.Id == _num2);
+            if (anwerSchCpt1 != null && anwerSchCpt2 != null)
+            {
+                isValid = anwerSchCpt1.Virement(somme, anwerSchCpt2);
+            }
 
             return isValid;
         }
