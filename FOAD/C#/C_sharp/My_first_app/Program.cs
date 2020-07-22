@@ -15,6 +15,7 @@ namespace Valeur_litterales
             Console.WriteLine(false);
 
             //String valeur different avec une valeur littéral
+            //Un littéral est littéralement une valeur codée en dur.
             Console.WriteLine("123");
             Console.WriteLine(123);
 
