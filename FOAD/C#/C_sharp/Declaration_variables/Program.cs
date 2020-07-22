@@ -30,8 +30,10 @@ namespace Declaration_variables
             Console.WriteLine(first_name);
             //error variable non init Console.WriteLine(firtname); -> (31,19): error CS0165: Use of unassigned local variable 'firstName'
 
-
-
+            //variables locales implicitement
+            var message = "Hello world!";//chaque instance sera de type string
+            //error message = 10.0m; -> (2,11): error CS0029: Cannot implicitly convert type 'decimal' to 'string'
+            //la variable doit etre init
         }
     }
 }
