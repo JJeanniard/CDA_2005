@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 
 namespace Declaration_variables
 {
@@ -26,7 +27,7 @@ namespace Declaration_variables
 
             //error, it is type int => gameScore = "resrs";
             Console.WriteLine(first_name);
-            first_name = "bibi"
+            first_name = "bibi";
             Console.WriteLine(first_name);
             //error variable non init Console.WriteLine(firtname); -> (31,19): error CS0165: Use of unassigned local variable 'firstName'
 
@@ -34,6 +35,15 @@ namespace Declaration_variables
             var message = "Hello world!";//chaque instance sera de type string
             //error message = 10.0m; -> (2,11): error CS0029: Cannot implicitly convert type 'decimal' to 'string'
             //la variable doit etre init
+
+            //TP
+            string firstname;
+            int nbrbox;
+            decimal celsius;
+            firtname = "Bobl";
+            nbrbox = 3;
+            celsius = 34.4M;
+            Console.WriteLine("Hello, {0}! You have {1} in your inbox. The temperature is {2} celsius.", firtname, nbrbox, celsius);
         }
     }
 }
