@@ -25,7 +25,28 @@ namespace mise_en_forme
             Console.WriteLine(@"c:\invoices\app.exe -j");
 
             //concate
+            string firstName = "Bod";
+            string greeting = "Hello";
+            string message = greeting + " " + firstName + "!";//à évité
+            Console.WriteLine(message);
+            Console.WriteLine(greeting + "" + firstName + "!");
 
+
+            //interpolation de chaine
+            string message2 = $"{greeting} {firstName}";//it is good
+            Console.WriteLine($"{message2}");
+            //Éviter les variables intermédiaires.
+            string fiRstName = "Bob";
+            string grEeting = "Hello";
+            message = $"{greeting} {firstName}!";//warning variable dans une variable
+            Console.WriteLine(message);
+
+            //TP
+            string projectName = "ACME";
+
+            string russianMessage = "\u041f\u043e\u0441\u043c\u043e\u0442\u0440\u0435\u0442\u044c \u0440\u0443\u0441\u0441\u043a\u0438\u0439 \u0432\u044b\u0432\u043e\u0434";
+
+            Console.WriteLine($"\nView English output:\n\t c:\\Exercise\\{projectName}\\data.txt\n\n{russianMessage}\n\tc:\\Exercise\\{projectName}\\ru-RU\\data.txt");
         }
     }
 }
