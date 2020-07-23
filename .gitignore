@@ -349,13 +349,24 @@ MigrationBackup/
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
 
+### VisualStudioCode ###
+.vscode/
+*.code-workspace
+
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
 
 *.workspace
 
 .idea/
 
-.vscode/
-
-FOAD/C#/bin
+*/bin
 
 .vs
+
+<<<<<<< HEAD
+.vs
+=======
+*.lck
+>>>>>>> feature/c#_academie
