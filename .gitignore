@@ -365,8 +365,4 @@ MigrationBackup/
 
 .vs
 
-<<<<<<< HEAD
-.vs
-=======
 *.lck
->>>>>>> feature/c#_academie
