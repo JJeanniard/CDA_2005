@@ -1,7 +1,7 @@
 on:
   push:
     branches:
-      - "develop"
+    - develop
 jobs:
   merge-branch:
     runs-on: ubuntu-latest
