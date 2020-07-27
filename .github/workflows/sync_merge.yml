@@ -1,0 +1,26 @@
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+# This workflow will download a prebuilt Ruby version, install dependencies and run tests with Rake
+# For more information see: https://github.com/marketplace/actions/setup-ruby-jruby-and-truffleruby
+
+name: sync merge auto
+
+on:
+  schedule:
+  - cron: "0/30 * * *"
+
+jobs:
+  automerge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: git-flow-merge-action
+        uses: yanamura/git-flow-merge-action@v1.1.0
+        with:
+          # GitHub token
+          github_token: "${{ secrets.GITHUB_TOKEN }}"
+          # release or hotfix branch
+          branch: master
+          # develop branch name
+          develop_branch: develop
