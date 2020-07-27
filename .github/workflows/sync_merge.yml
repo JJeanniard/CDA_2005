@@ -8,8 +8,9 @@
 name: sync merge auto
 
 on:
-  schedule:
-  - cron: "*/5 * * * *"
+  push:
+    branches: 
+      - develop  
     
 jobs:
   sync-branches:
