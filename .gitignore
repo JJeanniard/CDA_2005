@@ -365,4 +365,4 @@ MigrationBackup/
 
 *.lck
 
-*.lck_*
+*.vpp.bak_*

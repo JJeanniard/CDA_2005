@@ -7,7 +7,7 @@
 Les cours de developpement d'application web & logiciel informatique, donne un chemin à suivre pour progresser sur les différentes technologies :
 
 * Outils
-  * Git
+ * - [x] Git
   * VsCode
   * Vps (apache, php, mysql, depot privé)
   * node.js
@@ -25,6 +25,9 @@ Les cours de developpement d'application web & logiciel informatique, donne un c
 * Applicatif
   * C#
   * Java
+
+[Document](https://jjeanniard.github.io/CDA_2005)
+
 
 ## License
 
