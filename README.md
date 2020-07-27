@@ -8,7 +8,7 @@ Les cours de developpement d'application web & logiciel informatique, donne un c
 
 * Outils
   * - [x] Git
-  * VsCode
+  * - [x] VsCode
   * Vps (apache, php, mysql, depot privé)
   * node.js
   * FileZila (FTP)
