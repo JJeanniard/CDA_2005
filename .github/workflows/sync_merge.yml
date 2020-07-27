@@ -9,7 +9,7 @@ name: sync merge auto
 
 on:
   schedule:
-  - cron: "*/30 * * * *"
+  - cron: "*/5 * * * *"
 
 jobs:
   automerge:
