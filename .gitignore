@@ -364,5 +364,5 @@ MigrationBackup/
 */bin
 
 *.lck
-
+### paradigm
 *.vpp.bak_*
