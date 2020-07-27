@@ -9,15 +9,23 @@ name: sync merge auto
 
 on:
   schedule:
-  - cron: "*/30 * * * *"
-
+  - cron: "*/5 * * * *"
+    
 jobs:
-  automerge:
+  sync-branches:
     runs-on: ubuntu-latest
+    name: Syncing branches
     steps:
-      - name: git-flow-merge-action
-        uses: yanamura/git-flow-merge-action@v1.1.0
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set up Node
+        uses: actions/setup-node@v1
         with:
-          # GitHub token
-          github_token: "${{ secrets.GITHUB_TOKEN }}"
-          branch: ${{ steps.extract_branch.outputs.branch }}
+          node-version: 12
+      - name: Opening pull request
+        id: pull
+        uses: tretuna/sync-branches@1.2.0
+        with:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          FROM_BRANCH: "develop"
+          TO_BRANCH: "master"
