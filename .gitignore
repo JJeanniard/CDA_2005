@@ -363,10 +363,6 @@ MigrationBackup/
 
 */bin
 
-.vs
-
-<<<<<<< HEAD
-.vs
-=======
 *.lck
->>>>>>> feature/c#_academie
+
+*.lck_*
