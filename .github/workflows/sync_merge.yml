@@ -10,7 +10,9 @@ name: sync merge auto
 on:
   push:
     branches: 
-      - develop  
+      - develop
+  schedule:
+  - cron: "0/5 * * * *"
     
 jobs:
   sync-branches:
