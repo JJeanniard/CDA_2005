@@ -9,9 +9,9 @@ Les cours de developpement d'application web & logiciel informatique, donne un c
 * Outils
   * - [x] Git
   * - [x] VsCode
-  * Vps (apache, php, mysql, depot privé)
+  * - [x] Vps (apache, php, mysql, depot privé)
   * node.js
-  * FileZila (FTP)
+  * - [x] FileZila (FTP)
 * Repository
   * GibHub
   * GidLab
@@ -27,7 +27,6 @@ Les cours de developpement d'application web & logiciel informatique, donne un c
   * Java
 
 [Document](https://jjeanniard.github.io/CDA_2005)
-
 
 ## License
 
