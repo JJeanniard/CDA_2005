@@ -13,7 +13,7 @@ Les cours de developpement d'application web & logiciel informatique, donne un c
   * node.js
   * - [x] FileZila (FTP)
 * Repository
-  * GibHub
+  * - [x] GibHub
   * GidLab
 * Web
   * Php
