@@ -1,22 +1,25 @@
-name: Sync merge
+name: sync branch
 
-on: [push]
+on:
+  push:
+    branches: [ develop ]
 
 jobs:
-  sync-branches:
+  build:
+    name: merge
     runs-on: ubuntu-latest
-    name: Syncing branches
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Set up Node
-        uses: actions/setup-node@v1
-        with:
-          node-version: 12
-      - name: Opening pull request
-        id: pull
-        uses: tretuna/sync-branches@1.2.0
-        with:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-          FROM_BRANCH: "develop"
-          TO_BRANCH: "master"
+    - uses: actions/checkout@v2
+    - name: Set up Ruby 2.6
+      uses: actions/setup-ruby@v1
+      with:
+        ruby-version: 2.6.x
+
+    - name: Publish to GPR
+      run: |
+        git switch master
+        git merger develop
+      env:
+        GEM_HOST_API_KEY: "Bearer ${{secrets.GITHUB_TOKEN}}"
+        OWNER: ${{ github.repository_owner }}
