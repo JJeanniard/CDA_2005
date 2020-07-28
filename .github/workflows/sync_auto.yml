@@ -1,8 +1,5 @@
 name: Sync merge
-on:
-  push:
-    branches:
-    - develop
+on: [push]
 
 jobs:
   multimerge:
