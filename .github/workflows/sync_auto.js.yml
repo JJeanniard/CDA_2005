@@ -11,15 +11,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Set up Ruby 2.6
-      uses: actions/setup-ruby@v1
-      with:
-        ruby-version: 2.6.x
-
-    - name: Publish to GPR
-      run: |
+    - run: |
         git switch master
         git merger develop
-      env:
-        GEM_HOST_API_KEY: "Bearer ${{secrets.GITHUB_TOKEN}}"
-        OWNER: ${{ github.repository_owner }}
