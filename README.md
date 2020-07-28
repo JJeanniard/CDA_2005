@@ -7,19 +7,19 @@
 Les cours de developpement d'application web & logiciel informatique, donne un chemin à suivre pour progresser sur les différentes technologies :
 
 * Outils
-  * - [x] Git
-  * - [x] VsCode
-  * - [x] Vps (apache, php, mysql, depot privé)
+  * [x] Git
+  * [x] VsCode
+  * [x] Vps (apache, php, mysql, depot privé)
   * node.js
-  * - [x] FileZila (FTP)
+  * [x] FileZila (FTP)
 * Repository
-  * - [x] GibHub
+  * [x] GibHub
   * GidLab
 * Web
   * Php
   * Mysql
-  * - [x] Html
-  * - [x] Css
+  * [x] Html
+  * [x] Css
   * Sql
   * Js…
 * Applicatif
