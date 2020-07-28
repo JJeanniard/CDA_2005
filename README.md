@@ -18,7 +18,7 @@ Les cours de developpement d'application web & logiciel informatique, donne un c
 * Web
   * Php
   * Mysql
-  * Html
+  * - [x] Html
   * Css
   * Sql
   * Js…
