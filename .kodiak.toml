@@ -5,3 +5,4 @@ version = 1
 method = "merge"
 [update]
 always = true
+require_automerge_label = false
