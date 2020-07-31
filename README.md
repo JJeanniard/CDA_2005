@@ -17,7 +17,6 @@ Github     |            |         |            | Casandra | |                  |
 GitLab     |            |         |            |           |                  | Fail2Ban
 
 
-
 [Document](https://jjeanniard.github.io/CDA_2005)
 
 ## License
