@@ -1,0 +1,15 @@
+name: automerge
+on:
+  schedule:
+    # Every friday every hour between 12 and 15 UTC
+    - cron: "0/5 * * * *"
+      
+jobs:
+  automerge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: automerge
+        uses: pascalgn/automerge-action@v0.8.5
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          MERGE_DELETE_BRANCH: false
