@@ -8,8 +8,9 @@
 name: Auto merge
 
 on:
-  push:
-    branches: [ develop ]
+  schedule:
+    # Every friday every hour between 12 and 15 UTC
+    - cron: "0/5 * * * *"
 
 jobs:
   pr-automerge:
