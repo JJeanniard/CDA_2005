@@ -12,7 +12,6 @@ jobs:
       - uses: actions/checkout@v2
       - uses: christianvuerings/add-labels@v1
         with:
-          labels: |
-            autmerge
+          labels: autmerge
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
