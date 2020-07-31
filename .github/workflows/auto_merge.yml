@@ -22,4 +22,4 @@ jobs:
       with:
         merge-method: 'merge' # Default 'squash'
         min-approvals: 0 # Default 2
-        base-ref: 'develop' # Default 'dev'
+        base-ref: 'master' # Default 'dev'
