@@ -19,8 +19,6 @@ GitLab     |            |         |            |           |                  | 
 
 [Document](https://jjeanniard.github.io/CDA_2005)
 
-
-
 ## License
 
 [unlicense](https://unlicense.org)
