@@ -16,7 +16,6 @@ Scrum      |            |         |            | MongoDB | |                  | 
 Github     |            |         |            | Casandra | |                  | Ufw |
 GitLab     |            |         |            |           |                  | Fail2Ban
 
-
 [Document](https://jjeanniard.github.io/CDA_2005)
 
 ## License
