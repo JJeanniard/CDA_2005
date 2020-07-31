@@ -14,7 +14,7 @@ Unified Process |       | Html    | Windows forms | MS Server | | Cisco Switch  
 NodeJs     |            | CSS     | WPF        | Mysql |   | Cisco Routeur    | PhpMyAdmin
 Scrum      |            |         |            | MongoDB | |                  | Ssh |
 Github     |            |         |            | Casandra | |                  | Ufw |
-GitLab     |            |         |            |           |                  |
+GitLab     |            |         |            |           |                  | Fail2Ban
 
 [Document](https://jjeanniard.github.io/CDA_2005)
 
