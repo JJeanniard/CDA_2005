@@ -6,15 +6,15 @@
 
 Les cours de developpement d'application web & logiciel informatique, donne un chemin à suivre pour progresser sur les différentes technologies :
 
-Outils | Repository | Web | Applicatif
--------| ---------- | --- | ----------
-Git | GibHub | PHP | C#
-VsCode | GidLab | Mysql | Java 
-Vps (apache, php, mysql, depot privé) | | Html |
-NodeJs | | CSS |
-FileZila (FTP) | | Sql |
--|-|Js|-
-
+Gst Projet | Repository | Langage | Applicatif | BDD | IC | Réseaux & Système | Serveur  
+-----------| ---------- | ------- | ---------- | --- | -- | ----------------- | ------
+Git        | GibHub     | PHP     | C#         | SQL | Approche DevOps | Ubuntu Server | Apache
+Merise     | GidLab     | JS      | Java       | NoSql |  | Vmware Esxie      | Mysql server
+Unified Process |       | Html    | Windows forms | MS Server | | Cisco Switch  | Pure-Ftpd-Mysql
+NodeJs     |            | CSS     | WPF        | Mysql |   | Cisco Routeur    | PhpMyAdmin
+Scrum      |            |         |            | MongoDB | |                  | Ssh |
+Github     |            |         |            | Casandra | |                  | Ufw |
+GitLab     |            |         |            |           |                  |
 
 [Document](https://jjeanniard.github.io/CDA_2005)
 
