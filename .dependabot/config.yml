@@ -1,0 +1,14 @@
+# This is an example with only required properties:
+version: 1
+update_configs:
+  - package_manager: "ruby:bundler"
+    directory: "/"
+    update_schedule: "live"
+
+    default_labels:
+      - "label-name"
+    target_branch: "master"
+    automerged_updates:
+    - match:
+          dependency_type: "all"
+          update_type: "all"
