@@ -6,25 +6,15 @@
 
 Les cours de developpement d'application web & logiciel informatique, donne un chemin à suivre pour progresser sur les différentes technologies :
 
-* Outils
-  * [x] Git
-  * [x] VsCode
-  * [x] Vps (apache, php, mysql, depot privé)
-  * node.js
-  * [x] FileZila (FTP)
-* Repository
-  * [x] GibHub
-  * GidLab
-* Web
-  * Php
-  * Mysql
-  * [x] Html
-  * [x] Css
-  * Sql
-  * Js…
-* Applicatif
-  * C#
-  * Java
+Outils | Repository | Web | Applicatif
+-------| ---------- | --- | ----------
+Git | GibHub | PHP | C#
+VsCode | GidLab | Mysql | Java 
+Vps (apache, php, mysql, depot privé) | | Html |
+NodeJs | | CSS |
+FileZila (FTP) | | Sql |
+-|-|Js|-
+
 
 [Document](https://jjeanniard.github.io/CDA_2005)
 
