@@ -1,17 +1,16 @@
-name: Label sponsors
+name: Label master
 on:
   pull_request:
     branches: [master]
     types: [opened]
     
 jobs:
-  add-label:
-    name: Add Label
+  add_labels:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: christianvuerings/add-labels@v1.1
+      - uses: actions-ecosystem/action-add-labels@v1
+        if: ${{ startsWith(github.event.comment.body, '/add-labels') }}
         with:
-          labels: autmerge
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.github_token }}
+          labels: automerge
