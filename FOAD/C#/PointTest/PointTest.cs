@@ -1,8 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
 using PointSpace;
 using System.Collections.Generic;
-using System.Security.Cryptography.X509Certificates;
+
 
 namespace UnitTestProject
 {
@@ -11,15 +10,13 @@ namespace UnitTestProject
     {
         private static Dictionary<int, Point> coords = new Dictionary<int, Point>();
 
-        [TestMethod]
-        public void Generateur()
+        public PointTest()
         {
             int i;
             for (i = 0; i < 100; i++)
             {
                 coords.Add(i, new Point());
             }
-
         }
 
         [TestMethod]
@@ -28,7 +25,7 @@ namespace UnitTestProject
 
             foreach (KeyValuePair<int, Point> coord in coords)
             {
-                Console.WriteLine("{0}", coord.Value);
+                Assert.AreEqual($"x: {coord.Value.X}, y: {coord.Value.Y}", coord.Value.ToString());
             }
 
         }
@@ -37,12 +34,9 @@ namespace UnitTestProject
         public void MovePoint()
         {
             coords[2].DeplacePoint(-5, 9);
-            Point a = coords[2];
-            coords[2].MiroirOrDon(a);
 
-            coords[2].MiroirAbscis(a);
+            Assert.AreEqual($"x: -5, y: 9", coords[2].ToString())
 
-            coords[2].MiroirOrigin(a);
         }
     }
 }
