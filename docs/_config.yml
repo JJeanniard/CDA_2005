@@ -1,0 +1,7 @@
+show_downloads: true
+twitter_username: jjeanniard
+github_username:  jjeanniard
+theme: jekyll-theme-slate
+github:
+  is_project_page: false
+  repository_url: https://jjeanniard.github.io/
