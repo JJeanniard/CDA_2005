@@ -3,7 +3,7 @@ name: Sync Fork
 
 on:
   schedule:
-    - cron: '*/05 * * * *'
+    - cron: '*/05 * * * 1-5'
 
 jobs:
   sync:
