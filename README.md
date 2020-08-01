@@ -15,8 +15,8 @@ Merise     | GidLab     | JS  | Java       | NoSql |  | Vmware Esxie      | Mysq
 Unified Process |       | Html| Windows forms | MS Server | | Cisco Switch  | Pure-Ftpd-Mysql
 NodeJs     |            | CSS | WPF        | Mysql |   | Cisco Routeur    | PhpMyAdmin
 Scrum      |            | Sass|            | MongoDB | |                  | Ssh |
-Github     |            |     |            | Casandra | |                  | Ufw |
-GitLab     |            |     |            |           |                  | Fail2Ban
+Github     |            |     |            | Casandra | |                 | Ufw |
+GitLab     |            |     |            |          | |                 | Fail2Ban
 
 
 [Document](https://jjeanniard.github.io/CDA_2005)
