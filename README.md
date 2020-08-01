@@ -1,5 +1,7 @@
 # Pratique et exercice pour les cours en CDA
 
+![sync branch](https://github.com/JJeanniard/CDA_2005/workflows/sync%20branch/badge.svg)
+
 Être capable aujourd'hui de pourvoir s'adapté entre les différents langages et technologies en entreprise est un atout.
 
 ## Diffèrent Tp et exo
