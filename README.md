@@ -12,7 +12,7 @@ Git        | GibHub     | PHP     | C#         | SQL | Approche DevOps | Ubuntu 
 Merise     | GidLab     | JS      | Java       | NoSql |  | Vmware Esxie      | Mysql server
 Unified Process |       | Html    | Windows forms | MS Server | | Cisco Switch  | Pure-Ftpd-Mysql
 NodeJs     |            | CSS     | WPF        | Mysql |   | Cisco Routeur    | PhpMyAdmin
-Scrum      |            |         |            | MongoDB | |                  | Ssh |
+Scrum      |            | Sass    |            | MongoDB | |                  | Ssh |
 Github     |            |         |            | Casandra | |                  | Ufw |
 GitLab     |            |         |            |           |                  | Fail2Ban
 
