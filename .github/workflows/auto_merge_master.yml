@@ -2,10 +2,10 @@ name: PRs auto merge
 
 on:
   schedule:
-    - cron: "0 6 * * *"
-    - cron: "0 12 * * *"
-    - cron: "0 17 * * *"
-    - cron: "0 20 * * *"
+  - cron: "0 6 * * *"
+  - cron: "0 12 * * *"
+  - cron: "0 17 * * *"
+  - cron: "0 20 * * *"
 
 jobs:
   merge-branch:
