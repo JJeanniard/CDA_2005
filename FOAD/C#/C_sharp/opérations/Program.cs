@@ -49,7 +49,36 @@ namespace opérations
             Console.WriteLine(value1);
             Console.WriteLine(value2);
 
-            //la suite sur l'incrementation
+            //incrementation
+            int value = 0;
+            value = value + 5;
+            value += 5;
+            value = 0;
+            value = value + 1;
+            value++;
+            /*
+             * +=
+             * -=
+             * *=
+             * ++
+             * --
+             */
+            ++value;//incrementation effectué avant la recuperation de la valeur dans la variable
+            value++;//incrementation effectué apres que la valaur soit recuperé dans la variable
+
+            //utilisation de l'opérateur d'incrémentation avant et après la valeur.
+            value = 1;
+            value++;
+            Console.WriteLine("First: " + value);
+            Console.WriteLine("Second: " + value++);
+            Console.WriteLine("Third: " + value);//confirme l'incrementation sur la ligne précedent
+            Console.WriteLine("Fourth: " + (++value));
+
+            //TP -> caclcule de degrés Celsius en fonction du fahrenheit
+            int fahrenheit = 94;
+            decimal cinqNeuvi = 5m / 9m, convertion;
+            convertion = (fahrenheit - 32) * cinqNeuvi;
+            Console.WriteLine("The temperature is " + convertion + " Celsius.");
         }
     }
 }
