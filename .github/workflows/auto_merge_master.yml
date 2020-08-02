@@ -1,4 +1,4 @@
-name: PRs auto merge
+name: PRs auto merge master
 
 on:
   schedule:
