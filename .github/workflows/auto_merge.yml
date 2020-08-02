@@ -1,18 +1,11 @@
 name: PRs auto merge
 
 on:
-  pull_request:
-    branches: [ master ]
   schedule:
-    # Every friday every hour between 12 and 15 UTC
-    - cron: "0/5 * * * *"
-
-  #schedule:
-    # Every friday every hour between 12 and 15 UTC
-   # - cron: "0 6 * * *"
-    #- cron: "0 12 * * *"
-    #- cron: "0 17 * * *"
-    #- cron: "0 20 * * *"
+    - cron: "0 6 * * *"
+    - cron: "0 12 * * *"
+    - cron: "0 17 * * *"
+    - cron: "0 20 * * *"
 
 jobs:
   merge-branch:
