@@ -3,7 +3,10 @@ name: PRs auto merge
 on:
   schedule:
     # Every friday every hour between 12 and 15 UTC
-    - cron: "0/5 * * * *"
+    - cron: "0 6 * * *"
+    - cron: "0 12 * * *"
+    - cron: "0 17 * * *"
+    - cron: "0 20 * * *"
 
 jobs:
   pr-automerge:
