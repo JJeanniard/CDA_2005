@@ -6,13 +6,9 @@ on:
     - cron: "0/5 * * * *"
 
 jobs:
-  pr-automerge:
+  merge_schedule:
     runs-on: ubuntu-latest
     steps:
-    - uses: davideviolante/pr-automerge-action@v1.1.0
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        merge-method: 'merge' # Default 'squash'
-        min-approvals: 0 # Default 2
-        base-ref: 'master' # Default 'dev'
+      - uses: gr2m/merge-schedule-action@v1.x
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
