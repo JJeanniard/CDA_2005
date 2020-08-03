@@ -2,8 +2,7 @@
 using PointSpace;
 using System.Collections.Generic;
 
-
-namespace UnitTestProject
+namespace PointSpaceTest
 {
     [TestClass]
     public class PointTest

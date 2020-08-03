@@ -5,17 +5,17 @@ VisualStudioVersion = 16.0.30225.117
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GstBancaire", "GstBancaire.csproj", "{4AD2948F-77B2-47DE-8E31-E7081BB14C7A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Points", "..\Point\Points.csproj", "{47BDE960-1A44-4E26-A568-A9BD887444F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PointSpace", "..\Point\PointSpace.csproj", "{47BDE960-1A44-4E26-A568-A9BD887444F3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fraction", "..\Fraction\Fraction.csproj", "{4E9C995D-CF71-4DBA-8730-A400AB40326B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FractionCalcul", "..\Fraction\FractionCalcul.csproj", "{4E9C995D-CF71-4DBA-8730-A400AB40326B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Game_421", "..\Game_421\Game_421.csproj", "{92821CE9-123F-49A2-8807-F5BD5275E00E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GstBancaireTest", "..\GstBancaireTest\GstBancaireTest.csproj", "{A5EC28D7-D0BC-4AC6-8772-1DF47D978051}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GstBancaireTest", "..\GstBancaireTest\GstBancaireTest.csproj", "{A5EC28D7-D0BC-4AC6-8772-1DF47D978051}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PointTest", "..\PointTest\PointTest.csproj", "{55D31EEF-5EA3-4D9E-A540-D7AD44ECC9BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FractionTest", "..\FractionTest\FractionTest.csproj", "{E8584ABC-7936-44B7-81AF-147E8A4A9FB2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FractionTest", "..\FractionTest\FractionTest.csproj", "{E8584ABC-7936-44B7-81AF-147E8A4A9FB2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PointSpaceTest", "..\PointSpaceTest\PointSpaceTest.csproj", "{0EDDE83E-0719-458A-B55B-92465C556832}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,14 +43,14 @@ Global
 		{A5EC28D7-D0BC-4AC6-8772-1DF47D978051}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A5EC28D7-D0BC-4AC6-8772-1DF47D978051}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A5EC28D7-D0BC-4AC6-8772-1DF47D978051}.Release|Any CPU.Build.0 = Release|Any CPU
-		{55D31EEF-5EA3-4D9E-A540-D7AD44ECC9BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{55D31EEF-5EA3-4D9E-A540-D7AD44ECC9BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{55D31EEF-5EA3-4D9E-A540-D7AD44ECC9BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{55D31EEF-5EA3-4D9E-A540-D7AD44ECC9BC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E8584ABC-7936-44B7-81AF-147E8A4A9FB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E8584ABC-7936-44B7-81AF-147E8A4A9FB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E8584ABC-7936-44B7-81AF-147E8A4A9FB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E8584ABC-7936-44B7-81AF-147E8A4A9FB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EDDE83E-0719-458A-B55B-92465C556832}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EDDE83E-0719-458A-B55B-92465C556832}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EDDE83E-0719-458A-B55B-92465C556832}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EDDE83E-0719-458A-B55B-92465C556832}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
