@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Fraction
+namespace FractionCalcul
 {
     class Program
     {
