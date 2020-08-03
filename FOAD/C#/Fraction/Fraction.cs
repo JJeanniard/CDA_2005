@@ -1,10 +1,5 @@
 ﻿
-using Microsoft.VisualBasic.CompilerServices;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Fraction
+namespace FractionCalcul
 {
     public class Fraction
     {
@@ -74,7 +69,7 @@ namespace Fraction
             somme1 = (float)numerateur / (float)denominateur;
             somme2 = (float)_fraction.numerateur / (float)_fraction.denominateur;
 
-            if (somme1 > somme2)
+            if (somme1 < somme2)
                 resultat = false;
 
             return resultat;

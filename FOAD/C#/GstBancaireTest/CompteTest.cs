@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using GstBancaire;
 
-namespace UnitTestProject
+namespace GstBancaireTest
 {
     [TestClass]
     public class CompteTest
