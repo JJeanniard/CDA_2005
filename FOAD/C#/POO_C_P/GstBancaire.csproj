@@ -3,12 +3,6 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <Authors>JJeanniard</Authors>
-    <Copyright>JJeanniard</Copyright>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <StartupObject></StartupObject>
-    <RootNamespace>GstBancaire</RootNamespace>
-    <AssemblyName>GstBancaire</AssemblyName>
   </PropertyGroup>
 
 </Project>
