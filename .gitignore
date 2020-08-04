@@ -355,3 +355,5 @@ MigrationBackup/
 .idea/
 
 .vscode/
+
+*.lo1
