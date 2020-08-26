@@ -1,6 +1,6 @@
 drop database enonce_1;
 
-create database enonce_1;
+create database enonce_1 char set utf8;
 use enonce_1;
 
 create table personnes (
@@ -9,9 +9,9 @@ create table personnes (
     prenom varchar(30) not null,
     num_rue varchar(6) not null,
     rue varchar(10) not null,
-    cp_ville int(5) not null,
+    cp_ville int(5) not null, 
     primary key (id_personne),
-    constraint code_postal check (cp_ville < 96000) 
+    constraint ck_code_postal check (cp_ville<96000)
 );
 
 create table vehicules (
