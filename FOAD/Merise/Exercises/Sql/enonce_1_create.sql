@@ -1,6 +1,6 @@
 drop database enonce_1;
 
-create database enonce_1 char set utf8;
+create database enonce_1 char set utf8 collate utf8_general_ci;
 use enonce_1;
 
 create table personnes (
@@ -10,9 +10,8 @@ create table personnes (
     num_rue varchar(6) not null,
     rue varchar(10) not null,
     cp_ville int(5) not null, 
-    primary key (id_personne),
-    constraint ck_code_postal check (cp_ville<96000)
-);
+    primary key (id_personne)
+) char set utf8 collate	utf8_general_ci;
 
 create table vehicules (
 	immatricule varchar(10) not null,
@@ -21,4 +20,4 @@ create table vehicules (
     id_personne int not null,
 	primary key (immatricule),
     foreign key (id_personne) references personnes (id_personne)
-);
+) char set utf8 collate	utf8_general_ci;

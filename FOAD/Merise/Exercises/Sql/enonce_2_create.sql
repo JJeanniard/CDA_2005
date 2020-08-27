@@ -1,3 +1,4 @@
+drop database if exists enonce_2;
 create database enonce_2;
 use enonce_2;
 

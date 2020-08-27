@@ -17,21 +17,25 @@ create table articles (
     foreign key (nom_rayon) references rayons (nom_rayon)
 );
 
+create index type_article on articles (type_article);
+
 create table fournisseurs (
 	code_fournisseur int not null,
-    adresse varchar(255),
-    nom_fournisseur varchar(30),
+    adresse varchar(255) not null,
+    nom_fournisseur varchar(30) not null,
     primary key (code_fournisseur)
 );
 
 create table employees (
 	code_employee int not null,
-    nom_employee varchar(50),
+    nom_employee varchar(50) ,
     nom_rayon varchar(30),
     code_employee_chef int,
     primary key (code_employee),
     foreign key (code_employee_chef) references employees (code_employee)
 );
+
+create index nom_employee on employees (nom_employee);
 
 create table livraisons (
 	code_fournisseur int,

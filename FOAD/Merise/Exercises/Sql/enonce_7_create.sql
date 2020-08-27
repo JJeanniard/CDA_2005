@@ -1,3 +1,4 @@
+drop database enonce_7;
 create database enonce_7;
 use enonce_7;
 

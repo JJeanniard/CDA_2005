@@ -16,7 +16,7 @@ create table magasins (
 create table articles (
 	code_article int not null,
     nom_article varchar (30),
-    type_article char(1) not null check (type_article in ('P', 'L', 'D')),
+    type_article char(1) not null,
     primary key (code_article)
 );
 
