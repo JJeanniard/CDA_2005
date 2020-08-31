@@ -11,6 +11,10 @@ value
 (null,'lilol', 'lolil', '2', 'rue du petit pond', '65700')
 ;
 
+insert into personnes (nom, prenom, num_rue, rue, cp_ville) value
+('toto', 'gogog', '26', 'rue moulin', '35000')
+;
+
 insert into vehicules value
 ('bd-138-fr', 'audi', '35', 1),
 ('gt-265-df', 'renault', '120000', 2)
