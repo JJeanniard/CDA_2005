@@ -361,6 +361,10 @@ MigrationBackup/
 
 .idea/
 
+.vscode/
+
+*.lo1
+
 */bin
 
 ### paradigm ###
