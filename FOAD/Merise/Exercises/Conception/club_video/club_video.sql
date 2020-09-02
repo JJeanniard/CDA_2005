@@ -1,58 +1,99 @@
-DROP DATABASE IF EXISTS club_video;
-CREATE DATABASE IF NOT EXISTS club_video;
+drop database if exists club_video;
+create database if not exists club_video;
+use club_video;
 
-CREATE TABLE Types_movies (
-	type_id INT AUTO_INCREMENT PRIMARY KEY,
-    type_name VARCHAR(50) NOT NULL,
-    type_public VARCHAR(50)
+create table Movie_types (
+	type_id int auto_increment primary key,
+    type_name varchar(50) not null,
+    type_public varchar(50) not null
 );
 
-CREATE TABLE Actors (
-	actor_name VARCHAR(50) NOT NULL,
-    actor_firstname VARCHAR(50) NOT NULL,
-    actor_birth DATE NOT NULL,
-    actor_sex VARCHAR(20),
-    PRIMARY KEY (actor_name, actor_firstname, actor_birth)
+create table Actors (
+	actor_name varchar(50) not null,
+    actor_firstname varchar(50) not null,
+    actor_birth date not null,
+    actor_sex varchar(20),
+    primary key (actor_name, actor_firstname, actor_birth)
 );
 
-CREATE TABLE Movies (
-	movie_title VARCHAR(50),
-    movie_director VARCHAR(100),
-    movie_duration SMALLINT(5) NOT NULL,
-    PRIMARY KEY (movie_title, movie_director)
+create table Movies (
+	movie_title varchar(50),
+    movie_director varchar(100),
+    movie_duration smallint(5) not null,
+    type_id int,
+    primary key (movie_title, movie_director),
+	foreign key (type_id) references Movie_types (type_id)
 );
 
-CREATE TABLE Tapes (
-
+create table Tapes (
+	tape_id int auto_increment primary key,
+    tape_registration datetime not null,
+    tape_stats varchar(50) not null,
+    movie_title varchar(50),
+    movie_director varchar(100),
+    foreign key (movie_title, movie_director) references Movies (movie_title, movie_director)
 );
 
-CREATE TABLE Address (
+create table Address (
+	address_id int auto_increment primary key,
+	address_zipcode varchar(5) not null,
+    address_city varchar(50) not null,
+    address_number varchar(10),
+    address_street_name varchar(100) not null
+ );
 
-);
-
-CREATE TABLE Clients (
-	client_id int auto_increment,
+create table Clients (
+	client_id int auto_increment primary key,
     client_name varchar(50) not null,
     client_firstname varchar(50) not null,
-    
+    client_enrollment datetime not null,
+    address_id int,
+    foreign key (address_id) references Address(address_id)
 );
 
-CREATE TABLE Shops (
-
+create table Shops (
+	shop_name varchar(50) not null,
+    address_id int,
+    foreign key (address_id) references Address (address_id),
+    primary key (shop_name, address_id)
 );
 
-CREATE TABLE Visit (
-
+create table Visit (
+	client_id int,
+    shop_name varchar(50),
+    address_id int,
+    foreign key (client_id) references Clients(client_id),
+    foreign key (address_id) references Address(address_id),
+    foreign key (shop_name, address_id) references Shops(shop_name, address_id),
+    primary key (client_id, shop_name, address_id)
 );
 
-CREATE TABLE Contain (
-
+create table Contain (
+	tape_id int,
+    shop_name varchar(50),
+    address_id int,
+    foreign key (tape_id) references Tapes(tape_id),
+    foreign key (shop_name, address_id) references Shops(shop_name, address_id),
+    primary key (tape_id, shop_name, address_id)
 );
 
-CREATE TABLE Play (
-
+create table Play (
+	actor_name varchar(50),
+    actor_firstname varchar(50),
+    actor_birth date,
+    movie_title varchar(50),
+    movie_director varchar(100),
+    foreign key (actor_name, actor_firstname, actor_birth) references Actors(actor_name, actor_firstname, actor_birth),
+    foreign key (movie_title, movie_director) references Movies(movie_title, movie_director),
+    primary key (actor_name, actor_firstname, actor_birth, movie_title, movie_director)
 );
 
-CREATE TABLE Borrow (
-
+create table Borrow (
+	client_id int,
+    tape_id int,
+	borrow_start datetime not null,
+    borrow_end datetime check (borrow_end >= borrow_start),
+    foreign key (client_id) references Clients(client_id),
+    foreign key (tape_id) references Tapes(tape_id),
+    primary key (client_id, tape_id)
 );
