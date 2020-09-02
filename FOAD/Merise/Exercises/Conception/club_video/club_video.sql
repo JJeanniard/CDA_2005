@@ -31,7 +31,10 @@ CREATE TABLE Address (
 );
 
 CREATE TABLE Clients (
-
+	client_id int auto_increment,
+    client_name varchar(50) not null,
+    client_firstname varchar(50) not null,
+    
 );
 
 CREATE TABLE Shops (
