@@ -4,13 +4,12 @@ create database enonce_1 char set utf8 collate utf8_general_ci;
 use enonce_1;
 
 create table personnes (
-	id_personne int auto_increment,
+	id_personne int auto_increment PRIMARY KEY,
     nom varchar(30) not null,
     prenom varchar(30) not null,
     num_rue varchar(6) not null,
     rue varchar(10) not null,
     cp_ville int(5) not null,
-    primary key (id_personne),
     constraint ck_code_postal check (cp_ville<96000) 
 ) char set utf8 collate	utf8_general_ci;
 

@@ -1,5 +1,5 @@
-drop database enonce_5;
-create database enonce_5;
+drop database if exists enonce_5;
+create database enonce_5 charset utf8 collate utf8_general_ci;
 use enonce_5;
 
 create table rayons (
@@ -14,10 +14,9 @@ create table magasins (
 );
 
 create table articles (
-	code_article int not null,
+	code_article int not null primary key,
     nom_article varchar (30),
-    type_article char(1) not null,
-    primary key (code_article)
+    type_article char(1) not null check(type_article in ('P', 'L', 'D'))
 );
 
 create table ventes (

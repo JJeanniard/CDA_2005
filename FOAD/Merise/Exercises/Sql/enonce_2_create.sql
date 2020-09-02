@@ -3,7 +3,7 @@ create database enonce_2;
 use enonce_2;
 
 create table etudiants (
-	id_etudiant int auto_increment,
+	id_etudiant int auto_increment not null,
     nom varchar(30),
     prenom varchar(30),
     date_entree date,

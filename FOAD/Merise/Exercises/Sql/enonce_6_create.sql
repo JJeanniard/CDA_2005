@@ -1,5 +1,5 @@
-drop database enonce_5;
-create database enonce_5;
+drop database if exists enonce_5;
+create database enonce_5 charset utf8 collate utf8_general_ci;
 use enonce_5;
 
 create table rayons (
