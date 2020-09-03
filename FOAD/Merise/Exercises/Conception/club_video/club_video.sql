@@ -53,8 +53,8 @@ create table Clients (
 
 create table Shops (
 	shop_name varchar(50) not null,
-    address_id int,
-    foreign key (address_id) references Address (address_id),
+    address_id int not null,
+    constraint FK_address_to_shop foreign key (address_id) references Address (address_id),
     primary key (shop_name, address_id)
 );
 
@@ -63,7 +63,6 @@ create table Visit (
     shop_name varchar(50),
     address_id int,
     foreign key (client_id) references Clients(client_id),
-    foreign key (address_id) references Address(address_id),
     foreign key (shop_name, address_id) references Shops(shop_name, address_id),
     primary key (client_id, shop_name, address_id)
 );
