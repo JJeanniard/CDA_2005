@@ -1,0 +1,22 @@
+use Employees;
+SELECT ENAME, JOB, HIREDATE FROM emp;
+SELECT ENAME, JOB, HIREDATE FROM emp WHERE DEPTNO = '10';
+-- manager
+SELECT ENAME, JOB, HIREDATE FROM emp WHERE JOB = 'MANAGER' AND SAL > 2800;-- 2 manager
+SELECT ENAME, JOB, HIREDATE FROM emp WHERE JOB = 'MANAGER' AND DEPTNO != 30;-- 2 manager
+-- employees beetwen 1200 and 1400
+SELECT * FROM emp WHERE SAL > 1200 AND SAL < 1400;-- 3 employees
+-- employees departement
+SELECT * FROM emp WHERE DEPTNO in(10,30) ORDER BY ENAME;
+-- employees salaire
+SELECT * FROM emp WHERE DEPTNO = 30 ORDER BY SAL;
+SELECT * FROM emp ORDER BY JOB, SAL DESC;
+-- employees job
+SELECT DISTINCT job FROM emp;
+
+
+
+
+
+
+
