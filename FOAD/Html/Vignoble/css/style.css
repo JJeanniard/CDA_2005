@@ -1,0 +1,85 @@
+@font-face{
+    font-family: "Channel";
+    src: url('../fonts/channel-webfont.ttf');
+}
+
+*{
+    list-style: none;
+    margin: 0;
+}
+
+body {
+    background-image: url('../images/bg_motif.gif');
+}
+    
+h2{
+    font-family: "Channel", Helvetica, sans-serif;
+    text-align: center;
+    font-size: 1em;
+    font-weight: 100;
+    color: white;
+}
+
+button{
+    border: none;
+    width: 7em;
+    height: 2.5em;
+    color: rgb(175, 175, 175);
+    
+}
+
+header{
+    width: 100%;
+    height: 3em;
+    background-color: black;
+    border-bottom: 0.01em solid white;
+}
+
+header>nav{
+    width: 80%;
+}
+
+header>nav>ul>li{
+
+    display: inline-block;
+    color: white;
+    font-family: "Channel", Helvetica, sans-serif;
+}
+
+
+
+main{
+    padding-top: 2.5em;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    height: 100%;
+    background-color: rgba(65, 65, 65, 0.2);
+    box-shadow: 0 0 0.6em black;
+}
+
+.vignette{
+    background-image: url('../images/bg_g.png');
+    opacity: 1;
+    width: 35%;
+    margin: 0.8em;
+}
+
+
+
+
+
+#selection, #cadeaux{
+    background-color: rgba(65, 65, 65, 0.5);
+    margin: 0.8em 0.5em 1em 0.5em;
+}
+
+#selection{
+    width: 20%;
+    border: solid black;
+}
+
+#cadeaux{
+    width: 70%;
+    border: solid black;
+}
