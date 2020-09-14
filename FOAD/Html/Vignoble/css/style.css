@@ -20,6 +20,14 @@ h2{
     color: white;
 }
 
+hr{
+    width: 98%;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    border-top: solid rgba(255, 255, 225, 0.6) 0.01em;
+}
+
 button{
     border: none;
     width: 7em;
@@ -35,18 +43,32 @@ header{
     border-bottom: 0.01em solid white;
 }
 
-header>nav{
+header #logo{
+    width: 20%;
+    height: 0;
+}
+
+header nav{
     width: 80%;
+    float: right;
 }
 
-header>nav>ul>li{
-
-    display: inline-block;
-    color: white;
+header li{
+    height: 100%;
+    padding: 1em 1.5em 0;
     font-family: "Channel", Helvetica, sans-serif;
+    font-size: .8em;
+    display: inline-block;
 }
 
+nav a{
+    text-decoration: none;
+    color: white;
+}
 
+.sous{
+    display: none;
+}
 
 main{
     padding-top: 2.5em;
@@ -58,16 +80,19 @@ main{
     box-shadow: 0 0 0.6em black;
 }
 
+#carousel{
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    background-color: white;
+}
+
 .vignette{
     background-image: url('../images/bg_g.png');
-    opacity: 1;
+    background-repeat: no-repeat;
     width: 35%;
     margin: 0.8em;
 }
-
-
-
-
 
 #selection, #cadeaux{
     background-color: rgba(65, 65, 65, 0.5);
@@ -82,4 +107,13 @@ main{
 #cadeaux{
     width: 70%;
     border: solid black;
+}
+
+
+footer{
+    
+}
+
+footer ul>li{
+    display: inline-block;
 }
