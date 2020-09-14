@@ -1,126 +1,176 @@
-@font-face{
-    font-family: "Channel";
-    src: url('../fonts/channel-webfont.ttf');
+@font-face {
+  font-family: "Channel";
+  src: url("../fonts/channel-webfont.ttf");
 }
 
-*{
-    list-style: none;
-    margin: 0;
+@font-face {
+  font-family: "Caitlin";
+  src: url("../fonts/Caitlin.ttf");
+}
+
+@font-face {
+  font-family: "Ab_Exp";
+  src: url("../fonts/AB_Exp_by_III_wildcard_III.ttf");
+}
+
+* {
+  list-style: none;
+  margin: 0;
 }
 
 body {
-    background-image: url('../images/bg_motif.gif');
-}
-    
-h2{
-    font-family: "Channel", Helvetica, sans-serif;
-    text-align: center;
-    font-size: 1em;
-    font-weight: 100;
-    color: white;
+  background-image: url("../images/bg_motif.gif");
 }
 
-hr{
-    width: 98%;
-    margin: 0.5em auto 0.5em auto;
-    border: none;
-    border-top: solid rgba(255, 255, 225, 0.6) 0.01em;
+h2 {
+  font-family: "Channel", Helvetica, sans-serif;
+  text-align: center;
+  font-size: 1em;
+  font-weight: 100;
+  color: white;
 }
 
-button{
-    border: none;
-    width: 7em;
-    height: 2.5em;
-    color: white;
-    background-color: rgb(175, 175, 175);
+hr {
+  width: 98%;
+  margin: 0.5em auto 0.5em auto;
+  border: none;
+  border-top: solid rgba(255, 255, 225, 0.6) 0.01em;
 }
 
-header{
-    width: 100%;
-    height: 3em;
-    background-color: black;
-    border-bottom: 0.01em solid white;
+button {
+  border: none;
+  width: 7em;
+  height: 2.5em;
+  color: white;
+  background-color: rgb(175, 175, 175);
 }
 
-header #logo{
-    width: 20%;
-    height: 0;
+header {
+  position: fixed;
+  width: 100%;
+  height: 3em;
+  background-color: black;
+  border-bottom: 0.01em solid white;
 }
 
-header img{
-    
+header #logo {
+  width: 20%;
+  height: 0;
 }
 
-header nav{
-    width: 80%;
-    float: right;
+header img {
 }
 
-header li{
-    height: 100%;
-    padding: 1em 1.5em 0;
-    font-family: "Channel", Helvetica, sans-serif;
-    font-size: .8em;
-    display: inline-block;
+header nav {
+  width: 80%;
+  float: right;
 }
 
-nav a{
-    text-decoration: none;
-    color: white;
+header li {
+  height: 100%;
+  padding: 1em 1.5em 0;
+  font-family: "Channel", Helvetica, sans-serif;
+  font-size: 0.8em;
+  display: inline-block;
 }
 
-.sous{
-    display: none;
+nav a {
+  text-decoration: none;
+  color: white;
 }
 
-main{
-    padding-top: 2.5em;
+.sous {
+  display: none;
+}
+
+main {
+  padding-top: 2.5em;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  height: 100%;
+  background-color: rgba(65, 65, 65, 0.2);
+  box-shadow: 0 0 0.6em black;
+}
+
+#carousel {
+  margin-left: auto;
+  margin-right: auto;
+  width: 95%;
+}
+
+#switch {
+  padding: 0.2em;
+  margin-top: 1.5em;
+  background-color: white;
+}
+
+#carousel p {
+  margin-top: 0.5em;
+  padding: 0.2em;
+  background-color: white;
+  color: red;
+  text-align: center;
+}
+
+#switch img {
+  max-width: 100%;
+}
+
+.vignette {
+  background-image: url("../images/bg_g.png");
+  background-repeat: no-repeat;
+  width: 30%;
+  margin: 0.8em;
+  float: left;
+}
+
+.vignette h2 {
+  width: 80%;
+  float: left;
+}
+
+.vignette .icon {
+  width: 2em;
+  height: 2em;
+}
+
+.vignette p {
+  padding: 1em;
+  color: black;
+  text-align: center;
+  font-size: 1em;
+}
+
+.vignette>button{
     margin-left: auto;
     margin-right: auto;
-    width: 70%;
-    height: 100%;
-    background-color: rgba(65, 65, 65, 0.2);
-    box-shadow: 0 0 0.6em black;
 }
 
-#carousel{
-    margin-left: auto;
-    margin-right: auto;
-    width: 90%;
+#selection,
+#cadeaux {
+  background-color: rgba(65, 65, 65, 0.5);
+  margin: 0.8em 0.5em 1em 0.5em;
 }
 
-#switch, #switch + p{
-    margin-top: 0.5em;
-    background-color: white;
+#selection,
+#cadeaux {
+  height: 12em;
 }
 
-.vignette{
-    background-image: url('../images/bg_g.png');
-    background-repeat: no-repeat;
-    width: 35%;
-    margin: 0.8em;
+#selection {
+  width: 20%;
+  float: left;
 }
 
-#selection, #cadeaux{
-    background-color: rgba(65, 65, 65, 0.5);
-    margin: 0.8em 0.5em 1em 0.5em;
+#cadeaux {
+  width: 75%;
+  float: right;
 }
 
-#selection{
-    width: 20%;
-    border: solid black;
+footer {
 }
 
-#cadeaux{
-    width: 70%;
-    border: solid black;
-}
-
-
-footer{
-    
-}
-
-footer ul>li{
-    display: inline-block;
+footer ul > li {
+  display: inline-block;
 }
