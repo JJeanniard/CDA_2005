@@ -11,6 +11,3 @@ SELECT emp.ENAME, emp.JOB, date_format(emp.HIREDATE, '%a %e %b %X') FROM dept IN
 -- 13
 SELECT dept.DNAME, Max(emp.SAL) FROM emp INNER JOIN dept ON emp.DEPTNO = dept.DEPTNO GROUP BY dept.DNAME ORDER BY emp.SAL DESC;
 -- 14
-
--- 16
-SELECT ename, deptno, sal, job FROM emp WHERE job = (SELECT job FROM emp WHERE ename = "jones");
