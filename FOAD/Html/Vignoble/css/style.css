@@ -54,15 +54,19 @@ header {
 }
 
 header #logo {
-  width: 20%;
-  height: 0;
-}
-
-header img {
+  position: relative;
+  width: 6%;
+  top: 1.3em;
+  left: 3em;
 }
 
 header nav {
   width: 80%;
+  float: right;
+  margin-top: -19em;
+}
+
+header ul{
   float: right;
 }
 
@@ -81,6 +85,18 @@ nav a {
 
 .sous {
   display: none;
+  position: absolute;
+  width: 10em;
+  padding: 0;
+  background-color: rgba(255, 255, 225, 0.6);
+}
+
+nav a:hover{
+  color: brown; 
+}
+
+nav a:focus + .sous{
+  display: block;
 }
 
 main {
