@@ -45,6 +45,10 @@ button {
   background-color: rgb(175, 175, 175);
 }
 
+p{
+  font-weight: 900;
+}
+
 header {
   position: fixed;
   width: 100%;
@@ -86,9 +90,16 @@ nav a {
 .sous {
   display: none;
   position: absolute;
-  width: 10em;
+  top: 3.8em;
+  max-width: 11em;
   padding: 0;
-  background-color: rgba(255, 255, 225, 0.6);
+  background-color: rgba(0, 0, 0, 0.6);
+  border: solid 0.1em white;
+}
+
+.sous li:nth-child(1n+2){
+  width: 10.6em;
+  border-top: solid 0.1em white;
 }
 
 nav a:hover{
