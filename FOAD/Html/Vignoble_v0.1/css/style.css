@@ -13,6 +13,11 @@
   src: url("../fonts/AB_Exp_by_III_wildcard_III.ttf");
 }
 
+@font-face {
+  font-family: "BalsamiqSans-Bolf";
+  src: url("../fonts/BalsamiqSans-Bolf.ttf");
+}
+
 * {
   list-style: none;
   margin: 0;
@@ -31,24 +36,37 @@ h2 {
 }
 
 hr {
-  width: 98%;
+  width: 98.5%;
   margin: 0.5em auto 0.5em auto;
   border: none;
   border-top: solid rgba(255, 255, 225, 0.6) 0.01em;
 }
 
 button {
+  display: block;
   border: none;
   width: 7em;
   height: 2.5em;
   color: white;
   background-color: rgb(175, 175, 175);
+  font-weight: 300;
+  transition: 300ms
+}
+
+button:hover{
+  color: brown;
+  transform: rotate(-0.05turn) scale(1.15);
 }
 
 p{
-  font-weight: 900;
-}
+  font-family: 'BalsamiqSans-Bolf', Helvetica, sans-serif;
 
+}
+/**
+Fin des parametres generaux
+---------------------------
+Header
+*/
 header {
   position: fixed;
   width: 100%;
@@ -109,7 +127,11 @@ nav a:hover{
 nav a:focus + .sous{
   display: block;
 }
-
+/**
+fin header
+-----------
+debut bloc general main
+*/
 main {
   padding-top: 2.5em;
   margin-left: auto;
@@ -119,20 +141,14 @@ main {
   background-color: rgba(65, 65, 65, 0.2);
   box-shadow: 0 0 0.6em black;
 }
-
+/*bloc carousel*/
 #carousel {
   margin-left: auto;
   margin-right: auto;
   width: 95%;
 }
 
-#switch {
-  padding: 0.2em;
-  margin-top: 1.5em;
-  background-color: white;
-}
-
-#carousel p {
+#carousel h1 {
   margin-top: 0.5em;
   padding: 0.2em;
   background-color: white;
@@ -140,10 +156,23 @@ main {
   text-align: center;
 }
 
-#switch img {
-  max-width: 100%;
+#switch {
+  padding: 0.2em;
+  margin-top: 1.5em;
+  background-color: white;
+  animation-name: slide;
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
 }
 
+#switch img {
+  max-width: 100%;
+  
+}
+
+/* 2 sections avec les vignette*/
 .vignette {
   background-image: url("../images/bg_g.png");
   background-repeat: no-repeat;
@@ -173,16 +202,13 @@ main {
     margin-left: auto;
     margin-right: auto;
 }
-
+/* Selection & cadeaux */
 #selection,
 #cadeaux {
   background-color: rgba(65, 65, 65, 0.5);
   margin: 0.8em 0.5em 1em 0.5em;
-}
-
-#selection,
-#cadeaux {
   height: 12em;
+  padding: 1em;
 }
 
 #selection {
@@ -191,10 +217,11 @@ main {
 }
 
 #cadeaux {
-  width: 75%;
+  width: 70%;
   float: right;
 }
 
+/* footer */
 footer {
 }
 
