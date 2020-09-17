@@ -1,66 +1,65 @@
 @font-face {
-  font-family: "Channel";
-  src: url("../fonts/channel-webfont.ttf");
+    font-family: "Channel";
+    src: url("../fonts/channel-webfont.ttf");
 }
 
 @font-face {
-  font-family: "Caitlin";
-  src: url("../fonts/Caitlin.ttf");
+    font-family: "Caitlin";
+    src: url("../fonts/Caitlin.ttf");
 }
 
 @font-face {
-  font-family: "Ab_Exp";
-  src: url("../fonts/AB_Exp_by_III_wildcard_III.ttf");
+    font-family: "Ab_Exp";
+    src: url("../fonts/AB_Exp_by_III_wildcard_III.ttf");
 }
 
 @font-face {
-  font-family: "BalsamiqSans-Bolf";
-  src: url("../fonts/BalsamiqSans-Bolf.ttf");
+    font-family: "BalsamiqSans-Bolf";
+    src: url("../fonts/BalsamiqSans-Bolf.ttf");
 }
 
 * {
-  list-style: none;
-  margin: 0;
+    list-style: none;
+    margin: 0;
 }
 
 body {
-  background-image: url("../images/bg_motif.gif");
+    background-image: url("../images/bg_motif.gif");
 }
 
 h2 {
-  font-family: "Channel", Helvetica, sans-serif;
-  text-align: center;
-  font-size: 1em;
-  font-weight: 100;
-  color: white;
+    font-family: "Channel", Helvetica, sans-serif;
+    text-align: center;
+    font-size: 1em;
+    font-weight: 100;
+    color: white;
 }
 
 hr {
-  width: 98.5%;
-  margin: 0.5em auto 0.5em auto;
-  border: none;
-  border-top: solid rgba(255, 255, 225, 0.6) 0.01em;
+    width: 98.5%;
+    margin: 0.5em auto 0.5em auto;
+    border: none;
+    border-top: solid rgba(255, 255, 225, 0.6) 0.01em;
 }
 
 button {
-  display: block;
-  border: none;
-  width: 7em;
-  height: 2.5em;
-  color: white;
-  background-color: rgb(175, 175, 175);
-  font-weight: 300;
-  transition: 300ms
+    display: block;
+    border: none;
+    width: 7em;
+    height: 2.5em;
+    color: white;
+    background-color: rgb(175, 175, 175);
+    font-weight: 300;
+    transition: 300ms;
 }
 
-button:hover{
-  color: brown;
-  transform: rotate(-0.05turn) scale(1.15);
+button:hover {
+    color: brown;
+    transform: rotate(-0.05turn) scale(1.15);
 }
 
-p{
-  font-family: 'BalsamiqSans-Bolf', Helvetica, sans-serif;
-
+p {
+    font-family: "BalsamiqSans-Bolf", Helvetica, sans-serif;
 }
 /**
 Fin des parametres generaux
@@ -68,64 +67,65 @@ Fin des parametres generaux
 Header
 */
 header {
-  position: fixed;
-  width: 100%;
-  height: 3em;
-  background-color: black;
-  border-bottom: 0.01em solid white;
+    z-index: 10;
+    position: fixed;
+    width: 100%;
+    height: 3em;
+    background-color: black;
+    border-bottom: 0.01em solid white;
 }
 
 header #logo {
-  position: relative;
-  width: 6%;
-  top: 1.3em;
-  left: 3em;
+    position: relative;
+    width: 6%;
+    top: 1.3em;
+    left: 3em;
 }
 
 header nav {
-  width: 80%;
-  float: right;
-  margin-top: -19em;
+    width: 80%;
+    float: right;
+    margin-top: -19em;
 }
 
-header ul{
-  float: right;
+header ul {
+    float: right;
 }
 
 header li {
-  height: 100%;
-  padding: 1em 1.5em 0;
-  font-family: "Channel", Helvetica, sans-serif;
-  font-size: 0.8em;
-  display: inline-block;
+    height: 100%;
+    padding: 1em 1.5em 0;
+    font-family: "Channel", Helvetica, sans-serif;
+    font-size: 0.8em;
+    display: inline-block;
 }
 
 nav a {
-  text-decoration: none;
-  color: white;
+    text-decoration: none;
+    color: white;
 }
 
 .sous {
-  display: none;
-  position: absolute;
-  top: 3.8em;
-  max-width: 11em;
-  padding: 0;
-  background-color: rgba(0, 0, 0, 0.6);
-  border: solid 0.1em white;
+    display: none;
+    position: absolute;
+    top: 3.8em;
+    max-width: 11em;
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    border: solid 0.1em white;
 }
 
-.sous li:nth-child(1n+2){
-  width: 10.6em;
-  border-top: solid 0.1em white;
+.sous li:nth-child(1n + 2) {
+    width: 10.6em;
+    border-top: solid 0.1em white;
 }
 
-nav a:hover{
-  color: brown; 
+nav a:hover {
+    color: brown;
 }
 
-nav a:focus + .sous{
-  display: block;
+nav a:focus + .sous {
+    display: block;
 }
 /**
 fin header
@@ -133,98 +133,138 @@ fin header
 debut bloc general main
 */
 main {
-  padding-top: 2.5em;
-  margin-left: auto;
-  margin-right: auto;
-  width: 70%;
-  height: 100%;
-  background-color: rgba(65, 65, 65, 0.2);
-  box-shadow: 0 0 0.6em black;
+    padding-top: 2.5em;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    height: 100%;
+    background-color: rgba(65, 65, 65, 0.2);
+    box-shadow: 0 0 0.6em black;
 }
+
 /*bloc carousel*/
-#carousel {
-  margin-left: auto;
-  margin-right: auto;
-  width: 95%;
+
+#carousel h1, #switch{
+    margin: 0.2em 0;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #carousel h1 {
-  margin-top: 0.5em;
-  padding: 0.2em;
-  background-color: white;
-  color: red;
-  text-align: center;
+    width: 97.5%;
+    padding: 0.2em;
+    background-color: white;
+    color: red;
+    text-align: center;
+}
+
+@keyframes AutoSlide {
+	0% {
+		left: 0.2em; /*1ère image*/
+	}
+	15% {
+		left: 0.2em; /*idem pour attente*/
+	}
+	35% {
+		left: -65.5em; /*2ème image*/
+	}
+	50% {
+		left: -65.5em; /*idem pour attente*/
+	}
+	70% {
+		left: -131.0em; /*3ème image*/
+	}
+	85% {
+		left: -130.4em; /*idem pour attente*/
+	}
+	100% {
+		left: 0.2; /*1ère image*/
+	}
+}
+
+#slide {
+    position: relative;
+    margin-top: 1em;
+    height: 33.3em;
+    width: 65.5em;
+    background-color: white;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#switch li {
+	display: inline;
 }
 
 #switch {
-  padding: 0.2em;
-  margin-top: 1.5em;
-  background-color: white;
-  animation-name: slide;
-  animation-duration: 15s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
-  animation-fill-mode: forwards;
-}
-
-#switch img {
-  max-width: 100%;
-  
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 65em;
+    height: 44.8em;
+    
+    animation-name: AutoSlide;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
 }
 
 /* 2 sections avec les vignette*/
 .vignette {
-  background-image: url("../images/bg_g.png");
-  background-repeat: no-repeat;
-  width: 30%;
-  margin: 0.8em;
-  float: left;
+    background-image: url("../images/bg_g.png");
+    background-repeat: no-repeat;
+    width: 30%;
+    margin: 0.8em;
+    float: left;
 }
 
 .vignette h2 {
-  width: 80%;
-  float: left;
+    width: 80%;
+    float: left;
 }
 
 .vignette .icon {
-  width: 2em;
-  height: 2em;
+    width: 2em;
+    height: 2em;
 }
 
 .vignette p {
-  padding: 1em;
-  color: black;
-  text-align: center;
-  font-size: 1em;
+    padding: 1em;
+    color: black;
+    text-align: center;
+    font-size: 1em;
 }
 
-.vignette>button{
+.vignette > button {
     margin-left: auto;
     margin-right: auto;
 }
 /* Selection & cadeaux */
 #selection,
 #cadeaux {
-  background-color: rgba(65, 65, 65, 0.5);
-  margin: 0.8em 0.5em 1em 0.5em;
-  height: 12em;
-  padding: 1em;
+    background-color: rgba(65, 65, 65, 0.5);
+    margin: 0.8em 0.5em 1em 0.5em;
+    height: 12em;
+    padding: 1em;
 }
 
 #selection {
-  width: 20%;
-  float: left;
+    width: 20%;
+    float: left;
 }
 
 #cadeaux {
-  width: 70%;
-  float: right;
+    width: 70%;
+    float: right;
 }
 
 /* footer */
 footer {
+    background-image: url('../images/footer-bg.jpg');
+    height: 5em;
 }
 
 footer ul > li {
-  display: inline-block;
+    display: inline-block;
 }
