@@ -4,21 +4,11 @@
 }
 
 @font-face {
-    font-family: "Caitlin";
-    src: url("../fonts/Caitlin.ttf");
-}
-
-@font-face {
-    font-family: "Ab_Exp";
-    src: url("../fonts/AB_Exp_by_III_wildcard_III.ttf");
-}
-
-@font-face {
     font-family: "BalsamiqSans";
     src: url("../fonts/BalsamiqSans-Bold.ttf");
 }
 
-* {
+*{
     list-style: none;
     margin: 0;
 }
@@ -145,11 +135,11 @@ main {
 }
 
 /*bloc carousel*/
-
 #carousel {
     margin-left: auto;
     margin-right: auto;
-    width: 98%;
+    width: 97%;
+    height: 35em;
 }
 
 #carousel h1 {
@@ -159,20 +149,66 @@ main {
     background-color: white;
     margin-left: auto;
     margin-right: auto;
+    height: 6%;
 }
 
-#carousel #slide {
-    margin-top: 1em;
-    margin-bottom: 0.5em;
+#border {
+    width: 98%;
+    height: 88%;
     background-color: white;
+    margin-top: 1em;
+    padding: 1%;
+    margin-bottom: 0.5em;
+}
+
+#slide {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+@keyframes sliderAnimation {
+    0% { left: 0%; }
+    7.692307692% { left: 0%; }
+    15.38461538% { left: -100%; }
+    23.07692308% { left: -100%; }
+    30.76923077% { left: -200%; }
+    38.46153846% { left: -200%; }
+    46.15384615% { left: -300%; }
+    53.84615385% { left: -300%; }
+    61.53846154% { left: -400%; }
+    69.23076923% { left: -400%; }
+    76.92307692% { left: -500%; }
+    84.61538462% { left: -500%; }
+    92.30769231% { left: -600%; }
+    100% { left: -600%; }
+}
+
+#switch {
+    width: 700%;
+    height: 100%;
+
+    position: relative;
+    
+    animation-name: sliderAnimation;
+    animation-duration: 15s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
 }
 
 #switch img {
-    width: 99%;
-    margin: 0.3em;
+    height: 100%;
+    width: 14.2857142857%;
+    float: left;
 }
 
+
+
 /* 2 sections avec les vignette*/
+#sec-vignette {
+    height: 10em;
+}
+
 .vignette {
     background-image: url("../images/bg_g.png");
     background-repeat: no-repeat;
