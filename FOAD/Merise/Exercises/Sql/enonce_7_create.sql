@@ -4,8 +4,8 @@ use enonce_7;
 
 create table buveurs (
 	numero_buv int auto_increment,
-    nom_buv varchar(30) not null,
-    prenom_buv varchar(30) not null,
+    nom_buv varchar(30) not null UNIQUE key,
+    prenom_buv varchar(30) not null UNIQUE,
     ville_buv varchar(50) not null,
     primary key (numero_buv)
 );
