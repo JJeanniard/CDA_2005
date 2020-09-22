@@ -1,12 +1,12 @@
 <?php
 class user{
 
-    const user_id = null;
+    private user_id = NULL;
 
     private $user_firstname = "";
+
+    private $user_lastname = "";
     
-    public function test(){
-        return "test";
-    }
+    
 
 }
