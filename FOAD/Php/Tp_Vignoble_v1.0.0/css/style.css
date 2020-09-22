@@ -58,6 +58,21 @@ p {
     font-size: 0.8em;
 }
 
+input,
+textarea {
+    margin: 1em 0 0.5em 1em;
+    border-radius: 0.4em;
+    width: 80%;
+}
+
+input {
+    height: 3em;
+}
+
+form button {
+    margin: 1em;
+}
+
 a:hover {
     color: brown;
 }
@@ -374,33 +389,18 @@ main {
 }
 
 /*Contact*/
-#contact {
+#contact, #register, #login{
     margin: 2em 1em 40% 1em;
     padding: 1em;
     border-radius: 0.9em;
     background-color: rgba(65, 65, 65, 0.5);
 }
 
-#contact label {
+#contact label, #login label, #register label {
     margin: 1em 0 0.5em 1em;
     display: block;
     color: white;
     left: 0;
-}
-
-input,
-textarea {
-    margin: 1em 0 0.5em 1em;
-    border-radius: 0.4em;
-    width: 80%;
-}
-
-input {
-    height: 3em;
-}
-
-#contact button {
-    margin: 1em;
 }
 
 /* footer */

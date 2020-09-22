@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 if(!empty($_POST['c_email']) && !empty($_POST['c_text'])){
 

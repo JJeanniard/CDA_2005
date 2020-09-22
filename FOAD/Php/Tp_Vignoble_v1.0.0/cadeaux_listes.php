@@ -1,10 +1,7 @@
 <?php
-session_start();
-
 require_once("./header.php");
 require_once("./msg_session.php");
 require_once("./connect_pdo.php");
-global $bdd;
 
 ?>
 <section>
