@@ -17,3 +17,5 @@ user_id SMALLINT NOT NULL,
 CONSTRAINT CK_users FOREIGN KEY (`user_id`) REFERENCES `users`(user_id)
 ) CHARSET utf8 COLLATE utf8_general_ci;
 
+ALTER TABLE `cadeaux` ADD
+cadeau_image VARCHAR(200) NOT NULL;

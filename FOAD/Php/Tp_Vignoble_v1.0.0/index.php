@@ -2,6 +2,9 @@
 session_start();
 
 require_once("./header.php");
+require_once("./msg_session.php");
+require_once("./connect_pdo.php");
+
 ?>
     <section id="carousel">
         <div id="border">
@@ -60,6 +63,7 @@ require_once("./header.php");
             <h2>Cadeaux et accessoires</h2>
             <article>
                 <img src="images/home-img1.jpg">
+                <!--TODO: faire en sort de prendre le dernier cadeaux en bdd-->
                 <p id="little-title">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ducimus quos facilis vitae soluta
                     quidem optio deleniti, eveniet quo dolores. Iste fugiat modi expedita veniam recusandae
@@ -70,7 +74,7 @@ require_once("./header.php");
                     Facere accusamus iste voluptatibus quidem assumenda amet distinctio consectetur repudiandae quos
                     debitis, eveniet vero officia modi rerum itaque commodi sed iusto dolor vel reprehenderit
                     asperiores ratione a! Quidem, eum voluptatem.</p>
-                <button>Lire la suite</button>
+                <button><a href="./cadeaux_listes.php">Lire la suite</a></button>
             </article>
         </div>
     </section>

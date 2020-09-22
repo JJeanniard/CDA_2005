@@ -43,6 +43,11 @@ button {
     transition: 300ms;
 }
 
+button a {
+    text-decoration: none;
+    color: white;
+}
+
 button:hover {
     color: brown;
     transform: rotate(-0.05turn) scale(1.15);
@@ -136,15 +141,32 @@ main {
 
 /*bloc message*/
 
-#message {
-    margin-top: 1em;
+#message_alert {
+    margin: 0.5em;
+    margin-top: 2em;
     padding: 0.2em;
-    color: red;
     text-align: center;
-    background-color: white;
+    color: white;
+    background-color: rgb(255, 87, 87);
     margin-left: auto;
     margin-right: auto;
-    height: 6%;
+    height: 10%;
+    width: 98%;
+    border-radius: 0.4em;
+}
+
+#message_succes {
+    margin: 0.5em;
+    margin-top: 2em;
+    padding: 0.2em;
+    text-align: center;
+    color: white;
+    background-color: rgb(115, 255, 87);
+    margin-left: auto;
+    margin-right: auto;
+    height: 10%;
+    width: 98%;
+    border-radius: 0.4em;
 }
 
 /*bloc carousel*/
@@ -317,19 +339,19 @@ main {
     float: right;
 }
 
-#cadeaux img {
+#cadeaux img, #liste_cadeaux img {
     background-color: turquoise;
     float: left;
     margin: 1em;
     border: solid 0.2em white;
 }
 
-#cadeaux #little-title {
+#cadeaux #little-title, #liste_cadeaux #little-title {
     color: white;
     margin-bottom: 1em;
 }
 
-#cadeaux p {
+#cadeaux p, #liste_cadeaux p {
     text-align: left;
     margin-bottom: 2em;
     margin-right: 1em;
@@ -338,6 +360,17 @@ main {
 #cadeaux button {
     margin-right: 5em;
     float: right;
+}
+
+#liste_cadeaux {
+    margin: 2em 1em 40% 1em;
+    padding: 1em;
+    border-radius: 0.9em;
+    background-color: rgba(65, 65, 65, 0.5);
+}
+
+#liste_cadeaux article{
+    display: inline-block;
 }
 
 /*Contact*/

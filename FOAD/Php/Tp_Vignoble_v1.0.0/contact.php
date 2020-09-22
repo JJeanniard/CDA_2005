@@ -1,6 +1,7 @@
 <?php
+session_start();
 require_once("./header.php");
-
+require_once("./msg_session.php");
 ?>
 <section id="contact">
     <h2>Contact</h2>
