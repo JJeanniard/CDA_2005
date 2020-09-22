@@ -28,6 +28,9 @@
                     </ul>
                 </li>
                 <li><a href="#">Apllications</a></li>
+                <?php if(!empty($_SESSION['user'])){?>
+                <li><a href="#"><?php echo $_SESSION['user']['firstname'] ?></a></li>
+                <?php } ?>
                 <li><a href="contact.php">Contact</a></li>
             </ul>
         </nav>
