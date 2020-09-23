@@ -73,7 +73,7 @@ form button {
     margin: 1em;
 }
 
-a:hover {
+li:hover, a:hover {
     color: brown;
 }
 
@@ -116,7 +116,7 @@ header li {
     display: inline-block;
 }
 
-nav a {
+nav li, nav a{
     text-decoration: none;
     color: white;
 }
@@ -136,9 +136,10 @@ nav a {
     border-top: solid 0.1em white;
 }
 
-nav a:focus + .sous {
+nav li:hover .sous{
     display: block;
 }
+
 /**
 fin header
 -----------
@@ -388,15 +389,14 @@ main {
     display: inline-block;
 }
 
-/*Contact*/
-#contact, #register, #login{
+#contact, #register, #login, #cadeau{
     margin: 2em 1em 40% 1em;
     padding: 1em;
     border-radius: 0.9em;
     background-color: rgba(65, 65, 65, 0.5);
 }
 
-#contact label, #login label, #register label {
+#contact label, #login label, #register label, #cadeau label {
     margin: 1em 0 0.5em 1em;
     display: block;
     color: white;

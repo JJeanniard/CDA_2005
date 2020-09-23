@@ -2,28 +2,35 @@
 require_once("./header.php");
 require_once("./msg_session.php");
 require_once("./connect_pdo.php");
-
 ?>
 <section>
     <div id="liste_cadeaux">
         <h2>Cadeaux et accessoires</h2>
-        <article>
-            <img src="images/home-img1.jpg">
-            <!--TODO: faire en sort de prendre le dernier cadeaux en bdd-->
-            <p id="little-title">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ducimus quos facilis vitae soluta
-                quidem optio deleniti, eveniet quo dolores. Iste fugiat modi expedita veniam recusandae
-                voluptatum repellat explicabo ullam!
-                Inventore provident doloremque, sunt eum voluptas ex aspernatur sapiente excepturi at, omnis
-                labore expedita itaque assumenda. In quos totam recusandae odio architecto voluptatem ducimus
-                labore laborum iusto nostrum, laudantium ratione.
-                Facere accusamus iste voluptatibus quidem assumenda amet distinctio consectetur repudiandae quos
-                debitis, eveniet vero officia modi rerum itaque commodi sed iusto dolor vel reprehenderit
-                asperiores ratione a! Quidem, eum voluptatem.</p>
-        </article>
-    </div>
-</section>
-    
+<?php
+$rows = $bdd->query("SELECT * FROM cadeaux");
+while($donnes = $rows->fetch()){
+?>
+    <article>
+        <img src="<?php echo $donnes['cadeau_image']; ?>">
+        <!--TODO: faire en sort de prendre le dernier cadeaux en bdd-->
+        <p id="little-title"><?php echo $donnes['cadeau_title']; ?></p>
+        <p><?php echo $donnes['cadeau_description']; ?></p>
+    </article> 
+<?php
+}
+
+if(empty($rows)){
+    Echo "<center><h2>Pas d'article pour le moments</h2><center>";
+}
+if(!empty($_SESSION['user'])){
+?>
+<button><a href="cadeau_form.php">Ajouté des cadeaux</a></button>
+<?php
+}
+?>
+</div>
+
+    </section>
 <?php
     require_once("./footer.php");
-    ?>
+?>

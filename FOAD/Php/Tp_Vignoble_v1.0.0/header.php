@@ -18,7 +18,7 @@
             <ul>
                 <li><a href="index.php">Accueil</a></li>
                 <li><a href="#">Html 5</a></li>
-                <li><a href="#">CCS3</a>
+                <li><a>CCS3</a>
                     <ul class="sous">
                         <li><a href="#">Introduction</a> </li>
                         <li><a href="#">Background</a></li>
@@ -27,9 +27,13 @@
                         <li><a href="#">Transfromation</a></li>
                     </ul>
                 </li>
-                <li><a href="#">Apllications</a></li>
-                <?php if(!empty($_SESSION['user'])){?>
-                <li><a href="#"><?php echo $_SESSION['user']['firstname'] ?></a></li>
+                <li><a>Apllications</a></li>
+                <?php if (!empty($_SESSION['user'])) { ?>
+                    <li><a href="#"><?php echo $_SESSION['user']['firstname'] ?></a>
+                        <ul class="sous">
+                            <li><a href="logout.php">Logout</a></li>
+                        </ul>
+                    </li>
                 <?php } ?>
                 <li><a href="contact.php">Contact</a></li>
             </ul>

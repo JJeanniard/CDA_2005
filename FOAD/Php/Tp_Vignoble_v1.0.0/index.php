@@ -59,8 +59,8 @@ require_once("./connect_pdo.php");
         <div id="cadeaux">
             <h2>Cadeaux et accessoires</h2>
             <article>
-                <img src="images/home-img1.jpg">
                 <!--TODO: faire en sort de prendre le dernier cadeaux en bdd-->
+                <img src="images/home-img1.jpg">
                 <p id="little-title">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ducimus quos facilis vitae soluta
                     quidem optio deleniti, eveniet quo dolores. Iste fugiat modi expedita veniam recusandae
