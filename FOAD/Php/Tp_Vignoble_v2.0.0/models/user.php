@@ -1,12 +1,10 @@
 <?php
-class user{
+class User{
 
-    private user_id = NULL;
+    private int user_id = NULL;
 
-    private $user_firstname = "";
+    private string $user_firstname = "";
 
-    private $user_lastname = "";
-    
-    
+    private $user_lastname = "";   
 
 }

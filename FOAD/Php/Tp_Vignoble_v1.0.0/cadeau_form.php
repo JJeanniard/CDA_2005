@@ -7,7 +7,7 @@ if (!empty($_SESSION['user'])) {
     <section  id="cadeau">
         <div id="form_cadeau">
             <h2>Formulaire pour ajouté des cadeaux</h2>
-            <form action="cadeaux_send.php" method="post">
+            <form action="cadeaux.php?cadeaux=add" method="post" >
                 <label for="c_title">Titre:</label>
                 <input type="text" name="c_title" id="c_tilte">
                 <label for="c_image">Image du Adeaux:</label>

@@ -71,7 +71,7 @@ require_once("./connect_pdo.php");
                     Facere accusamus iste voluptatibus quidem assumenda amet distinctio consectetur repudiandae quos
                     debitis, eveniet vero officia modi rerum itaque commodi sed iusto dolor vel reprehenderit
                     asperiores ratione a! Quidem, eum voluptatem.</p>
-                <button><a href="./cadeaux_listes.php">Lire la suite</a></button>
+                <button><a href="./cadeaux.php">Lire la suite</a></button>
             </article>
         </div>
     </section>
