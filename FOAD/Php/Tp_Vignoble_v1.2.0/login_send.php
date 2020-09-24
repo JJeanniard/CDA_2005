@@ -6,7 +6,7 @@ if (!empty($_POST['l_email']) && !empty($_POST['l_pwd'])) {
     $email = htmlspecialchars($_POST['l_email']);
     $passwd = htmlspecialchars($_POST['l_pwd']);
 
-    $req = $bdd->prepare("SELECT user_email, user_pwd, user_firstname FROM users WHERE user_email = ?");
+    $req = $bdd->prepare("SELECT user_id, user_email, user_pwd, user_firstname FROM users WHERE user_email = ?");
     $req->execute(array($email));
 
     while ($rep = $req->fetch()) {
@@ -15,6 +15,7 @@ if (!empty($_POST['l_email']) && !empty($_POST['l_pwd'])) {
 
             $_SESSION['user']['lastname'] = $rep['user_lastname'];
             $_SESSION['user']['firstname'] = $rep['user_firstname'];
+            $_SESSION['user']['id'] = $rep['user_id'];
 
         } else {
             $_SESSION['msg_alert'] = "Erreur dans le login";
