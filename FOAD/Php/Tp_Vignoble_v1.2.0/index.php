@@ -2,6 +2,7 @@
 require_once("./header.php");
 require_once("./msg_session.php");
 require_once("./connect_pdo.php");
+
 ?>
     <section id="carousel">
         <div id="border">
