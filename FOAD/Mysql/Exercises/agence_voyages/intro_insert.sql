@@ -88,11 +88,12 @@ VALUES
 (3, 4),
 (3, 6);
 
-
+TRUNCATE orders;
 INSERT INTO orders 
 (client_id, trip_code, order_quantity, order_paid) 
 VALUES 
 (1, 1, 1, 1),
 (2, 3, 5, 1),
 (3, 1, 5, 0),
+(4, 1, 2, 1),
 (4, 2, 2, 0);
