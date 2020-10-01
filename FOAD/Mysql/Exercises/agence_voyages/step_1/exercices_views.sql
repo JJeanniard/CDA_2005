@@ -36,8 +36,7 @@ client_firstname,
 client_email,
 client_phone,
 client_added,
-ORS.order_paid,
-TR.trip_code + order_quantity nbr_strip,
+order_paid nbr_strip_paye,
 com_name,
 CT.country_name
 FROM clients CL
@@ -45,6 +44,6 @@ JOIN orders ORS ON CL.client_id = ORS.client_id
 JOIN sales SLS ON CL.com_code = SLS.com_code
 JOIN trips TR ON ORS.trip_code = TR.trip_code
 JOIN cities CI ON TR.city_code = CI.city_code
-JOIN countries CT ON CI.country_code = CT.country_code WHERE CL.client_id = 4 AND TR.trip_end LIMIT 1;
+JOIN countries CT ON CI.country_code = CT.country_code;
 
-SELECT * FROM info_clients;
+SELECT * FROM info_clients WHERE client_id = 1;
