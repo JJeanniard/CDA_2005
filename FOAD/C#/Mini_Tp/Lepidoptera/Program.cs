@@ -10,10 +10,6 @@ namespace Lepidoptere
             Lepidoptere lpd1 = new Lepidoptere(new Oeuf());
             lpd1.SeDeplacer();
             lpd1.SeMetamorphoser();
-
-            Chenille lpd2 = (Chenille)lpd1;
-
-            lpd2.SeDeplacer();
         }
     }
 }
