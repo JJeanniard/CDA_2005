@@ -1,12 +1,19 @@
 ﻿using System;
 
-namespace Lepidoptera
+namespace Lepidoptere
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            //new lepidoptera
+            Lepidoptere lpd1 = new Lepidoptere(new Oeuf());
+            lpd1.SeDeplacer();
+            lpd1.SeMetamorphoser();
+
+            Chenille lpd2 = (Chenille)lpd1;
+
+            lpd2.SeDeplacer();
         }
     }
 }
