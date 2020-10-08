@@ -4,13 +4,18 @@ using System.Text;
 
 namespace Lepidoptere
 {
+    /// <summary>
+    /// Lépidoptère une espèce qui se déplace avec la méthode "SeDeplacer()" 
+    /// et évolution en fonction de l'appelle de la méthode "SeMetamorphoser()".
+    /// </summary>
     public class Lepidoptere
     {
+
         private StadeDevolution monStadeCourant;
 
-        public Lepidoptere(StadeDevolution _monStadeCourant)
+        public Lepidoptere()
         {
-            monStadeCourant = _monStadeCourant;
+            monStadeCourant = new Oeuf();
         }
 
         public bool SeDeplacer()
@@ -18,9 +23,9 @@ namespace Lepidoptere
             return monStadeCourant.SeDeplacer();
         }
 
-        public bool SeMetamorphoser()
+        public StadeDevolution SeMetamorphoser()
         {
-            return monStadeCourant.SeMetamorphoser();
+            return monStadeCourant=monStadeCourant.SeMetamorphoser();
         }
     }
 }
