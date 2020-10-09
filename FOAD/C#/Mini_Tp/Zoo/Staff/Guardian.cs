@@ -5,10 +5,11 @@ using Zoo.Contrats;
 
 namespace Zoo.Staff
 {
-    class Guardian : Contrats.ISpeak, IMove
+    class Guardian : ISpeak, IMove
     {
         public bool Move()
         {
+            Console.WriteLine("Je cours");
             return true;
         }
 

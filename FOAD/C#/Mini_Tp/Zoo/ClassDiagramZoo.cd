@@ -1,52 +1,53 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="Zoo.Animals.Lion" Collapsed="true">
-    <Position X="3" Y="3.25" Width="1.5" />
+  <Class Name="Zoo.Animals.Lion">
+    <Position X="3" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAQAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Animals\Lion.cs</FileName>
     </TypeIdentifier>
-  </Class>
-  <Class Name="Zoo.Animals.Perrot" Collapsed="true">
-    <Position X="5.25" Y="3.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Animals\Perrot.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
-  <Class Name="Zoo.Animals.Rabbit" Collapsed="true">
-    <Position X="0.5" Y="3.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Animals\Rabbit.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Zoo.Staff.Guardian" Collapsed="true">
-    <Position X="5.25" Y="4.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Staff\Guardian.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
   </Class>
   <Class Name="Zoo.Animals.AnimalOfZoo">
     <Position X="0.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>EAAAAAACAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>EAAAAAACAIAAAgQAAAAAAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Animals\AnimalOfZoo.cs</FileName>
+      <NewMemberFileName>Animals\Perrot.cs</NewMemberFileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Zoo.Animals.Rabbit">
+    <Position X="0.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAgAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Animals\Rabbit.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Zoo.Staff.Guardian">
+    <Position X="8" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Staff\Guardian.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Zoo.Animals.Perrot">
+    <Position X="5.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAIAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Animals\Perrot.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Interface Name="Zoo.Contrats.IMove">
-    <Position X="3" Y="0.5" Width="1.5" />
+    <Position X="3.5" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Contrats\IMove.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Zoo.Contrats.ISpeak">
-    <Position X="6" Y="0.5" Width="1.5" />
+    <Position X="5.25" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAA=</HashCode>
       <FileName>Contrats\ISpeak.cs</FileName>
