@@ -7,9 +7,11 @@ namespace Zoo.Animals
 {
     class Perrot : AnimalOfZoo, ISpeak
     {
-        public Perrot(DateTime _dateOfBirth, bool _isBirthAtZoo) : base(_dateOfBirth, _isBirthAtZoo)
-        {
+        private int lengthBecCm;
 
+        public Perrot(DateTime _dateOfBirth, bool _isBirthAtZoo, int _lengthBecCm) : base(_dateOfBirth, _isBirthAtZoo)
+        {
+            lengthBecCm = _lengthBecCm;
         }
 
         public override bool Move()

@@ -17,7 +17,7 @@ namespace Zoo
 
             animals.Add(new Rabbit(DateTime.Parse("09/08/2020"), true));
             animals.Add(new Lion(DateTime.Parse("20/08/2015"), true));
-            animals.Add(new Perrot(DateTime.Parse("28/02/2001"), true));
+            animals.Add(new Perrot(DateTime.Parse("28/02/2001"), true, 3));
             animals.Add(new Rabbit(DateTime.Parse("18/08/2019"), false));
 
             Console.WriteLine("Liste des animaux du zoo :\n");
@@ -35,7 +35,7 @@ namespace Zoo
             Console.WriteLine("Prénom : John\n");
 
             //On trie les animaux dans l'odre du plus vieux au plus jeune
-            animals.Sort();
+            animals.Sort();//ASC or DESC
 
             Console.WriteLine("Le feux fait fuire les aniamaux du zoo dans un d'ordre donner!\n");
             //il faut mettre un peu d'ordre dans l'evacuation...du plus vieux au plus jeune

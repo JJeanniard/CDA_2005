@@ -6,7 +6,7 @@ using Zoo.Contrats;
 
 namespace Zoo.Animals
 {
-    abstract class AnimalOfZoo : IMove, IComparable<AnimalOfZoo>
+    abstract class AnimalOfZoo : IMove, IComparable, IComparable<AnimalOfZoo>
     {
         private DateTime dateOfBirth;
         private bool isBirthAtZoo;
@@ -34,11 +34,16 @@ namespace Zoo.Animals
 
         public int CompareTo(AnimalOfZoo other)
         {
-            if (this.dateOfBirth > other.dateOfBirth)
+           /* if (this.dateOfBirth > other.dateOfBirth)
             {
                 return 1;
-            }
+            }*/
             return this.dateOfBirth.CompareTo(other.dateOfBirth);
+        }
+
+        public int CompareTo(object obj)
+        {
+            throw new NotImplementedException();
         }
     }
 }
