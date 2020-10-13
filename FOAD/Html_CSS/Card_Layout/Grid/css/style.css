@@ -43,8 +43,9 @@ p {
 
 .container #card {
     grid-column: 2 / span 3;
-    grid-row: 6;
+    grid-row: 5;
     display: grid;
+    margin-top: 2.5rem;
     grid-template-columns: repeat(3, 1fr);
     grid-template-areas: "atc_first atc_sec atc_three";
     gap: 2rem;
@@ -73,10 +74,11 @@ p {
 }
 
 .container article > h2 {
-    padding: 1rem;
+    padding: 1.5rem;
     color: rgb(231, 76, 61);
 }
 
 .container article > p {
-    padding: 1rem;
+    padding: 1.5rem;
+    padding-top: 0rem;
 }
