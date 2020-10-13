@@ -1,72 +1,82 @@
-*{
-    margin:0;
+* {
+    margin: 0;
     padding: 0;
-    font-size: 62.5%;/* 62.5% = 10px */
+    font-size: 62.5%; /* 62.5% = 10px */
 }
 
-body{
-    background-color: rgb(236,240,241);
+body {
+    background-color: rgb(236, 240, 241);
 }
 
-h1{
+h1 {
     font-family: "Open Sans", Arial;
     font-size: 3rem;
 }
 
-h2{
+h2 {
     font-family: "Open Sans", Arial;
     font-size: 2.5rem;
 }
 
-p{
+p {
     font-size: 1.5rem;
 }
 
-.container{
+.container {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-gap: 2rem;/* = gap: 1rem */
+    grid-template-columns: 1.5fr repeat(3, 1fr) 1.5fr;
+    grid-template-rows: repeat(6, 1rem);
+    grid-gap: 2rem; /* 10px = gap: 1rem */
 }
 
-header{
-    grid-column: 1 / 6;
-    grid-row: 1;
-    height: 10rem;
+.container > header {
+    grid-column: 1 / span 5;
+    grid-row: span 4;
     background-color: rgb(231, 76, 61);
 }
 
-header>h1{
-    grid-column: 3 / 1;
+.container > header > h1 {
+    margin-top: 2.5rem;
+    text-align: center;
     color: white;
 }
 
-main{
-    grid-column: 2 / 5;
+.container #card {
+    grid-column: 2 / span 3;
+    grid-row: 6;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "atc_first atc_sec atc_three";
+    gap: 2rem;
 }
 
-section>article{
+.container #card > article {
     background-color: white;
 }
 
-section>article:nth-child(1) {
-    grid-column: 2;
-    grid-row: 2;
+.container article:nth-child(1) {
+    grid-area: atc_first;
 }
 
-section>article:nth-child(2) {
-    grid-column: 3;
-    grid-row: 2;
+.container article:nth-child(2) {
+    grid-area: atc_sec;
 }
 
-section>article:nth-child(3) {
-    grid-column: 3;
-    grid-row: 2;
+.container article:nth-child(3) {
+    grid-area: atc_three;
 }
 
-article>h2{
+.container article > img {
+    width: 100%;
+    object-fit: cover;
+    height: 16rem;
+}
+
+.container article > h2 {
+    padding: 1rem;
     color: rgb(231, 76, 61);
 }
 
-article>img{
-    width: 35rem;
+.container article > p {
+    padding: 1rem;
 }
