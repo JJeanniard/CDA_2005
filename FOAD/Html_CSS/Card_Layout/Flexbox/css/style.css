@@ -30,7 +30,6 @@ p {
     flex-basis: 100%;
     height: 10rem;
     background-color: rgb(231, 76, 61);
-
 }
 
 .container > header > h1 {
@@ -44,15 +43,14 @@ p {
     margin-top: 3rem;
     flex-basis: 55%;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;/* travail sur l'enfant */
+    align-content: stretch;/* align les voisins */
 }
 
 .container article{
     flex-basis: 32%;
     background-color: white;
-}
-
-.container #mid{
-    margin: 0 auto;
 }
 
 .container article > img {
