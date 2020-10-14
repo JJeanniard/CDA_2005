@@ -1,4 +1,4 @@
-# Pratique et exercice pour les cours en CDA
+# Pratique et exercice pour les cours en DWWM
 
 ![sync branch](https://github.com/JJeanniard/CDA_2005/workflows/sync%20branch/badge.svg)
 
