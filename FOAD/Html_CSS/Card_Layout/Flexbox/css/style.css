@@ -1,0 +1,136 @@
+* {
+    font-size: 62.5%; /* 62.5% = 10px */
+    font-family: "Open Sans", Arial;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: rgb(236, 240, 241);
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+p {
+    font-size: 1.5rem;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container header {
+    flex-basis: 100%;
+    height: 10rem;
+    background-color: rgb(231, 76, 61);
+    text-align: center;
+    color: white;
+}
+
+.container #card {
+    margin: 3rem auto 0;
+    flex-basis: 55%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* travail sur l'enfant */
+    align-content: stretch; /* align les voisins */
+}
+
+.container article {
+    flex-basis: 32%;
+    background-color: white;
+}
+
+.picture {
+    height: 25rem;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.img_one{
+    background-image: url("../img/cat_background_1.jpg");
+}
+
+.img_two{
+    background-image: url("../img/cat_background_2.jpg");
+}
+
+.img_three{
+    background-image: url("../img/cat_background_3.jpg");
+}
+
+.container article > h2 {
+    padding: 1.5rem;
+    color: rgb(231, 76, 61);
+}
+
+.container article > p {
+    padding: 0 1.5rem 1.5rem;
+}
+
+/**
+step one: Mobile first
+step two: Tablette
+step three: Pc
+
+Breakpoints :
+320px
+640px --
+-- 768px
+-- 1024px
+-- 1280px
+-- 1600px
+1920px
+**/
+@media all and (max-width: 640px) {
+    .container article {
+        flex-basis: 100%;
+        position: relative; /* bloque l'enfant qui est en absolute */
+    }
+
+    .container article h2 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(96, 96, 96, 0.8);
+        width: 100%;
+    }
+
+    article>div{
+        overflow: hidden;
+    }
+
+    .container article:hover .picture{
+        transition: all ease 0.5s;
+        transform: scale(1.2);
+    }
+
+    .container article:hover .picture{
+        transition: all ease 0.5s;
+        transform: scale(1.2);
+    }
+
+    .container article:hover .picture{
+        transition: all ease 0.5s;
+        transform: scale(1.2);
+    }
+
+    .container article:hover .img_one{
+        background-image: url("../img/cat_background_3.jpg");
+    }
+
+    .container article:hover .img_one{
+        background-image: url("../img/cat_background_1.jpg");
+    }
+    .container article:hover .img_one{
+        background-image: url("../img/cat_background_2.jpg");
+    }
+}

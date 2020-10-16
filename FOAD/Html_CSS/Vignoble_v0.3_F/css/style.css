@@ -1,0 +1,93 @@
+:root {
+    --color-brown: brown;
+}
+
+@font-face {
+    font-family: "Channel";
+    src: url("../fonts/channel-webfont.ttf");
+}
+
+@font-face {
+    font-family: "BalsamiqSans";
+    src: url("../fonts/BalsamiqSans-Bold.ttf");
+}
+
+* {
+    list-style: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 62.5%;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+}
+
+#header-nav {
+    display: flex;
+    flex-wrap: nowrap;/*pas remise à la ligne*/
+    background-color: black;
+    height: 3rem;
+    width: 100%;
+    align-items: stretch;
+    border-bottom: 1px solid white;
+}
+
+#header-nav #logo {
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+}
+
+#header-nav #logo img {
+    position: absolute;
+    align-items: flex-end;
+    padding: 1.4rem;
+}
+
+#header-nav nav {
+    display: flex;
+    align-items: stretch;
+    flex-grow: 2;
+}
+
+#header-nav ul {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 1vw;
+    width: 100%;
+}
+
+#header-nav ul > li {
+    display: flex;
+    padding: 0 1rem;
+    align-items: stretch;
+}
+
+
+
+#header-nav .sous-menu {
+    display: none;
+}
+
+#header-nav ul>li>a {
+    font-family: "channel", Arial, Helvetica, sans-serif;
+    font-size: 0.8rem;
+    color: white;
+    padding: 0.8rem 0;
+}
+
+
+
+main,
+#footer-bottom {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
