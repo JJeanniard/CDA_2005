@@ -1,0 +1,63 @@
+/*
+Fichier css en mode grid
+*/
+@font-face {
+    font-family: "Channel";
+    src: url("../fonts/channel-webfont.ttf");
+}
+
+@font-face {
+    font-family: "BalsamiqSans";
+    src: url("../fonts/BalsamiqSans-Bold.ttf");
+}
+
+:root{
+    --color-red-wine: brown;
+}
+
+*{
+    list-style: none;
+    text-decoration: none;
+    margin: 0;
+}
+
+body{
+    font-size: 62.5%;
+}
+
+#header-top{
+    background-color: cyan;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-auto-rows: 3rem;
+}
+
+#header-nav{
+    background-color: coral;
+    display: grid;
+}
+
+#header-nav ul{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr) 2fr;
+    
+}
+
+#header-nav li{
+    align-self: end;
+}
+
+#header-nav a{
+    font-family: "channel", Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 0.8rem;
+    
+}
+
+#header-nav .sous{
+    display: none;
+}
+
+#header-bottom{
+    grid-area: footer;
+}

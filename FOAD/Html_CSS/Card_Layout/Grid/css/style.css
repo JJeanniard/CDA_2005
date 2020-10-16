@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 62.5%; /* 62.5% = 10px */
+}
+
+body {
+    background-color: rgb(236, 240, 241);
+}
+
+h1 {
+    font-family: "Open Sans", Arial;
+    font-size: 3rem;
+}
+
+h2 {
+    font-family: "Open Sans", Arial;
+    font-size: 2.5rem;
+}
+
+p {
+    font-size: 1.5rem;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1.5fr repeat(3, 1fr) 1.5fr;
+    grid-template-rows: repeat(6, 1rem);
+    grid-gap: 2rem; /* 10px = gap: 1rem */
+}
+
+.container > header {
+    grid-column: 1 / span 5;
+    grid-row: span 4;
+    background-color: rgb(231, 76, 61);
+}
+
+.container > header > h1 {
+    margin-top: 2.5rem;
+    text-align: center;
+    color: white;
+}
+
+.container #card {
+    grid-column: 2 / span 3;
+    grid-row: 5;
+    display: grid;
+    margin-top: 2.5rem;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "atc_first atc_sec atc_three";
+    gap: 2rem;
+}
+
+.container #card > article {
+    background-color: white;
+}
+
+.container article:nth-child(1) {
+    grid-area: atc_first;
+}
+
+.container article:nth-child(2) {
+    grid-area: atc_sec;
+}
+
+.container article:nth-child(3) {
+    grid-area: atc_three;
+}
+
+.container article > img {
+    width: 100%;
+    object-fit: cover;
+    height: 16rem;
+}
+
+.container article > h2 {
+    padding: 1.5rem;
+    color: rgb(231, 76, 61);
+}
+
+.container article > p {
+    padding: 1.5rem;
+    padding-top: 0rem;
+}
