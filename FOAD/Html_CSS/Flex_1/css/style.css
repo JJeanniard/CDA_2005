@@ -1,0 +1,103 @@
+:root{
+    --color_blue: #CCDDFF;
+    --color_orange: #FFDDCC;
+    --color_white: #FFFFFF;
+    --color_grey: #777777;
+    --color_green: #00EEBB;
+}
+
+*{
+    margin:0;
+}
+
+html, body{
+    height: 100%;
+}
+
+html{
+    background-color: black;
+}
+
+body{
+    background-color: var(--color_grey);
+}
+
+.container nav>ul>li{
+    list-style: none;
+}
+
+header{
+    width: 100%;
+    height: 80px;
+    background-color: var(--color_blue);
+}
+
+header{
+    text-align: center;
+    padding: 20px;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    min-height: 100%;
+}
+
+.container nav{
+    background-color: var(--color_orange);
+    flex-grow: 1;
+
+}
+
+.container nav ul{
+    padding: 0;
+}
+
+.container nav ul>li{
+    margin: 30px;
+    height: 2.5em;
+    background-color: white;
+}
+
+.container section{
+    background-color: var(--color_green);
+    max-width: 60%;
+}
+
+.container section div{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+}
+
+.container h2{
+    padding: 10px;
+    display: block;
+    width: 100%;
+}
+
+.container section article{
+    border: 1px solid black;
+    width:24em;
+    height: 2.5em;
+    background-color: var(--color_white);
+    align-items: center;
+}
+
+.container aside{
+    background-color: var(--color_orange);
+    flex-grow: 1;
+}
+
+.container aside p{
+    padding-left: 10px;
+}
+
+footer{
+    width: 100%;
+    height: 50px;
+    background-color: var(--color_blue);
+}
