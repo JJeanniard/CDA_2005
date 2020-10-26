@@ -11,16 +11,39 @@
     <label for="name">Name</label>
     <input type="text" name="name" id="name">
     <label for="phone">Phone</label>
-    <input type="number" name="phone" id="phone">
+    <input type="tel" name="phone" id="phone">
     <label for="email">Email</label>
     <input type="email" name="email" id="email">
-    <label class="service_required">Which other service do you need?
-        <input type="radio" name="service_require" id="plumbing"><label for="plumbing">Architect</label>
-        <input type="radio" name="service_require" id="disinfection"><label for="disinfection">Disinfection</label>
-        <input type="radio" name="service_require" id="ratexterminat"><label for="ratexterminat">Rat extermination</label>
+    <label class="service_required">Which service do you require?
+        <input type="radio" name="service_require" id="plumbing">
+        <label for="plumbing">Plumbing</label>
+        <input type="radio" name="service_require" id="electricity">
+        <label for="electricity">Electricity</label>
+        <input type="radio" name="service_require" id="painting">
+        <label for="painting">Painting</label>
+    </label>
+    <label class="service_norequired">Which other service do you need?
+        <input type="checkbox" name="service_norequired" id="architect">
+        <label for="architect">Architect</label>
+        <input type="checkbox" name="service_norequired" id="disinfection">
+        <label for="disinfection">Disinfection</label>
+        <input type="checkbox" name="service_norequired" id="ratexterminat">
+        <label for="ratexterminat">Rat extermination</label>
     </label>
     <label for="datetime">Date/Time</label>
     <input type="datetime-local" name="datetime" id="datetime">
+    <label for="place">Place</label>
+    <select name="place" id="place">
+        <option value="">Select One</option>
+        <option value="main_office">Main Office (Paris)</option>
+        <option value="technical_center">Technical center (Lille)</option>
+        <option value="logistic_center">Logistic center (Amiens)</option>
+    </select>
+    <label for="other_needs">Other needs</label>
+    <input type="text" name="other_needs" id="other_needs">
+    <label for="special_intructions">Special Instructions</label>
+    <textarea name="special_intructions" id="special_intructions" cols="30" rows="5"></textarea>
+    <button type="submit">Submit</button>
 </form>
 </body>
 </html>
