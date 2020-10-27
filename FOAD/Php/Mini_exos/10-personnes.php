@@ -21,12 +21,10 @@ function calculRetraite(int $age): string
         $result = "Vous êtes à la retraite cette année.";
     } else if (60 < $age) {
         //TODO:supprimez le signe négatif
-        $result = "Vous êtes à la retraite depuis $somme ans.";
+        $result = "Vous êtes à la retraite depuis ".abs($somme)." ans.";
     }else if(0 > $age){
         $result = "Vous n'êtes pas encore né.";
     }
 
     return $result;
 }
-
-echo calculRetraite(60);
