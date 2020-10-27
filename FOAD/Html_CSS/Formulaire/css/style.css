@@ -8,11 +8,16 @@
 }
 
 form{
-    width: 50%;
+    width: 370px;
     margin-left: auto;
     margin-right: auto;
     background-color: var(--color_blue);
     padding: 10px;
+}
+
+form>div{
+    height: 28px;
+    margin: 3px 0;
 }
 
 label{
@@ -20,24 +25,43 @@ label{
     margin: 3px;
 }
 
-label .service_required{
-    display: inline-block;
-    border-style: 1px solid var(--color_grey);
-}
-
 input[type=text], input[type=tel], input[type=email], input[type=datetime-local], select, textarea{
     width: 60%;
     float: right;
-    margin: 3px;
 }
 
 input[type=text], input[type=tel], input[type=email], input[type=datetime-local], select{
     height: 28px;
 }
 
+.service_required, .service_norequired{
+    position: relative;
+    height: 40px;
+    border: 1px solid white;
+    margin: 20px 0;
+}
 
+.question{
+    padding: 5px;
+}
+
+.question>p{
+    position: absolute;
+    top:-10px;
+    background: var(--color_blue);
+    left:10px;
+    margin: 0;
+    padding: 0 4px;
+}
+.service_required input, .service_norequired input{
+    width: 9px;
+    height: 9px;
+    float:left;
+    margin:5px;
+}
 
 button {
+    margin-top: 3px;
     border-style: none;
     color: white;
     background-color: var(--color_grey);
