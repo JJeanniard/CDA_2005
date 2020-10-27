@@ -70,6 +70,7 @@ p {
 .container article > h2 {
     padding: 1.5rem;
     color: rgb(231, 76, 61);
+    margin: 0;
 }
 
 .container article > p {
