@@ -1,43 +1,26 @@
 <?php
-
 class RequestPDO
 {
-    private PDO $PDO;
+    private PDO $pdo;
 
     private string $table;
 
     /**
      * RequestPDO constructor.
      */
-    public function __construct(string $table)
+    public function __construct($table)
     {
-        $this->PDO = Dbconnect::getDb();
+        $this->pdo = Dbconnect::getDb();
         $this->table = $table;
     }
 
     /**
-     * @param $table
      * @return array
      */
     public function getFindAll()
     {
-        $rows = $this->PDO->query("SELECT * FROM $this->table");
-        return $rows->fetchAll(RequestPDO::FETCH_ASSOC);
-    }
-
-    public function getFindById(int $id)
-    {
-        $user = false;
-
-        $row = $this->PDO->prepare("SELECT * FROM $this->table WHERE user_id = :user_id");
-
-        if ($row->execute(array(":user_id" => $id))) {
-            $user = $row->fetchAll(RequestPDO::FETCH_ASSOC);
-        }
-        //On ferme la connection à la Db
-        $row->closeCursor();
-
-        return $user;
+        $rows = $this->pdo->query("SELECT * FROM $this->table");
+        return $rows->fetchAll(PDO::FETCH_ASSOC);
     }
 
     /**
@@ -48,10 +31,10 @@ class RequestPDO
     public function getFindBy(string $col, $val)
     {
         $result = false;
-        $row = $this->PDO->prepare("SELECT * FROM $this->table WHERE $col = :val");
+        $row = $this->pdo->prepare("SELECT * FROM $this->table WHERE $col = :val");
 
         if ($row->execute(array(":val" => $val))) {
-            $result = $row->fetch(RequestPDO::FETCH_ASSOC);
+            $result = $row->fetch(PDO::FETCH_ASSOC);
         }
 
         $row->closeCursor();
@@ -62,7 +45,7 @@ class RequestPDO
     public function insert(string $cols, string $vals)
     {
         $result = false;
-        $row = $this->PDO->prepare("INSERT INTO $this->table() VALUES ()");
+        $row = $this->pdo->prepare("INSERT INTO $this->table() VALUES ()");
 
         if($row->execute(array(
 
@@ -78,7 +61,7 @@ class RequestPDO
     public function delete(string $col, $val)
     {
         $results = false;
-        $row = $this->PDO->prepare("DELETE FROM $this->table WHERE $col = :val");
+        $row = $this->pdo->prepare("DELETE FROM $this->table WHERE $col = :val");
         if ($row->execute(array(":val" => $val))) {
             $results = $row;
         }

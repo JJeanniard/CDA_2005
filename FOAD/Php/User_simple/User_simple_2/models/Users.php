@@ -1,45 +1,22 @@
 <?php
-require "RequestPDO.php";
 /**
  * Organisation des methodes avec CRUD, pour la selection des utilisateurs dans la DB.
  * Class Users
  */
 class Users extends RequestPDO
 {
-    private RequestPDO $request;
-
     public function __construct()
     {
-        $this->request = new RequestPDO("users");
+        parent::__construct("users");
     }
 
     /**
-     * Retourne tout les utilisateurs
-     * @return array
-     */
-    public function getFindAll() : array
-    {
-        return $this->request->getFindAll();
-    }
-
-    /**
-     * Prend en parametre l'id d'un l'utilisateur
      * @param int $id
-     * @return array|false
+     * @return false|mixed
      */
     public function getFindById(int $id)
     {
-        return $this->request->getFindById($id);
-    }
-
-    /**
-     * @param $col
-     * @param $val
-     * @return false|mixed
-     */
-    public function getFindBy(string $col, $val)
-    {
-        return $this->request->getFindBy($col, $val);
+        return parent::getFindBy("user_id", $id);
     }
 
     /*public function insert(string $username, string $useremail, string $userpwd, int $userrole)
@@ -92,8 +69,8 @@ class Users extends RequestPDO
      * @param int $id
      * @return bool|PDOStatement
      */
-    public function delete(int $id)
+    public function deleteById(int $id)
     {
-        return $this->request->delete("user_id", $id);
+        return parent::delete("user_id", $id);
     }
 }
