@@ -13,7 +13,7 @@ class Dbconnect
     public static function getDb(){
 
         if(Dbconnect::$PDO === null){
-            Dbconnect::$PDO = new PDO("mysql:localhost;port=3306;dbname=db_users_simple;charset=utf8", "root", "");
+            Dbconnect::$PDO = new RequestPDO("mysql:localhost;port=3306;dbname=db_users_simple;charset=utf8", "root", "");
         }
 
         return Dbconnect::$PDO;

@@ -1,3 +1,6 @@
+<?php
+    require "./bootstrap.php";
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -13,7 +16,7 @@
 
     $page = basename($page);
 
-    if (is_file($page)) {
+    if (is_file("./views/$page.php")) {
         require "./views/$page.php";
     } else {
         require "./views/404.php";

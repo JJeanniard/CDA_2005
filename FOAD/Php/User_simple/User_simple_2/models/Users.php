@@ -1,75 +1,48 @@
 <?php
-
+require "RequestPDO.php";
 /**
  * Organisation des methodes avec CRUD, pour la selection des utilisateurs dans la DB.
  * Class Users
  */
-class Users
+class Users extends RequestPDO
 {
-    private PDO $PDO;
+    private RequestPDO $request;
 
     public function __construct()
     {
-        $this->PDO = Dbconnect::getDb();
+        $this->request = new RequestPDO("users");
     }
 
     /**
      * Retourne tout les utilisateurs
-     * @return bool|Statement
+     * @return array
      */
-    public function getFindAll()
+    public function getFindAll() : array
     {
-        $rows = $this->PDO->query("SELECT * FROM users");
-        return $rows->fetchAll(PDO::FETCH_ASSOC);
+        return $this->request->getFindAll();
     }
 
     /**
-     * Prend en parametre l'id de l'utilisateur
+     * Prend en parametre l'id d'un l'utilisateur
      * @param int $id
      * @return array|false
      */
     public function getFindById(int $id)
     {
-        $user = false;
-
-        $row = $this->PDO->prepare("SELECT * FROM users WHERE user_id = :user_id");
-
-        if ($row->execute(array(":user_id" => $id))) {
-            $user = $row->fetchAll(PDO::FETCH_ASSOC);
-        }
-        //On ferme la connection à la Db
-        $row->closeCursor();
-
-        return $user;
+        return $this->request->getFindById($id);
     }
 
     /**
      * @param $col
      * @param $val
-     * @return false|Statement
+     * @return false|mixed
      */
-    public function getFindBy($col, $val)
+    public function getFindBy(string $col, $val)
     {
-        $user = false;
-        $row = $this->PDO->prepare("SELECT * FROM users WHERE user_id = :user_id");
-
-        if ($row->execute()) {
-            $user = $row->fetch(PDO::FETCH_ASSOC);
-        }
-
-        $row->closeCursor();
-
-        return $user;
+        return $this->request->getFindBy($col, $val);
     }
 
-    /**
-     * @param string $username
-     * @param string $useremail
-     * @param string $userpwd
-     * @param int $userrole
-     * @return false|PDOStatement
-     */
-    public function insert(string $username, string $useremail, string $userpwd, int $userrole)
+    /*public function insert(string $username, string $useremail, string $userpwd, int $userrole)
     {
         $user = false;
         $row = $this->PDO->prepare("INSERT INTO users(user_name, user_email, user_pwd, user_role) VALUES (:username, :email, :pwd, :userrole)");
@@ -86,7 +59,7 @@ class Users
         $row->closeCursor();
 
         return $user;
-    }
+    }*/
 
     /**
      * @param int $id
@@ -96,7 +69,7 @@ class Users
      * @param int $userrole
      * @return false|Statement
      */
-    public function update(int $id, string $username, string $useremail, string $userpwd, int $userrole)
+    /*public function update(int $id, string $username, string $useremail, string $userpwd, int $userrole)
     {
         $results = false;
         $row = $this->PDO->prepare("UPDATE users SET user_name = :username, user_email = :email, user_pwd = :pwd, user_role = :userrole WHERE user_id = :user_id");
@@ -113,22 +86,14 @@ class Users
         $row->closeCursor();
 
         return $results;
-    }
+    }*/
 
     /**
      * @param int $id
-     * @return false|PDOStatement
+     * @return bool|PDOStatement
      */
     public function delete(int $id)
     {
-        $results = false;
-        $row = $this->PDO->prepare("DELETE FROM users WHERE user_id = :id");
-        if ($row->execute(array(":id" => $id))) {
-            $results = $row;
-        }
-
-        $row->closeCursor();
-
-        return $results;
+        return $this->request->delete("user_id", $id);
     }
 }

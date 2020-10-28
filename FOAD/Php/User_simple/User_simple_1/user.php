@@ -11,7 +11,7 @@
 <?php
 $dsn = 'mysql:host=localhost;port=3306;dbname=db_users_simple;charset=utf8';
 
-$dbconnect = new PDO($dsn, "root", "");
+$dbconnect = new RequestPDO($dsn, "root", "");
 
 /**
  * CONSIGNES :
