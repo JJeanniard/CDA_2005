@@ -42,22 +42,6 @@ class RequestPDO
         return $result;
     }
 
-    public function insert(string $cols, string $vals)
-    {
-        $result = false;
-        $row = $this->pdo->prepare("INSERT INTO $this->table() VALUES ()");
-
-        if($row->execute(array(
-
-        ))){
-            $result = $row;
-        }
-
-        $row->closeCursor();
-
-        return $result;
-    }
-
     public function delete(string $col, $val)
     {
         $results = false;

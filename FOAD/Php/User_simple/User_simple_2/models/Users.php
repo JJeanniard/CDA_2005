@@ -69,7 +69,7 @@ class Users extends RequestPDO
      * @param int $id
      * @return bool|PDOStatement
      */
-    public function deleteById(int $id)
+    public function remove(int $id)
     {
         return parent::delete("user_id", $id);
     }
