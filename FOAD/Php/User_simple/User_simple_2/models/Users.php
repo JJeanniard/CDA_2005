@@ -21,11 +21,11 @@ class Users
     }
 
     /**
-     *
+     * Prend en parametre l'id de l'utilisateur
      * @param int $id
-     * @return bool
+     * @return bool|PDOStatement
      */
-    public function getFindById(int $id)
+    public function getFindById(int $id) : PDOStatement
     {
         $row = $this->PDO->prepare("SELECT * FROM users WHERE user_id = :user_id");
         return $row->execute(array(":user_id" => $id));
