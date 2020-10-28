@@ -19,21 +19,20 @@ class Impot
         $this->revenu = $revenu;
     }
 
-    public function afficheImpot(): void
-    {
-        echo "$this->name votre impôt est de $this->resultat euros.";
-    }
-
     public function calculImpot(): float
     {
 
         if ($this->revenu > 15000) {
-            $this->resultat = $this->revenu / self::taux14 * 100;
+            $this->resultat = $this->revenu * self::taux14 / 100;
         } else {
-            $this->resultat = $this->revenu / self::taux9 * 100;
+            $this->resultat = $this->revenu * self::taux9 / 100;
         }
 
         return $this->resultat;
     }
 
+    public function afficheImpot(): void
+    {
+        echo "$this->name votre impôt est de ".$this->calculImpot()." euros.";
+    }
 }

@@ -9,9 +9,9 @@
 
 <form action="resultatImpot.php" method="post">
     <label for="lastname">lastname</label>
-    <input type="text" name="lastname" id="lastname">
+    <input type="text" name="lastname" id="lastname" required>
     <label for="revenu">Revenu</label>
-    <input type="number" name="revenu" id="revenu">
+    <input type="number" name="revenu" id="revenu" required>
     <button type="submit">Submit</button>
 </form>
 

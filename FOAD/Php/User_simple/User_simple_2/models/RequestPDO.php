@@ -15,12 +15,19 @@ class RequestPDO
     }
 
     /**
-     * @return array
+     * @return array|false
+     *
      */
     public function getFindAll()
     {
+        $result = false;
         $rows = $this->pdo->query("SELECT * FROM $this->table");
-        return $rows->fetchAll(PDO::FETCH_ASSOC);
+
+        if($rows){
+            $result = $rows->fetchAll(PDO::FETCH_ASSOC);
+        }
+
+        return $result;
     }
 
     /**
