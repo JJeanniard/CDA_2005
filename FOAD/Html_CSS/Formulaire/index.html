@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Formulaire</title>
+</head>
+<body>
+<form action="" type="POST">
+    <div class="name">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name">
+    </div>
+    <div class="phone">
+        <label for="phone">Phone</label>
+        <input type="tel" name="phone" id="phone">
+    </div>
+    <div class="email">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email">
+    </div>
+    <div class="service_required">
+        <label class="question"><p>Which service do you require?</p>
+            <label for="plumbing">Plumbing
+                <input type="radio" name="service_require" id="plumbing">
+            </label>
+            <label for="electricity">Electricity
+                <input type="radio" name="service_require" id="electricity">
+            </label>
+            <label for="painting">Painting
+                <input type="radio" name="service_require" id="painting">
+            </label>
+        </label>
+    </div>
+    <div class="service_required">
+        <label class="question"><p>Which other service do you need?</p>
+            <label for="architect">Architect
+                <input type="checkbox" name="service_norequired" id="architect">
+            </label>
+            <label for="disinfection">Disinfection
+                <input type="checkbox" name="service_norequired" id="disinfection">
+            </label>
+            <label for="ratexterminat">Rat extermination
+                <input type="checkbox" name="service_norequired" id="ratexterminat">
+            </label>
+        </label>
+    </div>
+    <div class="datetime">
+        <label for="datetime">Date/Time</label>
+        <input type="datetime-local" name="datetime" id="datetime">
+    </div>
+    <div class="place">
+        <label for="place">Place</label>
+        <select name="place" id="place">
+            <option value="">Select One</option>
+            <option value="main_office">Main Office (Paris)</option>
+            <option value="technical_center">Technical center (Lille)</option>
+            <option value="logistic_center">Logistic center (Amiens)</option>
+        </select>
+    </div>
+    <div class="other_needs">
+        <label for="other_needs">Other needs</label>
+        <input type="text" name="other_needs" id="other_needs">
+    </div>
+    <div class="special_intructions">
+        <label for="special_intructions">Special Instructions</label>
+        <textarea name="special_intructions" id="special_intructions" cols="30" rows="5"></textarea>
+    </div>
+    <button type="submit">Submit</button>
+</form>
+</body>
+</html>
