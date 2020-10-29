@@ -17,7 +17,7 @@ if(!is_string($lastname) || !is_string($pwd)){
     header("Location: ./index.php");
 }
 
-if($lastname = "admin" && $pwd = "Cdi1234"){
+if($lastname == "admin" && $pwd == "Cdi1234"){
     $_SESSION['user']['name'] = $lastname;
     header("Location: ./info.php");
 }else{

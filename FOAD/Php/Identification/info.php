@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-if(isset($_SESSION['user']['name']) && empty($_SESSION['user']['name'])){
-    $_SESSION['error']['alert'] = "Tu n'est pas connécter";
+if(empty($_SESSION['user']['name']) && !isset($_SESSION['user']['name'])){
+    $_SESSION['error']['alert'] = "Tu n'est pas connécter ". $_SESSION['user']['name'];
     header("Location: ./index.php");
 }
 ?>
