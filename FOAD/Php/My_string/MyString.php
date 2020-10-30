@@ -4,7 +4,7 @@
 class MyString
 {
 
-    private int $lenght;
+    private int $length;
 
     private string $str;
 
@@ -16,7 +16,7 @@ class MyString
 
     public function strSize()
     {
-        return $this->lenght = strlen($this->str);
+        return $this->length = strlen($this->str);
     }
 
     /**
@@ -27,7 +27,7 @@ class MyString
     {
         $value = "";
 
-        for($i = 0; $i < $this->lenght;$i++){
+        for($i = 0; $i < $this->length; $i++){
             if ($index == $i) {
                 $value = $this->str[$index];
             }
@@ -45,7 +45,7 @@ class MyString
          */
         $position = -1;
 
-        for($i = $index; $i < $this->lenght;$i++){
+        for($i = $index; $i < $this->length; $i++){
             if($str == substr($this->str, $i, strlen($str))){
                 $position = $i+1;
             }
