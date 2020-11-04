@@ -71,20 +71,35 @@ header, footer {
     height: 100%;
 }
 
-.header ul>li{
+.header .menu ul>li{
     padding: 18px 5px;
     height: 100%;
 }
 
-.header ul>li:hover>a{
-    color: red;
+.header .menu ul>li:hover {
+    background: linear-gradient(var(--bleu_clair), var(--bleu_fonce));
 }
 
-.header ul>li:hover > ul{
+.header .menu ul>li:hover > .sous-menu {
     display: block;
     position: absolute;
     background-color: var(--bleu_and_fonce);
-    padding: 0;
+    width: 100%;
+    left: 0;
+}
+
+.header .menu .sous-menu {
+    margin-top: 20px;
+    width: 100%;
+    left: 0;
+}
+
+.header .menu .sous-menu a{
+    color: var(--lite);
+}
+
+.header .menu .sous-menu img{
+    width: 15px;
 }
 
 /*
