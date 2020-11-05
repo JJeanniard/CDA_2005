@@ -25,17 +25,8 @@ ul {
 
 body {
     min-height: 100vh;
-    background-image: url("../img/ice.jpg");
-    background-repeat: no-repeat;
     margin: 0;
     color: var(--lite);
-}
-
-header, footer {
-    background-color: var(--bleu_and_fonce);
-    height: 60px;
-    display: flex;
-    flex-direction: column;
 }
 
 /*
@@ -44,19 +35,26 @@ header, footer {
 .header {
     width: 100%;
     position: fixed;
+}
+
+.header .header-menu{
+    background-color: var(--bleu_and_fonce);
+    box-shadow: 0 0 10px var(--lite);
+    position: relative;
+    height: 60px;
+    display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     justify-content: stretch;
     align-content: space-between;
-    box-shadow: 0 0 10px var(--lite);
 }
 
-.header .logo{
+.header .header-menu .logo{
     padding: 5px 0 5px 20px;
     flex-basis: 100%;
-
 }
 
-.header .logo > img {
+.header .header-menu .logo > img {
     width: 80px;
 }
 
@@ -76,11 +74,12 @@ header, footer {
     height: 100%;
 }
 
-.header .menu ul>li:hover {
+.header .menu ul > .boot-menu:hover {
     background: linear-gradient(var(--bleu_clair), var(--bleu_fonce));
 }
 
 .header .menu ul>li:hover > .sous-menu {
+    z-index: 1;
     display: block;
     position: absolute;
     background-color: var(--bleu_and_fonce);
@@ -102,36 +101,39 @@ header, footer {
     width: 15px;
 }
 
-/*
- * Main
-*/
-section{
+.header .title {
+    text-shadow: var(--shadow-text);
+    height: 100%;
+    width: 100%;
+    background-image: url("../img/ice.jpg");
+    background-repeat: no-repeat;
+    background-position: -46px -80px;
+
+    position: fixed;
+
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
+    justify-content: space-around;
     align-items: center;
 }
 
-section .logo {
-    margin-top: 70px;
+.header .title .logo{
+    margin-top: 10px;
 }
 
-section .title>h1 {
+.header .title .title-main{
+    margin: 0 auto;
     font-size: 50px;
-    text-shadow: var(--shadow-text);
     text-align: center;
-    margin: 27px;
 }
 
-section > p {
+.header .title button{
+    border-style: none;
+    background-color:var(--bleu_fonce);
+    flex-basis: 60px;
+    width: 100%;
+    color: var(--lite);
     text-shadow: var(--shadow-text);
-}
-
-.footer {
-    justify-content: center;
-    align-items: center;
-}
-
-.footer > p {
-    text-shadow: var(--shadow-text);
+    font-size: 20px;
+    font-weight: 900;
 }
