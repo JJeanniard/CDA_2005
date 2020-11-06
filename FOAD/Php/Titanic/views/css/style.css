@@ -24,7 +24,6 @@ ul {
 }
 
 body {
-    min-height: 100vh;
     margin: 0;
     color: var(--lite);
 }
@@ -33,37 +32,48 @@ body {
  * header
 */
 .header {
+    min-height: 100vh;
     width: 100%;
     position: fixed;
-}
 
-.header .header-menu{
-    background-color: var(--bleu_and_fonce);
-    box-shadow: 0 0 10px var(--lite);
-    position: relative;
-    height: 60px;
+    background-image: url("../img/ice.jpg");
+    background-repeat: no-repeat;
+    background-position: -50px -10px;
+
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    justify-content: stretch;
-    align-content: space-between;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.header .header-menu .logo{
-    padding: 5px 0 5px 20px;
+.header .menu{
+    background-color: var(--bleu_and_fonce);
+    box-shadow: 0 0 10px var(--lite);
+
+    height: 60px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: space-between;
+}
+.header .menu .logo{
+    margin-left: 20px;
+    padding-top: 5px;
     flex-basis: 100%;
 }
 
-.header .header-menu .logo > img {
+.header .menu .logo > img {
     width: 80px;
 }
 
-.header .menu {
+.header .menu nav{
     margin-right: 20px;
     flex-basis: 100%;
 }
 
-.header .menu > ul {
+.header .menu nav > ul {
     padding: 0;
     margin: 0;
     height: 100%;
@@ -101,39 +111,23 @@ body {
     width: 15px;
 }
 
-.header .title {
+.header .title-main, .header button, .header p{
     text-shadow: var(--shadow-text);
-    height: 100%;
-    width: 100%;
-    background-image: url("../img/ice.jpg");
-    background-repeat: no-repeat;
-    background-position: -46px -80px;
-
-    position: fixed;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
 }
 
-.header .title .logo{
-    margin-top: 10px;
-}
-
-.header .title .title-main{
+.header .title-main{
     margin: 0 auto;
     font-size: 50px;
     text-align: center;
+
 }
 
-.header .title button{
+.header button{
     border-style: none;
     background-color:var(--bleu_fonce);
     flex-basis: 60px;
     width: 100%;
     color: var(--lite);
-    text-shadow: var(--shadow-text);
     font-size: 20px;
     font-weight: 900;
 }
