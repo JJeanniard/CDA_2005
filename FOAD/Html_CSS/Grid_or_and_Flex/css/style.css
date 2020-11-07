@@ -1,0 +1,64 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 80px);
+    grid-template-areas: "H H H H" "NV S3 S4 S4" "NV S5 S5 S6" "NV S7 S8 S9" "NV F F F";
+    gap: 5px;
+}
+
+header, nav, section, footer {
+    background-color: #CCCC33;
+}
+
+header {
+    grid-area: H;
+}
+
+nav {
+    grid-area: NV;
+}
+
+.section_3 {
+    grid-area: S3;
+}
+
+.section_4 {
+    grid-area: S4;
+}
+
+.section_5 {
+    grid-area: S5;
+}
+
+.section_6 {
+    grid-area: S6;
+}
+
+.section_7 {
+    grid-area: S7;
+}
+
+.section_8 {
+    grid-area: S8;
+}
+
+.section_9 {
+    grid-area: S9;
+}
+
+footer {
+    grid-area: F;
+}
+
+@media all and (width: 320px){
+    body{
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 80px;
+        grid-template-areas: "H H" "NV S3" "NV S4" "NV S5" "NV S6" "NV S7" "NV S8" "NV S9" "F F";
+    }
+}
