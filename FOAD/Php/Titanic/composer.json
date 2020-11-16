@@ -1,0 +1,12 @@
+{
+    "name": "jonat/titanic",
+    "description": "Site web Agence Titanic",
+    "license": "unlicense",
+    "authors": [
+        {
+            "name": "Jonasbadboys",
+            "email": "jonathanjeanniard@sfr.fr"
+        }
+    ],
+    "require": {}
+}
