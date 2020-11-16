@@ -65,6 +65,7 @@ body {
 }
 
 .header .menu .logo > img {
+    margin-top: 5px;
     width: 80px;
 }
 
@@ -72,6 +73,11 @@ body {
     margin-right: 15px;
     flex-basis: 100%;
 }
+
+.header .menu nav>ul {
+    padding: 0;
+}
+
 .header .menu nav > .boot-menu{
     margin: 0;
     height: 100%;
@@ -79,6 +85,7 @@ body {
 .header .menu nav > .boot-menu > li{
     height: 100%;
     margin: 0 5px;
+    padding-top: 18px;
 }
 
 .header .menu ul > .boot-menu > .sous-menu {
