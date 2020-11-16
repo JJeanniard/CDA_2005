@@ -47,7 +47,7 @@ body {
     align-items: center;
 }
 
-.header .menu {
+.header .sidebar {
     background-color: var(--bleu_and_fonce);
     box-shadow: 0 0 10px var(--lite);
 
@@ -59,44 +59,39 @@ body {
     align-content: space-between;
 }
 
-.header .menu .logo {
+.header .sidebar .logo {
     margin-left: 20px;
     flex-basis: 100%;
 }
 
-.header .menu .logo > img {
+.header .sidebar .logo > img {
     margin-top: 5px;
     width: 80px;
 }
 
-.header .menu nav {
+.header .sidebar nav {
     margin-right: 15px;
     flex-basis: 100%;
 }
 
-.header .menu nav>ul {
+.header .sidebar nav > .menu {
     padding: 0;
 }
 
-.header .menu nav > .boot-menu{
+.header .sidebar nav > .menu{
     margin: 0;
     height: 100%;
 }
-.header .menu nav > .boot-menu > li{
+.header .sidebar nav > .menu > #act-menu{
     height: 100%;
-    margin: 0 5px;
-    padding-top: 18px;
+    padding: 18px 5px;
 }
 
-.header .menu ul > .boot-menu > .sous-menu {
-    display: none;
-}
-
-.header .menu ul > .boot-menu:hover {
+.header .sidebar #act-menu:hover {
     background: linear-gradient(var(--bleu_clair), var(--bleu_fonce));
 }
 
-.header .menu ul > li:hover > .sous-menu {
+.header .sidebar .menu > #act-menu:hover > #sous-menu {
     z-index: 1;
     display: block;
     position: absolute;
@@ -105,23 +100,23 @@ body {
     left: 0;
 }
 
-.header .menu .sous-menu {
+.header .sidebar #sous-menu {
     margin-top: 20px;
 }
 
-.header .menu .sous-menu > li {
+.header .sidebar #sous-menu > li {
     margin: 42px 0;
 }
 
-.header .menu .sous-menu > li:last-child {
+.header .sidebar #sous-menu > li:last-child {
     margin: 20px 0;
 }
 
-.header .menu .sous-menu a {
+.header .sidebar #sous-menu a {
     color: var(--lite);
 }
 
-.header .menu .sous-menu img {
+.header .sidebar #sous-menu img {
     width: 15px;
 }
 
@@ -147,7 +142,7 @@ body {
 }
 
 @media all and (min-width: 1024px) {
-    .header .menu {
+    .header .sidebar {
         background: none;
         box-shadow: none;
     }
@@ -176,15 +171,15 @@ body {
 
     }
 
-    .header .sous-menu > li {
+    .header #act-menu > .sous-menu {
         margin: auto !important;
     }
 
-    .header .menu ul > .boot-menu:hover {
+    .header .sidebar ul > .boot-menu:hover {
         background: linear-gradient(var(--bleu_clair), var(--bleu_fonce));
     }
 
-    .header .menu ul > li:hover > .sous-menu {
+    .header .sidebar ul > #act-menu:hover > #sous-menu {
         z-index: 1;
         display: block;
         position: absolute;
