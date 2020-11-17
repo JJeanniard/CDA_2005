@@ -1,6 +1,5 @@
 <?php
 
-
 class Router
 {
     private string $request;
@@ -13,18 +12,32 @@ class Router
     {
         $this->request = $_SERVER['REQUEST_URI'];
 
-        if($baseUrl !== "/"){
+        if ($baseUrl !== "/") {
             $this->request = str_replace($baseUrl, '', $this->request);
         }
 
         $this->route = explode('/', $this->request);
 
-        $this->controller = !empty($this->route[0])? $this->route[0] : 'home';
+        $this->controller = !empty($this->route[0]) ? $this->route[0] : 'home';
 
         $this->controller = mb_convert_case($this->controller, MB_CASE_TITLE);
-        $this->controller .= 'Controller';
 
-        //TODO : autochargement
+        $this->controller = "Controllers\\" . $this->controller."Controller";
+        echo $this->controller;
+    }
 
+    public function getController()
+    {
+        return $this->controller;
+    }
+
+    public function getAction()
+    {
+        return !empty($this->route[1] ? $this->route[1] : "index");
+    }
+
+    public function getId()
+    {
+        return !empty($this->route[2] ? $this->route[2] : null);
     }
 }

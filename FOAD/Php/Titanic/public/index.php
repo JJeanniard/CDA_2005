@@ -1,4 +1,5 @@
 <?php
-require "./app/bootstrap.php";
+
+require "../App/bootstrap.php";
 
 

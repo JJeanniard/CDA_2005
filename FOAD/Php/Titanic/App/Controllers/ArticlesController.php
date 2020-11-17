@@ -1,7 +1,11 @@
 <?php
+namespace Controllers;
 
+use Controller;
 
-class ArticlesController
+class ArticlesController extends Controller
 {
-
+    public function index(){
+        echo "article";
+    }
 }
