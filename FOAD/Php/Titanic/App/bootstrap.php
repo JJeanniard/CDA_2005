@@ -7,7 +7,7 @@ function autoload(string $className)
     $className = __DIR__."/".$className.".php";
 
     if(is_file($className)){
-        require($className);
+        require $className;
     }else{
         echo "error de chargement de la classe!";
     }

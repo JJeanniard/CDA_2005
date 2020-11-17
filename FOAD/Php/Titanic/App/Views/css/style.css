@@ -28,13 +28,23 @@ body {
     color: var(--lite);
 }
 
+/**
+  TODO: background semi-fixe
+  TODO: btn du menu reactif avec un changement de couleur
+  //Vue Mobile
+  TODO: btn "découvrir" transparant en vue mobile
+  TODO: big-logo + btn disparais à "x" px de scrolling en vue mobile
+  //vue PC
+  TODO: Menu translucide en vue pc et devient opaque à "x" px de scrolling
+
+ */
+
 /*
  * header
 */
 .header {
     min-height: 100vh;
     width: 100%;
-    position: fixed;
 
     background-image: url("../img/ice.jpg");
     background-repeat: no-repeat;
@@ -78,11 +88,12 @@ body {
     padding: 0;
 }
 
-.header .sidebar nav > .menu{
+.header .sidebar nav > .menu {
     margin: 0;
     height: 100%;
 }
-.header .sidebar nav > .menu > #act-menu{
+
+.header .sidebar nav > .menu > #act-menu {
     height: 100%;
     padding: 18px 5px;
 }
@@ -141,12 +152,17 @@ body {
     font-weight: 900;
 }
 
+@media all and (min-width: 800px) {
+    .header {
+
+    }
+}
+
 @media all and (min-width: 1024px) {
     .header .sidebar {
         background: none;
         box-shadow: none;
     }
-
 
     .header nav {
         width: 80%;

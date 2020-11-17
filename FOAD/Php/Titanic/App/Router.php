@@ -23,7 +23,6 @@ class Router
         $this->controller = mb_convert_case($this->controller, MB_CASE_TITLE);
 
         $this->controller = "Controllers\\" . $this->controller."Controller";
-        echo $this->controller;
     }
 
     public function getController()
