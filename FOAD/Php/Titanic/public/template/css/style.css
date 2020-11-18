@@ -29,17 +29,22 @@ body {
 }
 
 /**
+    //vue general
     TODO: Background semi-fixe
     TODO: Btn du menu reactif avec un changement de couleur
     TODO: Btn "découvrir ..." enversion du gradiant
-    TODO: Big-logo + btn disparais à "x" px de scrolling
+    TODO: Big-logo + btn "découvrir ..." avant de disparaitre à "x" px de scrolling
     TODO: Le btn "découvrir ..." est associer avec la section "Destination"
     TODO: Les btn des vignettes, ont une enversion du gradiant sur le passage de la sourie
+
+    //vue Mobile et Tablette
+    TODO: Menu qui viens de la gauche et qui repart sur la gauche
+
     //Vue Mobile
     TODO: Btn "découvrir ..." est translucide en vue mobile
-    TODO: Menu qui viens de la gauche et qui repare sur la gauche
     //vue tablette
     TODO: Btn "découvrir ..." est translucide en vue tablette
+
     //vue PC
     TODO: Menu transparent en vue pc et devient opaque à "x" px de scrolling
     TODO: Btn "découvrir ..." devient translucide avant de disparaitre sur "x" px de scrolling
@@ -50,7 +55,6 @@ body {
     TODO: section avec trois colonne translucide avec un titre et une liste
 
     TODO: QST -> l'aticle "Nos offres ont du talent", les deux mots sont du a quoi?
-
  */
 
 /*
