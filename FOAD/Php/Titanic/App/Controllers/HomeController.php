@@ -5,9 +5,10 @@ use Controller;
 
 class HomeController extends Controller
 {
-    public function index(){
-        echo "hello home";
-
-        $this->view("home");
+    public function index()
+    {
+        return $this->view('home', [
+            'welcome' => 'welcome'
+        ]);
     }
 }

@@ -4,7 +4,7 @@ function autoload(string $className)
 {
     str_replace("\\", "/", $className);
 
-    $className = __DIR__."/".$className.".php";
+    $className = (__DIR__.'/'.$className.'.php');
 
     if(is_file($className)){
         require $className;
@@ -15,8 +15,12 @@ function autoload(string $className)
 
 spl_autoload_register("autoload");
 
-$router = new Router();
+$router = new Router("/Titanic/");
 
 $controllerName = $router->getController();
 
 $controller = new $controllerName($router);
+
+$result = $controller->run();
+
+echo $result;

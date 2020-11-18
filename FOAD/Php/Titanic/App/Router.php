@@ -32,11 +32,11 @@ class Router
 
     public function getAction()
     {
-        return !empty($this->route[1] ? $this->route[1] : "index");
+        return !empty($this->route[1]) ? $this->route[1] : 'index';
     }
 
     public function getId()
     {
-        return !empty($this->route[2] ? $this->route[2] : null);
+        return !empty($this->route[2]) ? $this->route[2] : null;
     }
 }
