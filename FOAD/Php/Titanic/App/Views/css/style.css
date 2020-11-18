@@ -29,14 +29,19 @@ body {
 }
 
 /**
-  TODO: background semi-fixe
-  TODO: btn du menu reactif avec un changement de couleur
-  //Vue Mobile
-  TODO: btn "découvrir" transparant en vue mobile
-  TODO: big-logo + btn disparais à "x" px de scrolling en vue mobile
-  //vue PC
-  TODO: Menu translucide en vue pc et devient opaque à "x" px de scrolling
-
+    TODO: Background semi-fixe
+    TODO: Btn du menu reactif avec un changement de couleur
+    TODO: Btn "découvrir ..." enversion du gradiant
+    TODO: Big-logo + btn disparais à "x" px de scrolling
+    TODO: Le btn "découvrir ..." est associer avec la section "Destination"
+    TODO: Les btn des vignettes, ont une enversion du gradiant sur le passage de la sourie
+    //Vue Mobile
+    TODO: Btn "découvrir ..." est translucide en vue mobile
+    //vue PC
+    TODO: Menu transparent en vue pc et devient opaque à "x" px de scrolling
+    TODO: Btn "découvrir ..." devient translucide avant de disparaitre sur "x" px de scrolling
+    TODO: vignette de voyage en 3 colonne, en betwen et avec bordure arrondie
+    TODO: L'article avec 2 colonne une photo sur la gauche et du texte sur la droit
  */
 
 /*
