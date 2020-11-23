@@ -1,7 +1,7 @@
 :root {
     --bleu_standart: #4080AC;
     --bleu_clair: #70B0DC;
-    --bleu_fonce: #2565A1;
+    --bleu_fonce: #2565a1;
     --bleu_and_fonce: #10508C;
 
     --lite: #F5F5F5;
@@ -30,7 +30,6 @@ body {
 
 /**
     //vue general
-    TODO: Background semi-fixe
     TODO: Btn du menu reactif avec un changement de couleur
     TODO: Btn "découvrir ..." enversion du gradiant
     TODO: Big-logo + btn "découvrir ..." avant de disparaitre à "x" px de scrolling
@@ -40,8 +39,6 @@ body {
     //vue Mobile et Tablette
     TODO: Menu qui viens de la gauche et qui repart sur la gauche
 
-    //Vue Mobile
-    TODO: Btn "découvrir ..." est translucide en vue mobile
     //vue tablette
     TODO: Btn "découvrir ..." est translucide en vue tablette
 
@@ -66,16 +63,13 @@ body {
 
     background-image: url("../img/ice.jpg");
     background-repeat: no-repeat;
-    background-position: -50px -10px;
-
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+    background-position: -90px -50px;
+    background-attachment: fixed;
 }
 
 .header .sidebar {
+    position: fixed;
+
     background-color: var(--bleu_and_fonce);
     box-shadow: 0 0 10px var(--lite);
 
@@ -120,13 +114,16 @@ body {
     background: linear-gradient(var(--bleu_clair), var(--bleu_fonce));
 }
 
-.header .sidebar .menu > #act-menu:hover > #sous-menu {
-    z-index: 1;
+.header .sidebar .menu > #act-menu > #sous-menu {
+    display: none;
+}
+
+.header .sidebar .menu > #act-menu > #sous-menu1 {
+    animation: margin-left 0.5s;
     display: block;
     position: absolute;
     background-color: var(--bleu_and_fonce);
     width: 100%;
-    left: 0;
 }
 
 .header .sidebar #sous-menu {
@@ -149,21 +146,81 @@ body {
     width: 15px;
 }
 
-.header .title-main, .header button, .header p {
+/*
+* header title
+*/
+.header h1, .header a, .header p {
     text-shadow: var(--shadow-text);
 }
 
-.header .title-main {
-    margin: 0 auto;
-    font-size: 50px;
-    text-align: center;
-
+.header .title{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.header button {
+.header .title .main-logo{
+    margin-top: 80px;
+}
+
+.header .title h1 {
+    font-size: 40px;
+}
+
+.header .title a {
+    text-align: center;
+    padding: 15px;
+    background-color: rgba(37,101,161,0.5);
+    height: 60px;
+    width: 100%;
+    color: var(--lite);
+    font-size: 20px;
+    font-weight: 900;
+}
+
+/*
+* destination
+*/
+#destination {
+    background-color: var(--bleu_clair);
+    width: 100%;
+}
+
+#destination h2{
+    padding-top: 50px;
+    margin: 0;
+    color: black;
+    text-align: center;
+}
+
+#destination div{
+/   margin-top: 20px;
+}
+
+#destination div img{
+    width: 100%;
+}
+
+#destination h3{
+    padding: 10px 0;
+    margin: 0;
+    color: black;
+    text-align: center;
+}
+
+#destination p{
+    color: black;
+    text-align: justify;
+    margin: 16px 16px;
+}
+
+#destination button {
     border-style: none;
-    background-color: var(--bleu_fonce);
-    flex-basis: 60px;
+    text-align: center;
+    background: linear-gradient(var(--bleu_and_fonce), var(--bleu_fonce));
+    height: 60px;
     width: 100%;
     color: var(--lite);
     font-size: 20px;
