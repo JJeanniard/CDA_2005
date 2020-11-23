@@ -1,10 +1,11 @@
 <?php
 require "Moteur.php";
+
 /**
  * Class Voiture
  * @author jonasbadboys
  * @author jjeanniard@jonathan-jeanniard.fr
- * @license Unlicense
+ * @license Unlicensed
  * This is free and unencumbered software released into the public domain.
  *
  * Anyone is free to copy, modify, publish, use, compile, sell, or
@@ -48,6 +49,11 @@ class Voiture
         $this->setMarque($marque);
         $this->setModele($modele);
         $this->setPoids($poids);
+    }
+
+    public function toString()
+    {
+        echo $this->getMarque() . " " . $this->getModele() . " " . $this->getPoids();
     }
 
     /**
@@ -98,7 +104,8 @@ class Voiture
         $this->poids = $poids;
     }
 
-    public function vitesseMax(){
-        return $this->moteur->getVitessMax() - ($this->getPoids() * 5 / 100);
+    public function vitesseMax() : int
+    {
+        return $this->moteur->getVitessMax() - ($this->getPoids() * 0.3);
     }
 }
