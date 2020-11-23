@@ -1,5 +1,5 @@
 <?php
-
+require "Moteur.php";
 /**
  * Class Voiture
  * @author jonasbadboys
@@ -39,9 +39,11 @@ class Voiture
     /** Poids en kilogramme @var int */
     protected int $poids;
 
-    public function __construct(string $marque, string $modele, int $poids = 1000, string $modeleMoteur, int $vitessMax)
+    protected Moteur $moteur;
+
+    public function __construct(string $marque, string $modele, string $modeleMoteur, int $vitessMax, int $poids = 1000)
     {
-        $moteur = new Moteur($modeleMoteur, $vitessMax);
+        $this->moteur = new Moteur($modeleMoteur, $vitessMax);
 
         $this->setMarque($marque);
         $this->setModele($modele);
@@ -96,5 +98,7 @@ class Voiture
         $this->poids = $poids;
     }
 
-
+    public function vitesseMax(){
+        return $this->moteur->getVitessMax() - ($this->getPoids() * 5 / 100);
+    }
 }
