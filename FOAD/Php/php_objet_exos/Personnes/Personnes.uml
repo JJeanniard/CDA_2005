@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>PHP</ID>
+  <OriginalElement>D:/jonat/Documents/GitHub/CRM/CDA_2005/FOAD/Php/php_objet_exos/Personnes</OriginalElement>
+  <nodes>
+    <node x="100.0" y="80.0">\Intervenant</node>
+    <node x="0.0" y="80.0">\Client</node>
+    <node x="0.0" y="155.0">\Interventions</node>
+    <node x="52.0" y="0.0">\Personne</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="\Client" target="\Personne">
+      <point x="0.0" y="-15.0" />
+      <point x="40.0" y="55.0" />
+      <point x="76.0" y="55.0" />
+      <point x="-24.0" y="15.0" />
+    </edge>
+    <edge source="\Intervenant" target="\Personne">
+      <point x="0.0" y="-15.0" />
+      <point x="160.0" y="55.0" />
+      <point x="124.0" y="55.0" />
+      <point x="24.0" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="110.0" y="92.5" />
+  <SelectedNodes>
+    <node>\Intervenant</node>
+  </SelectedNodes>
+  <Categories />
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
