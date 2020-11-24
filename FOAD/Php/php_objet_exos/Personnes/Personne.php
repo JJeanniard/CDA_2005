@@ -22,9 +22,7 @@ class Personne
 
         $this->prenom = $prenom;
 
-        $diff = $toDay->diff($datedenaissance);
-
-        $this->age = $diff->y;
+        $this->age = $toDay->diff($datedenaissance)->y;
     }
 
     /**
