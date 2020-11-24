@@ -1,6 +1,7 @@
 <?php
 
 
+use Interventions;
 use Personne;
 
 class Intervenant extends Personne

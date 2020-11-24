@@ -13,4 +13,38 @@ class Interventions
     {
 
     }
+
+    /**
+     * @return DateTime
+     */
+    public function getDatetime(): DateTime
+    {
+        return $this->datetime;
+    }
+
+    /**
+     * @param DateTime $datetime
+     */
+    public function setDatetime(DateTime $datetime): void
+    {
+        $this->datetime = $datetime;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDescription(): string
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param string $description
+     */
+    public function setDescription(string $description): void
+    {
+        $this->description = $description;
+    }
+
+
 }
