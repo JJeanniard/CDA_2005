@@ -1,17 +1,26 @@
 <?php
 
-
 class Personne
 {
-    private string $name;
+    private string $nom;
 
     private string $prenom;
 
     private int $age;
 
-    public function __construct(string $name, string $prenom, DateTime $datedenaissance)
+    /**
+     * Personne constructor.
+     * @param string $nom
+     * @param string $prenom
+     * @param DateTime $datedenaissance
+     */
+    public function __construct(string $nom, string $prenom, DateTime $datedenaissance)
     {
         $toDay = new DateTime();
+
+        $this->nom = $nom;
+
+        $this->prenom = $prenom;
 
         $diff = $toDay->diff($datedenaissance);
 
@@ -21,17 +30,17 @@ class Personne
     /**
      * @return string
      */
-    public function getName(): string
+    public function getNom(): string
     {
-        return $this->name;
+        return $this->nom;
     }
 
     /**
-     * @param string $name
+     * @param string $nom
      */
-    public function setName(string $name): void
+    public function setNom(string $nom): void
     {
-        $this->name = $name;
+        $this->nom = $nom;
     }
 
     /**
