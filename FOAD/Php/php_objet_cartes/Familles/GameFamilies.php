@@ -3,6 +3,7 @@
 
 namespace Families;
 
+use Exception;
 use Families\Player;
 use Families\GameCard;
 
@@ -29,7 +30,7 @@ class GameFamilies
     public function distribute($players)
     {
         if (sizeof($players) < 2 || sizeof($players) > 4) {
-            throw new Exception("Soit il n'y a pas le nombre de joueur suffisant ou il y a trop de joueur!");
+            throw new Exception("Soit il ns'y a pas le nombre de joueur suffisant ou il y a trop de joueur!");
         }
 
         $x = 0;
@@ -49,12 +50,12 @@ class GameFamilies
         }
 
         foreach (array_count_values($rows) as $count){
+            echo $count."\n";
             if($count === 7){
-                echo "MATCH";
+                printf("MATCH");
                 sleep(10);
                 $this->distribute($players);
             }
         }
-
     }
 }
