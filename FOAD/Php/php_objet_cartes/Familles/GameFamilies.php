@@ -26,12 +26,12 @@ class GameFamilies
         shuffle($this->cards);
     }
 
-    //TODO: faire en sorte qu'il y a pas une famille lors de la distribution
     public function distribute($players)
     {
         if (sizeof($players) < 2 || sizeof($players) > 4) {
             throw new Exception("Soit il n'y a pas le nombre de joueur suffisant ou il y a trop de joueur!");
         }
+
         $x = 0;
         for($i = 0; $i < 7; $i++){
             for ($y = 0; $y < sizeof($players); $y++) {
@@ -39,6 +39,22 @@ class GameFamilies
                 $x++;
             }
         }
-        //TODO: verifier qu'un joueur n'a pas 7 fois la le même nom de famille dans son jeux
+
+        $z = 0;
+        foreach ($player as $cards){
+            foreach ($cards as $family){
+                $rows[$z] = $family->getFamily();
+                $z++;
+            }
+        }
+
+        foreach (array_count_values($rows) as $count){
+            if($count === 7){
+                echo "MATCH";
+                sleep(10);
+                $this->distribute($players);
+            }
+        }
+
     }
 }

@@ -17,7 +17,9 @@ $game = new GameFamilies();
 
 var_dump($game);
 
-$game->distribute($players);
+for($i = 0; $i<1000000000;$i++) {
+    $game->distribute($players);
+}
 
 var_dump($players);
 
