@@ -39,6 +39,6 @@ class GameFamilies
                 $x++;
             }
         }
-        //TODO: verifier qu'un joueur à pas 7 fois la le même nom de famille
+        //TODO: verifier qu'un joueur n'a pas 7 fois la le même nom de famille dans son jeux
     }
 }
