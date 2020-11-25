@@ -8,9 +8,9 @@ class Player
 {
     private string $playerName;
 
-    public function __construct()
+    public function __construct($name)
     {
-
+        $this->setPlayerName($name);
     }
 
     /**
