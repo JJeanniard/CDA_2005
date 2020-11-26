@@ -41,4 +41,22 @@ class Player
     {
         return $this->playerTeam;
     }
+
+    /**
+     * @return array
+     */
+    public function getPlayerCards(): array
+    {
+        return $this->playerCards;
+    }
+
+    /**
+     * @param array $playerCards
+     */
+    public function setPlayerCards(array $playerCards): void
+    {
+        $this->playerCards = $playerCards;
+    }
+
+
 }
