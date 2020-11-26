@@ -1,11 +1,11 @@
 <?php
 
-namespace Bonus;
-
-require "Card.php";
-require "ICard.php";
+namespace Bonus\Belote;
 
 use Exception;
+
+use Bonus\Card;
+use Bonus\ICard;
 
 class GameBelote extends Card implements ICard
 {

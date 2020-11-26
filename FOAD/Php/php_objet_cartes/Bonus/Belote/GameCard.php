@@ -1,7 +1,5 @@
 <?php
-
-
-namespace Belote;
+namespace Bonus\Belote;
 
 
 class GameCard
