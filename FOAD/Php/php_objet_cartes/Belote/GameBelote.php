@@ -38,9 +38,6 @@ class GameBelote
             throw new Exception("Trop ou peu d'équipe pour jouer!");
         }
 
-        //On fait une premiere distribution sur 3 carte au premiere joueurs de chaque équipes puis au 2 autre joueurs.
-        //En suite on distribue 2 carte dans le même ordre.
-
         foreach ($players as $key => $player) {
             for ($i = 1; $i < 2; $i++) {
                 if ($player->getPlayerTeam() === 1) {
@@ -59,25 +56,28 @@ class GameBelote
         $players[] = $secondTeam[1];
 
         $idCard = 0;
-
-
-        for ($i = 0; $i < 3; $i++) {
-            foreach ($players as $player) {
-                $card[] = $this->cards[$idCard];
-                $player->setPlayerCards($card);
+        foreach ($players as $player) {
+            $cardPlDist1 = null;
+            for ($x = 0; $x < 3; $x++) {
+                $cardPlDist1[] = $this->cards[$idCard];
                 $idCard++;
             }
+            $player->setPlayerCards($cardPlDist1);
         }
 
-
-        for ($i = 0; $i < 2; $i++) {
-            foreach ($players as $player) {
-                $card[] = $this->cards[$idCard];
-                $player->setPlayerCards($card);
+        foreach ($players as $player) {
+            $cardPlDist2 = null;
+            for ($i = 0; $i < 2; $i++) {
+                $cardPlDist2[] = $this->cards[$idCard];
                 $idCard++;
             }
+
+            foreach ($player->getPlayerCards() as $cards){
+                $cardPlDist2[] = $cards;
+            }
+            $player->setPlayerCards($cardPlDist2);
         }
 
-        return $this->cards[$idCard+1];
+        return $this->cards[$idCard + 1];
     }
 }

@@ -18,8 +18,14 @@ $game = new GameBelote();
 
 //var_dump($game);
 
-var_dump($game->distribute($players));
+$game->distribute($players);
 
 //var_dump($players);
 
-echo $players->getPlayerName();
+foreach ($players as $player){
+    echo $player->getPlayerName(). "\n";
+    foreach ($player->getPlayerCards() as $card){
+        echo $card->getColor() . " " . $card->getName() ."\n";
+    }
+    echo "\n";
+}
