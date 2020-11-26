@@ -18,6 +18,8 @@ $game = new GameBelote();
 
 //var_dump($game);
 
-$game->distribute($players);
+var_dump($game->distribute($players));
 
 //var_dump($players);
+
+echo $players->getPlayerName();
