@@ -52,8 +52,6 @@ class GameFamilies
         foreach (array_count_values($rows) as $count){
             echo $count."\n";
             if($count === 7){
-                printf("MATCH");
-                sleep(10);
                 $this->distribute($players);
             }
         }
