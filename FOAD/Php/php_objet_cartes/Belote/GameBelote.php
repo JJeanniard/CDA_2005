@@ -54,6 +54,7 @@ class GameBelote
             }
         }
 
+        //TODO: on doit distribuer 3 carte à un joueur puis passée au suivant
         $z = 0;
         for($i = 0; $i < 3; $i++){
             $cardPl1[] = $this->cards[$z++];
