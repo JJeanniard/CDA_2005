@@ -1,19 +1,10 @@
 <?php
 
-function autoload(string $className)
-{
-    str_replace("\\", "/", $className);
+require "../vendor/autoload.php";
 
-    $className = (__DIR__.'/'.$className.'.php');
-
-    if(is_file($className)){
-        require $className;
-    }else{
-        echo "error de chargement de la classe!";
-    }
-}
-
-spl_autoload_register("autoload");
+use Titanic\Router;
+use Titanic\Controllers\HomeController;
+use Titanic\Views;
 
 $router = new Router("/Titanic/");
 
@@ -22,5 +13,7 @@ $controllerName = $router->getController();
 $controller = new $controllerName($router);
 
 $result = $controller->run();
+
+$smarty = new Smarty();
 
 echo $result;

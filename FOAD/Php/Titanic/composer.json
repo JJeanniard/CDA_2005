@@ -8,5 +8,12 @@
             "email": "jonathanjeanniard@sfr.fr"
         }
     ],
-    "require": {}
+    "autoload": {
+        "psr-4": {
+            "Titanic\\" : "./App/"
+        }
+    },
+    "require": {
+        "smarty/smarty": "^3.1"
+    }
 }

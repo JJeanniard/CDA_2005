@@ -1,5 +1,9 @@
 <?php
 
+namespace Titanic;
+
+use Exception;
+
 abstract class Controller
 {
     protected Router $router;

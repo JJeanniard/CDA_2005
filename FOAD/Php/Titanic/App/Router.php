@@ -1,5 +1,7 @@
 <?php
 
+namespace Titanic;
+
 class Router
 {
     private string $request;
@@ -22,7 +24,7 @@ class Router
 
         $this->controller = mb_convert_case($this->controller, MB_CASE_TITLE);
 
-        $this->controller = "Controllers\\" . $this->controller."Controller";
+        $this->controller = "Titanic\\Controllers\\".$this->controller."Controller";
     }
 
     public function getController()

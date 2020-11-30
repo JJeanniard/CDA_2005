@@ -1,7 +1,7 @@
 <?php
-namespace Controllers;
+namespace Titanic\Controllers;
 
-use Controller;
+use Titanic\Controller;
 
 class HomeController extends Controller
 {
