@@ -1,0 +1,281 @@
+:root {
+    --bleu_standart: #4080AC;
+    --bleu_clair: #70B0DC;
+    --bleu_fonce: #2565a1;
+    --bleu_and_fonce: #10508C;
+
+    --lite: #F5F5F5;
+    --lite_hover: #FFFFD0;
+    --dark: #111111;
+    --shadow-text: 1px 1px var(--dark), -1px 1px var(--dark), 1px -1px var(--dark), -1px -1px var(--dark);
+}
+
+* {
+    box-sizing: border-box;
+    font-family: "Open Sans", Arial, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    margin: 0;
+    color: var(--lite);
+}
+
+/**
+    //vue general
+    TODO: Btn du menu reactif avec un changement de couleur
+    TODO: Btn "découvrir ..." enversion du gradiant
+    TODO: Big-logo + btn "découvrir ..." avant de disparaitre à "x" px de scrolling
+    TODO: Le btn "découvrir ..." est associer avec la section "Destination"
+    TODO: Les btn des vignettes, ont une enversion du gradiant sur le passage de la sourie
+
+    //vue Mobile et Tablette
+    TODO: Menu qui viens de la gauche et qui repart sur la gauche
+
+    //vue tablette
+    TODO: Btn "découvrir ..." est translucide en vue tablette
+
+    //vue PC
+    TODO: Menu transparent en vue pc et devient opaque à "x" px de scrolling
+    TODO: Btn "découvrir ..." devient translucide avant de disparaitre sur "x" px de scrolling
+    TODO: vignette de voyage en 3 colonne, en betwen et avec bordure arrondie
+    TODO: L'article avec 2 colonne une photo sur la gauche et du texte avec l'auteur en lien sur la droit
+    TODO: Section "Offres du moment" en h2, avec trois colonne avec des photos un titre un paragraphe, une liste, un prix et un btn
+    TODO: Section article avec titre, image, texte et l'article suivant doit etre asymetrique de l'article qui le precede
+    TODO: section avec trois colonne translucide avec un titre et une liste
+
+    TODO: QST -> l'aticle "Nos offres ont du talent", les deux mots sont du a quoi?
+ */
+
+/*
+ * Header
+*/
+.header {
+    min-height: 100vh;
+    width: 100%;
+
+    background-image: url("../img/ice.jpg");
+    background-repeat: no-repeat;
+    background-position: -90px -50px;
+    background-attachment: fixed;
+}
+
+.header .sidebar {
+    position: fixed;
+
+    background-color: var(--bleu_and_fonce);
+    box-shadow: 0 0 10px var(--lite);
+
+    height: 60px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: space-between;
+}
+
+.header .sidebar .logo {
+    margin-left: 20px;
+    flex-basis: 100%;
+}
+
+.header .sidebar .logo > img {
+    margin-top: 5px;
+    width: 80px;
+}
+
+.header .sidebar nav {
+    margin-right: 15px;
+    flex-basis: 100%;
+}
+
+.header .sidebar nav > .menu {
+    padding: 0;
+}
+
+.header .sidebar nav > .menu {
+    margin: 0;
+    height: 100%;
+}
+
+.header .sidebar nav > .menu > #act-menu {
+    height: 100%;
+    padding: 18px 5px;
+}
+
+.header .sidebar #act-menu:hover {
+    background: linear-gradient(var(--bleu_clair), var(--bleu_fonce));
+}
+
+.header .sidebar .menu > #act-menu > #sous-menu {
+    display: none;
+}
+
+.header .sidebar .menu > #act-menu > #sous-menu1 {
+    animation: margin-left 0.5s;
+    display: block;
+    position: absolute;
+    background-color: var(--bleu_and_fonce);
+    width: 100%;
+}
+
+.header .sidebar #sous-menu {
+    margin-top: 20px;
+}
+
+.header .sidebar #sous-menu > li {
+    margin: 42px 0;
+}
+
+.header .sidebar #sous-menu > li:last-child {
+    margin: 20px 0;
+}
+
+.header .sidebar #sous-menu a {
+    color: var(--lite);
+}
+
+.header .sidebar #sous-menu img {
+    width: 15px;
+}
+
+/*
+* Header > title
+*/
+.header .title h1, .header .title a, .header .title p {
+    text-shadow: var(--shadow-text);
+}
+
+.header .title{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .title .main-logo{
+    margin-top: 80px;
+}
+
+.header .title h1 {
+    font-size: 40px;
+}
+
+.header .title a {
+    text-align: center;
+    padding: 15px;
+    background-color: rgba(37,101,161,0.5);
+    height: 60px;
+    width: 100%;
+    color: var(--lite);
+    font-size: 20px;
+    font-weight: 900;
+}
+
+/*
+* destination
+*/
+#destination {
+    background-color: var(--bleu_clair);
+    width: 100%;
+}
+
+#destination h2{
+    padding-top: 50px;
+    margin: 0;
+    color: black;
+    text-align: center;
+}
+
+#destination div{
+/   margin-top: 20px;
+}
+
+#destination div img{
+    width: 100%;
+}
+
+#destination h3{
+    padding: 10px 0;
+    margin: 0;
+    color: black;
+    text-align: center;
+}
+
+#destination p{
+    color: black;
+    text-align: justify;
+    margin: 16px 16px;
+}
+
+#destination button {
+    border-style: none;
+    text-align: center;
+    background: linear-gradient(var(--bleu_and_fonce), var(--bleu_fonce));
+    height: 60px;
+    width: 100%;
+    color: var(--lite);
+    font-size: 20px;
+    font-weight: 900;
+}
+
+@media all and (min-width: 800px) {
+    .header {
+
+    }
+}
+
+@media all and (min-width: 1024px) {
+    .header .sidebar {
+        background: none;
+        box-shadow: none;
+    }
+
+    .header nav {
+        width: 80%;
+        margin: 0 !important;
+        height: 60px;
+    }
+
+    .header nav > ul > .boot-menu {
+        padding: 0 !important;
+    }
+
+    .header nav > ul > .boot-menu > a {
+        display: none;
+    }
+
+
+    .header .sous-menu {
+        height: 100%;
+        display: flex !important;
+        margin: 0 !important;
+        width: 100%;
+
+    }
+
+    .header #act-menu > .sous-menu {
+        margin: auto !important;
+    }
+
+    .header .sidebar ul > .boot-menu:hover {
+        background: linear-gradient(var(--bleu_clair), var(--bleu_fonce));
+    }
+
+    .header .sidebar ul > #act-menu:hover > #sous-menu {
+        z-index: 1;
+        display: block;
+        position: absolute;
+        background-color: var(--bleu_and_fonce);
+        width: 100%;
+        left: 0;
+    }
+}

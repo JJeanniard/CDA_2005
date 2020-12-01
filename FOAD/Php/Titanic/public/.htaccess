@@ -1,0 +1,9 @@
+Options +FollowSymLinks
+
+RewriteEngine On
+#Si le dossier existe pas
+RewriteCond %{REQUEST_FILENAME} !-d
+#Si le fichier existe pas
+RewriteCond %{REQUEST_FILENAME} !-f
+#Accepte tout les carracteres
+RewriteRule ^(.*)$ index.php

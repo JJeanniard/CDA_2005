@@ -1,0 +1,19 @@
+{
+    "name": "jonat/titanic",
+    "description": "Site web Agence Titanic",
+    "license": "unlicense",
+    "authors": [
+        {
+            "name": "Jonasbadboys",
+            "email": "jonathanjeanniard@sfr.fr"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Titanic\\" : "./App/"
+        }
+    },
+    "require": {
+        "smarty/smarty": "^3.1"
+    }
+}
