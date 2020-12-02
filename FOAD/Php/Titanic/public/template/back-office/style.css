@@ -1,15 +1,16 @@
-:root{
-    --color_black: rgb(17,17,17);
+:root {
+    --color_black: rgb(17, 17, 17);
     --color_black_grey: rgb(51, 51, 51);
-    --color_yellow: rgb(255,255,188);
-    --color_grey: rgb(204,204,192);
+    --color_yellow: rgb(255, 255, 188);
+    --color_grey: rgb(204, 204, 192);
 }
 
-*{
-    font-family: "Open Sans", Arial, sans-serif;
+* {
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
 }
 
-body{
+body {
     background-color: var(--color_black_grey);
     margin: 0;
 }
@@ -20,20 +21,49 @@ body{
     height: 50px;
 }
 
-.header > h1{
+.header > h1 {
     color: var(--color_grey);
     margin: 0 15px;
-    font-weight: 1000;
+    padding: 10px 0;
+    font-size: 28px;
 }
 
 .login {
-    width: 150px;
+    width: 300px;
+    margin: 20px auto;
 }
 
-.login > input {
-
+.login > .image {
+    margin-bottom: -4px;
 }
 
-.login > button {
+.login > .image > img{
+    margin-left: 75px;
+}
 
+.login > form > input, .login > form > button {
+    border-style: none;
+    border: solid 1px var(--color_grey);
+
+    height: 40px;
+    width: 300px;
+    margin: 4px 0;
+
+    font-size: 20px;
+}
+
+.login > form > input:first-child{
+    margin-top: 0;
+}
+
+.login > form > input {
+    color: var(--color_grey);
+    background-color: var(--color_black);
+    padding: 1px 6px;
+}
+
+.login > form > button {
+    color: var(--color_yellow);
+    background-color: var(--color_black);
+    padding: 0;
 }
