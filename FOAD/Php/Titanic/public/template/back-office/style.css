@@ -1,5 +1,6 @@
 :root {
     --color_black: rgb(17, 17, 17);
+    --color_second_black: rgb(34,34,34);
     --color_black_grey: rgb(51, 51, 51);
     --color_yellow: rgb(255, 255, 188);
     --color_grey: rgb(204, 204, 192);
@@ -15,19 +16,114 @@ body {
     margin: 0;
 }
 
+.body_grid {
+    min-height: 100%;
+
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 50px 100vh;
+    grid-template-areas: "menu header" "menu dashboard";
+}
+
+/**
+ * Header
+ */
 .header {
+    grid-area: header;
     background-color: var(--color_black);
     width: 100%;
     height: 50px;
 }
 
 .header > h1 {
+    float: left;
     color: var(--color_grey);
     margin: 0 15px;
     padding: 10px 0;
     font-size: 28px;
+    width: 500px;
 }
 
+.header > .logout {
+    height: 100%;
+    width: 150px;
+    float: right;
+    margin-right: 15px;
+    padding: 16px 0;
+}
+
+.header > .logout a {
+    text-decoration: none;
+    color: var(--color_grey);
+}
+
+.menu {
+    grid-area: menu;
+    width: 200px;
+    min-height: 100%;
+    background-color: var(--color_black);
+}
+
+.menu > img {
+    margin: 15px auto 0px 8px;
+    width: 90%;
+}
+
+.menu > nav {
+    margin: 0 auto;
+    width: 90%;
+    list-style: none;
+    color: white;
+}
+
+.menu > nav > ul {
+    width: 100%;
+    height: 35px;
+    background-color: var(--color_black_grey);
+    border: solid 1px var(--color_grey);
+    padding: 8px 4px;
+    margin: 5px 0;
+}
+
+.dashboard {
+    grid-area: dashboard;
+}
+
+.dashboard > header {
+    margin-top: 0;
+    height: 40px;
+    background-color: var(--color_second_black);
+    color: var(--color_grey);
+}
+
+.dashboard > header > h2 {
+    margin: 0;
+    padding: 8px 20px;
+    color: var(--color_grey);
+}
+
+.dashboard > section{
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dashboard > section p {
+    width: 100%;
+    color: white;
+}
+
+.dashboard > section .info{
+    display: flex;
+}
+
+.dashboard > section .info > div{
+    background-color: var(--color_black);
+}
+
+/**
+ *  Page Login
+ */
 .login {
     width: 300px;
     margin: 20px auto;
@@ -37,13 +133,14 @@ body {
     margin-bottom: -4px;
 }
 
-.login > .image > img{
+.login > .image > img {
     margin-left: 75px;
 }
 
 .login > form > input, .login > form > button {
     border-style: none;
     border: solid 1px var(--color_grey);
+    background-color: var(--color_black);
 
     height: 40px;
     width: 300px;
@@ -58,12 +155,12 @@ body {
 
 .login > form > input {
     color: var(--color_grey);
-    background-color: var(--color_black);
+
     padding: 1px 6px;
 }
 
 .login > form > button {
     color: var(--color_yellow);
-    background-color: var(--color_black);
     padding: 0;
 }
+
