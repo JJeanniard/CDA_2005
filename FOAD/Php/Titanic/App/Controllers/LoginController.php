@@ -1,9 +1,11 @@
 <?php
 namespace Titanic\Controllers;
 
-class LoginController
+use Titanic\Controller;
+
+class LoginController extends Controller
 {
     public function index(){
-        echo "login";
+        return $this->view('admin/login.html.twig', '');
     }
 }

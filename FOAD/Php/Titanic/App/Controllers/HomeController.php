@@ -8,7 +8,7 @@ class HomeController extends Controller
 
     public function index()
     {
-        return $this->view('index.html', [
+        return $this->view('index.html.twig', [
             'welcome' => 'welcome'
         ]);
     }
