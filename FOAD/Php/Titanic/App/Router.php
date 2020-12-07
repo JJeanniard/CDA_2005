@@ -25,6 +25,7 @@ class Router
         $this->controller = mb_convert_case($this->controller, MB_CASE_TITLE);
 
         $this->controller = "Titanic\\Controllers\\".$this->controller."Controller";
+
     }
 
     public function getController() : string
