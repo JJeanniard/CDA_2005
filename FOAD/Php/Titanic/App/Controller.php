@@ -4,11 +4,14 @@ namespace Titanic;
 
 use Exception;
 
+use Twig\Loader as Loader;
+use Twig\Environment as Environment;
+
 abstract class Controller
 {
     protected Router $router;
 
-    public function __construct(Router $router)
+    final public function __construct(Router $router)
     {
         $this->router = $router;
     }
@@ -18,32 +21,20 @@ abstract class Controller
         $action = $this->router->getAction();
 
         if (!method_exists($this, $action)) {
-            throw new Exception("Invalide Action");
+            throw new Exception("Invalide Action.");
         }
 
         return $this->$action();
     }
 
-    public function view(string $view, array $data, bool $layout = true)
+    public function view(string $view, array $data)
     {
-        $path = (__DIR__.'/Views/'.$view.'.php');
+        $loader = new Loader\FilesystemLoader('../App/Template/Titanic');
+        $twig = new Environment($loader, [
+            'cache' => '../public',
+        ]);
 
-        extract($data);
-
-        ob_start();
-
-        require $path;
-
-        $result = ob_get_clean();
-        $data = [
-            'page' => $result
-        ];
-
-        if($layout === true){
-            $result = $this->view('layout', $data, false);
-        }
-
-        return $result;
+        return $twig->render($view, $data);
     }
 
     abstract public function index();

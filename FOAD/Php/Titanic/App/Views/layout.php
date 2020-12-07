@@ -1,3 +1,7 @@
+<?php
+namespace Titanic\Views;
+?>
+
 <!doctype html>
 <html lang="fr">
 <head>
