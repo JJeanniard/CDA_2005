@@ -17,8 +17,11 @@ abstract class Controller
     {
         $action = $this->router->getAction();
 
+        echo "<pre>".var_dump($action);
+        echo "<pre>".var_dump($this);
+
         if (!method_exists($this, $action)) {
-            throw new Exception("Invalide Action");
+            throw new Exception("Invalide Action.");
         }
 
         return $this->$action();

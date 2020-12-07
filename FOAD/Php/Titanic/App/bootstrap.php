@@ -1,19 +1,22 @@
 <?php
+namespace Titanic;
 
-require "../vendor/autoload.php";
+require '../vendor/autoload.php';
 
-use Titanic\Router;
-use Titanic\Controllers\HomeController;
-use Titanic\Views;
+use Twig\Loader as Loader;
+use Twig\Environment as Environment;
 
-$router = new Router("/Titanic/");
+$router = new Router('Titanic');
+
+$loader = new Loader\FilesystemLoader('../App/Template/Titanic');
+$twig = new Environment($loader, [
+    'cache' => '../public',
+]);
 
 $controllerName = $router->getController();
 
 $controller = new $controllerName($router);
 
 $result = $controller->run();
-
-$smarty = new Smarty();
 
 echo $result;

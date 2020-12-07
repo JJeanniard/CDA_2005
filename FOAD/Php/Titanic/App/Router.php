@@ -27,17 +27,17 @@ class Router
         $this->controller = "Titanic\\Controllers\\".$this->controller."Controller";
     }
 
-    public function getController()
+    public function getController() : string
     {
         return $this->controller;
     }
 
-    public function getAction()
+    public function getAction() : string
     {
         return !empty($this->route[1]) ? $this->route[1] : 'index';
     }
 
-    public function getId()
+    public function getId() : ?string
     {
         return !empty($this->route[2]) ? $this->route[2] : null;
     }
