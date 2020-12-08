@@ -27,11 +27,12 @@ abstract class Controller
         return $this->$action();
     }
 
-    public function view(string $view, ?array $data)
+    public function view(string $view, array $data = [])
     {
         $loader = new Loader\FilesystemLoader('../App/Template/Titanic');
         $twig = new Environment($loader, [
-            'cache' => '../public',
+            'debug' => true,
+            'cache' => '../public/cache',
         ]);
 
         return $twig->render($view, $data);

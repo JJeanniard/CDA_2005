@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Administration | Login</title>
-</head>
-<body>
+{% extends 'admin/base.html.twig' %}
+{% block title %}{{ parent() }} Login{% endblock %}
+
+{% block body %}
     <header class="header"><h1>Titanic Authentification</h1></header>
     <section class="login">
         <div class="image"><img src="https://via.placeholder.com/150" alt="login"></div>
@@ -21,6 +16,4 @@
          <p>Incorrect Credentials</p>
          -->
     </section>
-    <script src="./js/main.js"></script>
-</body>
-</html>
+{% endblock %}

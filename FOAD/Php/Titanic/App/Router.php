@@ -18,6 +18,8 @@ class Router
             $this->request = str_replace($baseUrl, '', $this->request);
         }
 
+        $this->request = ltrim($this->request, "/");
+
         $this->route = explode('/', $this->request);
 
         $this->controller = !empty($this->route[0]) ? $this->route[0] : 'home';
