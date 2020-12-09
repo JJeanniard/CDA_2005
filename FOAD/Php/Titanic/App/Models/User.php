@@ -1,7 +1,7 @@
 <?php
 namespace Titanic\Models;
 
-class User
+class User extends UserModel
 {
     private int $user_id;
 
@@ -91,5 +91,10 @@ class User
     public function setUserRole(int $user_role): void
     {
         $this->user_role = $user_role;
+    }
+
+    protected function getPassword()
+    {
+        return $this->user_pwd;
     }
 }

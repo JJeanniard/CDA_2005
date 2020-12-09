@@ -1,10 +1,15 @@
 <?php
-
 namespace Titanic\Models;
+/**
+ * Class Users
+ * @package Titanic\Models
+ */
+
+use PDO;
 
 class Users
 {
-    private ?PDO $pdo = null;
+    private PDO $pdo;
 
     public function __construct()
     {
@@ -14,9 +19,8 @@ class Users
     public function getClientAll()
     {
         //Statement
-        $sttm =  $this->pdo->query('SELECT * FROM user');
-
-       return $sttm->fetchAll('PDO::FETCH_CLASS', "User");
+        $sttm =  $this->pdo->query('SELECT * FROM clients');
+        return !empty($sttm)? $sttm : false;
     }
 
 

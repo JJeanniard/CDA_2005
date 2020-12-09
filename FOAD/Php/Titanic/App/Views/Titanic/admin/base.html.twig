@@ -3,12 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% block stylesheet %}<link rel="stylesheet" href="../css/admin.css">{% endblock %}
+    {% block stylesheet %}
+        <link rel="stylesheet" href="../css/admin.css">{% endblock %}
     <title>Administration {% block title %}|{% endblock %}</title>
 </head>
 <body {% block classBody %}{% endblock %}>
-{% block body %}
-{% endblock %}
+<header class="header">
+    <h1>Titanic</h1>
+    <div class="logout"><a href="">Utilisateur connecté</a></div>
+</header>
+<section class="menu">
+    <img src="./img/logo/titanic_1.png" alt="logo">
+    <nav>
+        <ul>Dashboard</ul>
+        <ul>Orders</ul>
+        <ul>Users</ul>
+        <ul>Sales</ul>
+        <ul>Trips</ul>
+        <ul>Places</ul>
+        <ul>Themes</ul>
+        <ul>Services</ul>
+    </nav>
+</section>
+<main class="dashboard">
+    <header><h2>{% block sous_title %}{% endblock %}</h2></header>
+    {% block content %}
+    {% endblock %}
+</main>
 {% block js %}
     <script src="../js/main.js"></script>
 {% endblock %}

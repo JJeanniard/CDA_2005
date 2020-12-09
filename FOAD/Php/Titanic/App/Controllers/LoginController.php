@@ -23,7 +23,11 @@ class LoginController extends Controller
 
 
         if($request === 'POST'){
-            
+
+        }else{
+            return header();
         }
+
+        return header();
     }
 }

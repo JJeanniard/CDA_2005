@@ -11,7 +11,7 @@ use PDO;
  */
 class DbConnect
 {
-    private static ?PDO $pdo = null;
+    static private ?PDO $pdo = null;
 
     private function __construct(){} //Pour empêcher l'instanciation de la classes
 
@@ -20,10 +20,10 @@ class DbConnect
      * Retourne un type PDO
      * @return PDO
      */
-    public static function getInstance() : ?PDO
+    static public function getInstance() : PDO
     {
         if(DbConnect::$pdo === null){
-            DbConnect::$pdo = new PDO("mysql:localhost;port=3306;dbname=db_users_simple;charset=utf8", "root", "");
+            DbConnect::$pdo = new PDO("mysql:localhost;port=3306;dbname=tp_agence_voyages;charset=utf8", "root", "", array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
         }
 
         return DbConnect::$pdo;

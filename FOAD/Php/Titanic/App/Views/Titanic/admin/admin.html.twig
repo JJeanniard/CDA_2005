@@ -1,33 +1,14 @@
 {% extends 'admin/base.html.twig' %}
 {% block title %}{{ parent() }} Dashboard{% endblock %}
 {% block classBody %}class="body_grid"{% endblock %}
-{% block body %}
-<header class="header">
-    <h1>Titanic</h1>
-    <div class="logout"><a href="">Utilisateur connecté</a></div>
-</header>
-<section class="menu">
-    <img src="./img/logo/titanic_1.png" alt="logo">
-    <nav>
-        <ul>Dashboard</ul>
-        <ul>Orders</ul>
-        <ul>Users</ul>
-        <ul>Sales</ul>
-        <ul>Trips</ul>
-        <ul>Places</ul>
-        <ul>Themes</ul>
-        <ul>Services</ul>
-    </nav>
-</section>
-<main class="dashboard">
-    <header><h2>Welcome to your Dashboard</h2></header>
-    <section>
+{% block sous-title %}Welcome to your Dashboard{% endblock %}
+{% block content %}
+    <section class="content">
         <p>This pages shows you an overview of your database</p>
         <div class="info">
-            <div>101 Orders</div>
-            <div>34 trips</div>
-            <div>17 Places</div>
+            <a>101 Orders</a>
+            <a>34 trips</a>
+            <a>17 Places</a>
         </div>
     </section>
-</main>
 {% endblock %}
