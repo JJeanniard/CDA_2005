@@ -4,8 +4,8 @@ namespace Titanic;
 
 use Exception;
 
-use Twig\Loader as Loader;
-use Twig\Environment as Environment;
+use Twig\Loader\FilesystemLoader;
+use Twig\Environment;
 
 abstract class Controller
 {
@@ -29,7 +29,7 @@ abstract class Controller
 
     public function view(string $view, array $data = [])
     {
-        $loader = new Loader\FilesystemLoader('../App/Template/Titanic');
+        $loader = new FilesystemLoader('../App/Views/Titanic');
         $twig = new Environment($loader, [
             'debug' => true,
             'cache' => '../public/cache',

@@ -2,6 +2,10 @@
 
 namespace Titanic;
 
+/**
+ * Class Router
+ * @package Titanic
+ */
 class Router
 {
     private string $request;
