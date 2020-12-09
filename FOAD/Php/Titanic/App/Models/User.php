@@ -1,5 +1,5 @@
 <?php
-namespace Models;
+namespace Titanic\Models;
 
 class User
 {

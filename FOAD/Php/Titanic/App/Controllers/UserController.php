@@ -2,6 +2,7 @@
 namespace Titanic\Controllers;
 
 use Titanic\Controller;
+use Titanic\Models\Users;
 
 /**
  * Class UsersController
@@ -14,9 +15,10 @@ class UserController extends Controller
      */
     public function index()
     {
+        $users = new Users();
 
-        return $this->view('user', [
-            'tata' => 'tata'
+        return $this->view('users.html.twig', [
+            'user' => $users->getClientAll()
         ]);
     }
 }

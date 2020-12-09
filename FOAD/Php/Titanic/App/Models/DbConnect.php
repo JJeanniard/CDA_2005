@@ -1,5 +1,8 @@
 <?php
-namespace Models;
+namespace Titanic\Models;
+
+use PDO;
+
 /**
  * Classe de type static pour faire une connection à la db (une instance par utilisateur)
  * Avec le patterne "singleton"

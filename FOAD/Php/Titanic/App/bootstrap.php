@@ -3,6 +3,8 @@ namespace Titanic;
 
 require '../vendor/autoload.php';
 
+session_start();
+
 $router = new Router();
 
 $controllerName = $router->getController();

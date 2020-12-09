@@ -19,6 +19,11 @@ class LoginController extends Controller
 
     public function login($request){
         //recuperation de la requet type post
+        //TODO verifier que le formulaire est bon, sinon retour avec message d'erreu
 
+
+        if($request === 'POST'){
+            
+        }
     }
 }

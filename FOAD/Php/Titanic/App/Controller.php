@@ -4,10 +4,11 @@ namespace Titanic;
 
 use Exception;
 
+use Titanic\Session;
 use Twig\Loader\FilesystemLoader;
 use Twig\Environment;
 
-abstract class Controller
+abstract class Controller extends Session
 {
     protected Router $router;
 
