@@ -18,7 +18,7 @@ class UserController extends Controller
         $users = new Users();
 
         return $this->view('admin/users.html.twig', [
-            'user' => $users->getClientAll()
+            'users' => $users->getClientAll()
         ]);
     }
 }

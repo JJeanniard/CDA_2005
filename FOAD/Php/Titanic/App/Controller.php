@@ -5,6 +5,7 @@ namespace Titanic;
 use Exception;
 
 use Titanic\Session;
+use Twig\Extension\DebugExtension;
 use Twig\Loader\FilesystemLoader;
 use Twig\Environment;
 
@@ -35,7 +36,7 @@ abstract class Controller extends Session
             'debug' => true,
             'cache' => '../public/cache',
         ]);
-
+        $twig->addExtension(new DebugExtension());
         return $twig->render($view, $data);
     }
 

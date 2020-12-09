@@ -16,11 +16,15 @@ class Users
         $this->pdo = DbConnect::getInstance();
     }
 
+    /**
+     * @return array|false
+     */
     public function getClientAll()
     {
         //Statement
         $sttm =  $this->pdo->query('SELECT * FROM clients');
-        return !empty($sttm)? $sttm : false;
+        $rows = $sttm->fetchAll();
+        return !empty($rows)? $rows : false;
     }
 
 

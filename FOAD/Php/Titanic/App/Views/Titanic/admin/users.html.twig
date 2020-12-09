@@ -6,6 +6,22 @@
     <section class="content">
         <p>Here you can view the list of users, add, modify and delete them.</p>
         <h3>Add Customer</h3>
+        <form action="post">
+            <label for="username">User name</label>
+            <input type="text" name="username" id="username">
+            <label for="pwd">Password</label>
+            <input type="password" name="pwd" id="pwd">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email">
+            <label for="phone">Phone</label>
+            <input type="tel" name="phone" id="phone">
+            <label for="salesPerson">Sales Person</label>
+            <select name="salesPerson" id="salesPerson">
+                {% for sale as sales %}
+                <option value="{{ sale.com_code }}">{{ sale.com_name }}</option>
+                {% endblock %}
+            </select>
+        </form>
         <h3>Customers</h3>
         <table>
             <tr>
@@ -13,13 +29,13 @@
                 <th>Email</th>
                 <th>Action</th>
             </tr>
-            <tr>
-                {% for user in users %}
+            {% for user in users %}
+                <tr>
                     <td>{{ user.client_lastname }}</td>
                     <td>{{ user.client_email }}</td>
-                    <td></td>
-                {% endfor %}
-            </tr>
+                    <td><a href="">Edit</a> | <a href="">Delete</a></td>
+                </tr>
+            {% endfor %}
         </table>
     </section>
 {% endblock %}

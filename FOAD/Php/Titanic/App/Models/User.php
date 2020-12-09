@@ -93,7 +93,7 @@ class User extends UserModel
         $this->user_role = $user_role;
     }
 
-    protected function getPassword()
+    protected function getPassword() : string
     {
         return $this->user_pwd;
     }
