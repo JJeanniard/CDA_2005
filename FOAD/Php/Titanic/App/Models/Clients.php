@@ -1,13 +1,15 @@
 <?php
 namespace Titanic\Models;
 /**
- * Class Users
- * @package Titanic\Models
+ * Client.php
+ *
+ * @author Jjeanniard
+ * @version 0.0.1
  */
 
 use PDO;
 
-class Users
+class Clients
 {
     private PDO $pdo;
 
@@ -21,9 +23,9 @@ class Users
      */
     public function getClientAll()
     {
-        //Statement
-        $sttm =  $this->pdo->query('SELECT * FROM clients');
-        $rows = $sttm->fetchAll();
+        //Statement+data
+        $rows =  $this->pdo->query('SELECT * FROM clients')->fetchAll(PDO::FETCH_CLASS, 'Titanic\Models\Client');
+
         return !empty($rows)? $rows : false;
     }
 

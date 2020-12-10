@@ -17,9 +17,9 @@
             <input type="tel" name="phone" id="phone">
             <label for="salesPerson">Sales Person</label>
             <select name="salesPerson" id="salesPerson">
-                {% for sale as sales %}
+                {% for sale in sales %}
                 <option value="{{ sale.com_code }}">{{ sale.com_name }}</option>
-                {% endblock %}
+                {% endfor %}
             </select>
         </form>
         <h3>Customers</h3>
