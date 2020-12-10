@@ -20,7 +20,7 @@ class Sale extends UserModel
 
     private string $com_password;
 
-    private string $com_substitute;
+    private ?string $com_substitute;
 
     /**
      * @return string

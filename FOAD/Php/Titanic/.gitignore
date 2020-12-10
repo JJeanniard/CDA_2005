@@ -3,3 +3,7 @@
 
 # Twig
 /public/cache
+
+# Phpdoc
+.phpdoc
+phpdoc.xml
