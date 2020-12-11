@@ -1,11 +1,17 @@
-{% extends 'admin/base.html.twig' %}
-{% block title %}{{ parent() }} Login{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-{% block body %}
+        <link rel="stylesheet" href="../css/admin.css">
+    <title>Administration | Login</title>
+</head>
+<body>
     <header class="header"><h1>Titanic Authentification</h1></header>
     <section class="login">
         <div class="image"><img src="https://via.placeholder.com/150" alt="login"></div>
-        <form method="post">
+        <form action="Login/login" method="post">
             <input type="text" name="username" id="username" placeholder="User Name" required autofocus>
             <input type="password" name="password" id="password" placeholder="Password" required>
             <button type="submit">Sign in</button>
@@ -16,4 +22,3 @@
          <p>Incorrect Credentials</p>
          -->
     </section>
-{% endblock %}

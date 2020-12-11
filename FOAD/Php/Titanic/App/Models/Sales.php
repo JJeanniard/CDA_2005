@@ -24,7 +24,7 @@ class Sales
     public function getSaleAll()
     {
         //Statement+data
-        $rows =  $this->pdo->query('SELECT * FROM sales')->fetchAll(PDO::FETCH_CLASS, 'Titanic\Models\Sale');
+        $rows =  $this->pdo->query('SELECT * FROM sales')->fetchAll(PDO::FETCH_CLASS, Sale::class);
 
         return !empty($rows)? $rows : false;
     }

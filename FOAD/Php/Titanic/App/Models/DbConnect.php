@@ -19,6 +19,7 @@ class DbConnect
      * Réalise une instance de connection, si celle-ci n'est pas déjâ realisé
      * Retourne un type PDO
      * @return PDO
+     * @throws PDOException
      */
     static public function getInstance() : PDO
     {

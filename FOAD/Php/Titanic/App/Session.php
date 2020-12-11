@@ -13,8 +13,11 @@ abstract class Session{
      * @param string $messageType
      * @param string $message
      */
-    function addMessage(string $messageType, string $message)
+    public function addMessage(string $messageType, string $message)
     {
-
+        $_SESSION['msg'] = null;
+        $_SESSION['msg'][''.$messageType.''] = $message;
     }
+
+
 }

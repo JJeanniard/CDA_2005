@@ -24,7 +24,7 @@ class Clients
     public function getClientAll()
     {
         //Statement+data
-        $rows =  $this->pdo->query('SELECT * FROM clients')->fetchAll(PDO::FETCH_CLASS, 'Titanic\Models\Client');
+        $rows =  $this->pdo->query('SELECT * FROM clients')->fetchAll(PDO::FETCH_CLASS, Client::class);
 
         return !empty($rows)? $rows : false;
     }
