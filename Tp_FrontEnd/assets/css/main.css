@@ -8,6 +8,18 @@ body{
     background-color: #222222;
 }
 
+#header{
+    display: flex;
+    background-color: #224422;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+#logo{
+    height: 100px;
+}
+
 p{
     color: #FFFFFF;
 }
@@ -18,6 +30,14 @@ h1{
 
 a {
     color: #CCCCFF;
+}
+
+.menu{
+    list-style: none;
+}
+
+.menu a {
+    text-decoration: none;
 }
 
 footer>p{
