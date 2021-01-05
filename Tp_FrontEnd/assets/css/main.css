@@ -1,0 +1,26 @@
+*{
+    box-sizing: border-box;
+    font-family: Verdana, Sans-Serif;
+}
+
+body{
+    margin: 0;
+    background-color: #222222;
+}
+
+p{
+    color: #FFFFFF;
+}
+
+h1{
+    color: #CCFFCC;
+}
+
+a {
+    color: #CCCCCFF;
+}
+
+footer>p{
+    width: 500px;
+    margin: auto;
+}
