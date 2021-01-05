@@ -17,10 +17,9 @@ h1{
 }
 
 a {
-    color: #CCCCCFF;
+    color: #CCCCFF;
 }
 
 footer>p{
-    width: 500px;
-    margin: auto;
+    text-align: center;
 }
