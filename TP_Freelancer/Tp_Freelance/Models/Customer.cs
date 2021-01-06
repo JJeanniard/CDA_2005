@@ -7,6 +7,6 @@ namespace Tp_Freelance.Models
         public int Id { get; set; }
         public string CustomerName { get; set; }
         public string CustomerEmail { get; set; }
-        //public CustomerCat CatId { get; set; }
+        public int CatId { get; set; }
     }
 }

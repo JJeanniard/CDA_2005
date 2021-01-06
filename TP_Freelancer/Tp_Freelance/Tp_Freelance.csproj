@@ -16,7 +16,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Migrations\" />
+    <None Include="wwwroot\css\style.css" />
+    <None Include="wwwroot\img\TP_Freelancer_logo.jpg" />
   </ItemGroup>
 
 </Project>

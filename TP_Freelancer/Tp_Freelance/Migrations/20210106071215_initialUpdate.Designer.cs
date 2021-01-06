@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Tp_Freelance.Data;
 
 namespace Tp_Freelance.Migrations
 {
     [DbContext(typeof(FreelanceContext))]
-    partial class FreelanceContextModelSnapshot : ModelSnapshot
+    [Migration("20210106071215_initialUpdate")]
+    partial class initialUpdate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

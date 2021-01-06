@@ -13,6 +13,6 @@ namespace Tp_Freelance.Models
         [DataType(DataType.Date)]
         public DateTime QuoteFinalDate { get; set; }
         public int QuoteFinalAmount { get; set; }
-        //public Job JobId { get; set; }
+        public int JobId { get; set; }
     }
 }
