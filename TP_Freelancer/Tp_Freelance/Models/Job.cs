@@ -6,13 +6,16 @@ namespace Tp_Freelance.Models
     public class Job
     {
         public int Id { get; set; }
-        public char JobStat { get; set; }
-        public string JobTitle { get; set; }
+        [Required]
+        public char Stat { get; set; }
+        [Required]
+        [StringLength(100)]
+        public string Title { get; set; }
         [DataType(DataType.Date)]
-        public DateTime JobStart { get; set; }
+        public DateTime Start { get; set; }
         [DataType(DataType.Date)]
-        public DateTime JobEnd { get; set; }
-        public string JobDescription { get; set; }
+        public DateTime End { get; set; }
+        public string Description { get; set; }
         public int CustomerId { get; set; }
     }
 }

@@ -29,11 +29,15 @@ namespace Tp_Freelance.Migrations
                     b.Property<int>("CatId")
                         .HasColumnType("int");
 
-                    b.Property<string>("CustomerEmail")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
-                    b.Property<string>("CustomerName")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.HasKey("Id");
 
@@ -47,11 +51,13 @@ namespace Tp_Freelance.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<string>("CatDescription")
+                    b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("CatName")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.HasKey("Id");
 
@@ -68,21 +74,23 @@ namespace Tp_Freelance.Migrations
                     b.Property<int>("CustomerId")
                         .HasColumnType("int");
 
-                    b.Property<string>("JobDescription")
+                    b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("JobEnd")
+                    b.Property<DateTime>("End")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("JobStart")
+                    b.Property<DateTime>("Start")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("JobStat")
+                    b.Property<string>("Stat")
                         .IsRequired()
                         .HasColumnType("nvarchar(1)");
 
-                    b.Property<string>("JobTitle")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.HasKey("Id");
 
@@ -96,19 +104,19 @@ namespace Tp_Freelance.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<int>("JobId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("QuoteDate")
+                    b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("QuoteFinalAmount")
+                    b.Property<int>("FinalAmount")
+                        .HasColumnType("int");
+
+                    b.Property<int>("JobId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("QuoteFinalDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("QuoteStat")
+                    b.Property<string>("Stat")
                         .IsRequired()
                         .HasColumnType("nvarchar(1)");
 

@@ -47,6 +47,7 @@ namespace Tp_Freelance
             }
 
             app.UseHttpsRedirection();
+
             app.UseStaticFiles();
 
             app.UseRouting();
