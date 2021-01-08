@@ -12,6 +12,21 @@
     box-sizing: border-box;
 }
 
+.text-center {
+    text-align: center;
+}
+
+.table {
+    border-color: var(--black);
+    border-width: 1px;
+    border-style: solid;
+}
+
+.table thead {
+    color: var(--white);
+    background-color: var(--black);
+} 
+
 body {
     margin: 0;
     background-color: var(--white-break);
@@ -62,16 +77,16 @@ body {
             color: var(--white);
         }
 
-    .header nav li > a {
-        color: var(--grey);
-        text-decoration: none;
-        width: 30px;
-        padding: 0 0 0 5px;
-    }
-
-        .header nav li > a:hover {
-            color: var(--white);
+        .header nav li > a {
+            color: var(--grey);
+            text-decoration: none;
+            width: 30px;
+            padding: 0 0 0 5px;
         }
+
+            .header nav li > a:hover {
+                color: var(--white);
+            }
 
 main {
     padding: 0 15px;
