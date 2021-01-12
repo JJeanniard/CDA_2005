@@ -24,24 +24,28 @@ namespace Tp_Freelance.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
+                        .HasColumnName("customer_id")
                         .UseIdentityColumn();
 
                     b.Property<int>("CatId")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("cat_id");
 
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
+                        .HasColumnType("nvarchar(255)")
+                        .HasColumnName("customer_email");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasColumnType("nvarchar(100)")
+                        .HasColumnName("customer_name");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Customer");
+                    b.ToTable("customers");
                 });
 
             modelBuilder.Entity("Tp_Freelance.Models.CustomerCat", b =>
@@ -52,16 +56,18 @@ namespace Tp_Freelance.Migrations
                         .UseIdentityColumn();
 
                     b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("Text")
+                        .HasColumnName("cat_description");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("varchar(50)")
+                        .HasColumnName("cat_name");
 
                     b.HasKey("Id");
 
-                    b.ToTable("CustomerCat");
+                    b.ToTable("customers_cats");
                 });
 
             modelBuilder.Entity("Tp_Freelance.Models.Job", b =>
@@ -69,32 +75,40 @@ namespace Tp_Freelance.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
+                        .HasColumnName("job_id")
                         .UseIdentityColumn();
 
                     b.Property<int>("CustomerId")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("customer_id");
 
                     b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("text")
+                        .HasColumnName("job_description");
 
                     b.Property<DateTime>("End")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("datetime2")
+                        .HasColumnName("job_end");
 
                     b.Property<DateTime>("Start")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("datetime2")
+                        .HasColumnName("job_start");
 
                     b.Property<string>("Stat")
                         .IsRequired()
-                        .HasColumnType("nvarchar(1)");
+                        .HasMaxLength(10)
+                        .HasColumnType("char(10)")
+                        .HasColumnName("job_stat");
 
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasColumnType("nvarchar(100)")
+                        .HasColumnName("job_title");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Job");
+                    b.ToTable("jobs");
                 });
 
             modelBuilder.Entity("Tp_Freelance.Models.Quote", b =>
@@ -102,30 +116,38 @@ namespace Tp_Freelance.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
+                        .HasColumnName("quote_id")
                         .UseIdentityColumn();
 
                     b.Property<DateTime>("Date")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("datetime2")
+                        .HasColumnName("quote_date");
 
                     b.Property<int>("FinalAmount")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("quote_final_amount");
 
                     b.Property<int>("JobId")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("job_id");
 
                     b.Property<DateTime>("QuoteFinalDate")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("datetime2")
+                        .HasColumnName("quote_final_date");
 
                     b.Property<string>("Stat")
                         .IsRequired()
-                        .HasColumnType("nvarchar(1)");
+                        .HasMaxLength(10)
+                        .HasColumnType("char(10)")
+                        .HasColumnName("quote_state");
 
                     b.Property<int>("amount")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("quote_amount");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Quote");
+                    b.ToTable("quotes");
                 });
 #pragma warning restore 612, 618
         }

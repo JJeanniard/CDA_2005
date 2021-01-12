@@ -5,6 +5,7 @@ namespace Tp_Freelance.Data
 {
     public class FreelanceContext : DbContext
     {
+
         public FreelanceContext(DbContextOptions<FreelanceContext> options):base(options)
         {
         }
