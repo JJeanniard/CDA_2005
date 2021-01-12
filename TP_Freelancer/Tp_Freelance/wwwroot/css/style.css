@@ -17,6 +17,49 @@
     text-align: center;
 }
 
+.m {
+    margin: 10px;
+}
+
+/*
+ * Btn-simple
+*/
+
+
+.btn {
+    border: 1px solid var(--grey);
+    padding: 5px;
+    border-radius: 3px;
+    text-decoration: none;
+    width: 30px;
+    color: var(--grey);
+}
+
+.btn-simple:hover {
+    background-color: var(--green);
+    color: var(--white);
+}
+
+.btn-danger:hover {
+    background-color: var(--red);
+    color: var(--white);
+}
+
+
+
+/* btn fa */
+.btn-fa {
+    margin: 5px;
+}
+
+.fa-pencil-square-o {
+    color: var(--green);
+}
+
+.fa-times {
+    color: var(--red);
+}
+
 body {
     margin: 0;
     background-color: var(--white-break);
@@ -70,6 +113,11 @@ body {
             .header nav li:hover > a {
                 color: var(--white);
             }
+
+        .header nav li > a {
+            color: var(--grey);
+            text-decoration: none;
+        }
 
 main {
     padding: 0 15px;
@@ -133,39 +181,7 @@ main {
         margin: 0;
     }
 
-/*
- * Btn-simple
-*/
 
-.btn {
-    color: var(--grey);
-    text-decoration: none;
-    width: 30px;
-}
-
-    .btn:hover {
-        background-color: var(--green);
-        color: var(--white);
-    }
-
-.btn-simple {
-    border: 1px solid var(--grey);
-    padding: 5px;
-    border-radius: 3px;
-}
-
-/* btn fa */
-.btn-fa {
-    margin: 5px;
-}
-
-.fa-pencil-square-o {
-    color: var(--green);
-}
-
-.fa-times {
-    color: var(--red);
-}
 
 /*
  * form
@@ -192,4 +208,22 @@ main {
 
     .form textarea {
         resize: none;
+    }
+
+/*
+ * info
+*/
+.info_del {
+    border: 1px solid var(--black);
+    border-radius: 3px;
+    padding: 5px;
+}
+
+    .info_del dt {
+        margin-bottom: 5px;
+        text-decoration-line: underline;
+    }
+
+    .info_del dd {
+        margin-bottom: 5px;
     }
