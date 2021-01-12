@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Tp_Freelance.Data;
 using Tp_Freelance.Models;
 
-namespace Tp_Freelance
+namespace Tp_Freelance.Controllers
 {
     public class CustomerCatsController : Controller
     {

@@ -6,6 +6,7 @@
     --grey-trans: #EBEFF2;
     --green: #38DD09;
     --purple: #3809DD;
+    --red: #ff0000;
 }
 
 * {
@@ -15,17 +16,6 @@
 .text-center {
     text-align: center;
 }
-
-.table {
-    border-color: var(--black);
-    border-width: 1px;
-    border-style: solid;
-}
-
-.table thead {
-    color: var(--white);
-    background-color: var(--black);
-} 
 
 body {
     margin: 0;
@@ -77,14 +67,7 @@ body {
             color: var(--white);
         }
 
-        .header nav li > a {
-            color: var(--grey);
-            text-decoration: none;
-            width: 30px;
-            padding: 0 0 0 5px;
-        }
-
-            .header nav li > a:hover {
+            .header nav li:hover > a {
                 color: var(--white);
             }
 
@@ -119,6 +102,26 @@ main {
             list-style: none;
         }
 
+
+.table {
+    width: 80%;
+    margin: 0 auto 30px auto;
+    border-spacing: 0;
+    border-color: var(--black);
+    border-width: 1px;
+    border-style: solid;
+    padding: 0;
+}
+
+    .table > thead {
+        color: var(--white);
+        background-color: var(--black);
+    }
+
+    .table td {
+        text-align: center;
+    }
+
 .copyright {
     border-radius: 0 0 5px 5px;
     color: var(--white);
@@ -128,4 +131,65 @@ main {
 
     .copyright p {
         margin: 0;
+    }
+
+/*
+ * Btn-simple
+*/
+
+.btn {
+    color: var(--grey);
+    text-decoration: none;
+    width: 30px;
+}
+
+    .btn:hover {
+        background-color: var(--green);
+        color: var(--white);
+    }
+
+.btn-simple {
+    border: 1px solid var(--grey);
+    padding: 5px;
+    border-radius: 3px;
+}
+
+/* btn fa */
+.btn-fa {
+    margin: 5px;
+}
+
+.fa-pencil-square-o {
+    color: var(--green);
+}
+
+.fa-times {
+    color: var(--red);
+}
+
+/*
+ * form
+ *
+*/
+.form {
+    width: 400px;
+    margin: 0 auto 30px auto;
+}
+
+    .form .form-group {
+        margin: 10px 0;
+    }
+
+    .form label {
+        display: block;
+        margin: 0 0 2px 0;
+    }
+
+    .form input {
+        width: 100%;
+        height: 35px;
+    }
+
+    .form textarea {
+        resize: none;
     }
