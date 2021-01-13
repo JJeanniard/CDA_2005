@@ -17,10 +17,10 @@ namespace Tp_Freelance.Models
 
         [Required]
         [StringLength(50)]
-        [Column("cat_name", TypeName="varchar")]
+        [Column("cat_name", TypeName = "varchar")]
         public string Name { get; set; }
 
-        [Column("cat_description", TypeName="Text")]
+        [Column("cat_description", TypeName = "Text")]
         public string Description { get; set; }
     }
 }

@@ -14,5 +14,6 @@ namespace Tp_Freelance.Data
         public DbSet<Customer> Customer { get; set; }
         public DbSet<Job> Job { get; set; }
         public DbSet<Quote> Quote { get; set; }
+
     }
 }

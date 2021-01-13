@@ -28,8 +28,7 @@ namespace Tp_Freelance.Migrations
                         .UseIdentityColumn();
 
                     b.Property<int>("CatId")
-                        .HasColumnType("int")
-                        .HasColumnName("cat_id");
+                        .HasColumnType("int");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -79,8 +78,7 @@ namespace Tp_Freelance.Migrations
                         .UseIdentityColumn();
 
                     b.Property<int>("CustomerId")
-                        .HasColumnType("int")
-                        .HasColumnName("customer_id");
+                        .HasColumnType("int");
 
                     b.Property<string>("Description")
                         .HasColumnType("text")

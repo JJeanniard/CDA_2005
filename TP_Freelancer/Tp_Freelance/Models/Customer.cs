@@ -1,5 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -23,11 +25,12 @@ namespace Tp_Freelance.Models
         [Required]
         [StringLength(255)]
         [Column("customer_email")]
+        [DataType(DataType.EmailAddress)]//[EmailAddress]
         public string Email { get; set; }
 
         [Required]
-        [Column("cat_id")]
-        [ForeignKey("CustomerCat")]
+        [ForeignKey("cat_id")]
         public int CatId { get; set; }
+        public List<CustomerCat> CustomerCats { get; set; } 
     }
 }

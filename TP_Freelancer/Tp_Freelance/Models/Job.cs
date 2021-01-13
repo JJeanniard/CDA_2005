@@ -36,7 +36,6 @@ namespace Tp_Freelance.Models
         public string Description { get; set; }
 
         [Required]
-        [Column("customer_id")]
         [ForeignKey("Customer")]
         public int CustomerId { get; set; } 
     }
