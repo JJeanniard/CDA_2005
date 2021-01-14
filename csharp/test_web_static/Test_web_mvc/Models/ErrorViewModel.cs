@@ -1,6 +1,6 @@
 using System;
 
-namespace Test_web_mvc.Models
+namespace TestWebMvc.Models
 {
     public class ErrorViewModel
     {

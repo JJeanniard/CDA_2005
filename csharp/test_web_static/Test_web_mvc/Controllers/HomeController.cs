@@ -5,9 +5,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-using Test_web_mvc.Models;
+using TestWebMvc.Models;
 
-namespace Test_web_mvc.Controllers
+namespace TestWebMvc.Controllers
 {
     public class HomeController : Controller
     {
