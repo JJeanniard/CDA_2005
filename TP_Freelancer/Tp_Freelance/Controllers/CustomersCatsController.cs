@@ -24,24 +24,6 @@ namespace Tp_Freelance.Controllers
             return View(await _context.CustomersCats.ToListAsync());
         }
 
-        // GET: CustomersCats/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var customersCat = await _context.CustomersCats
-                .FirstOrDefaultAsync(m => m.CatId == id);
-            if (customersCat == null)
-            {
-                return NotFound();
-            }
-
-            return View(customersCat);
-        }
-
         // GET: CustomersCats/Create
         public IActionResult Create()
         {

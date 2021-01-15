@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 #nullable disable
 
@@ -13,7 +14,9 @@ namespace Tp_Freelance.Models
         }
 
         public int JobId { get; set; }
+        [Required]
         public string JobStat { get; set; }
+        [Required]
         public string JobTitle { get; set; }
         public DateTime? JobStart { get; set; }
         public DateTime? JobEnd { get; set; }

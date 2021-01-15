@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 #nullable disable
 
@@ -13,6 +14,7 @@ namespace Tp_Freelance.Models
         }
 
         public int CatId { get; set; }
+        [Required]
         public string CatName { get; set; }
         public string CatDescription { get; set; }
 

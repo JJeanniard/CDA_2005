@@ -25,25 +25,6 @@ namespace Tp_Freelance.Controllers
             return View(await freelanceContext.ToListAsync());
         }
 
-        // GET: Quotes/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var quote = await _context.Quotes
-                .Include(q => q.Job)
-                .FirstOrDefaultAsync(m => m.QuoteId == id);
-            if (quote == null)
-            {
-                return NotFound();
-            }
-
-            return View(quote);
-        }
-
         // GET: Quotes/Create
         public IActionResult Create()
         {

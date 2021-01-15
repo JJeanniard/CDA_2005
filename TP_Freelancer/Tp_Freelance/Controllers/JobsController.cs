@@ -25,29 +25,10 @@ namespace Tp_Freelance.Controllers
             return View(await freelanceContext.ToListAsync());
         }
 
-        // GET: Jobs/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var job = await _context.Jobs
-                .Include(j => j.Customer)
-                .FirstOrDefaultAsync(m => m.JobId == id);
-            if (job == null)
-            {
-                return NotFound();
-            }
-
-            return View(job);
-        }
-
         // GET: Jobs/Create
         public IActionResult Create()
         {
-            ViewData["CustomerId"] = new SelectList(_context.Customers, "CustomerId", "CustomerEmail");
+            ViewData["CustomerId"] = new SelectList(_context.Customers, "CustomerId", "CustomerName");
             return View();
         }
 
@@ -64,7 +45,7 @@ namespace Tp_Freelance.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CustomerId"] = new SelectList(_context.Customers, "CustomerId", "CustomerEmail", job.CustomerId);
+            ViewData["CustomerId"] = new SelectList(_context.Customers, "CustomerId", "CustomerName", job.CustomerId);
             return View(job);
         }
 
@@ -81,7 +62,7 @@ namespace Tp_Freelance.Controllers
             {
                 return NotFound();
             }
-            ViewData["CustomerId"] = new SelectList(_context.Customers, "CustomerId", "CustomerEmail", job.CustomerId);
+            ViewData["CustomerId"] = new SelectList(_context.Customers, "CustomerId", "CustomerName", job.CustomerId);
             return View(job);
         }
 
@@ -117,7 +98,7 @@ namespace Tp_Freelance.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CustomerId"] = new SelectList(_context.Customers, "CustomerId", "CustomerEmail", job.CustomerId);
+            ViewData["CustomerId"] = new SelectList(_context.Customers, "CustomerId", "CustomerName", job.CustomerId);
             return View(job);
         }
 
