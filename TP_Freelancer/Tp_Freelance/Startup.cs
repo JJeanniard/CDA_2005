@@ -9,7 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Tp_Freelance.Data;
+using Tp_Freelance.Models;
 
 namespace Tp_Freelance
 {
@@ -26,10 +26,7 @@ namespace Tp_Freelance
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-
-            services.AddDbContext<FreelanceContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("FreelanceContext"))
-            );
+            services.AddDbContext<FreelanceContext>(options => options.UseSqlServer("name=ConnectionStrings:Freelance"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
