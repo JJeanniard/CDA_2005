@@ -16,7 +16,7 @@ namespace TestWebMvc.Models
         [Required, Column("customer_name"), StringLength(100)]
         public string Customer_Name { get; set; }
 
-        [Required, ForeignKey("cat_id")]
-        public CustomerCat Cat_Id { get; set; }
+        [Required, Column("cat_id"), ForeignKey("cat_id")]
+        public int Cat_Id { get; set; }
     }
 }

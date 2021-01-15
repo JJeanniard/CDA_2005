@@ -1,5 +1,4 @@
 ﻿@model TestWebMvc.Models.Customer
-@model TestWebMvc.Models.CustomerCat
 
 @{
     ViewData["Title"] = "Create";
@@ -7,8 +6,6 @@
 
 <h1>Create</h1>
 
-<h4>Customer</h4>
-<hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
@@ -18,7 +15,7 @@
                 <input asp-for="Customer_Name" class="form-control" />
                 <span asp-validation-for="Customer_Name" class="text-danger"></span>
             </div>
-            @Html.DropDownListFor(m => m.Cat_Id, new SelectList()))
+            <select asp-for="Cat_Id" class="form-control" asp-items="ViewBag.Cat_Id"></select>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
