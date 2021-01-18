@@ -14,13 +14,17 @@ namespace Tp_Freelance.Models
         }
 
         public int JobId { get; set; }
-        [Required]
-        public string JobStat { get; set; }
-        [Required]
+        [Required, StringLength(10)]
+        public char JobStat { get; set; }
+        [Required, StringLength(100)]
         public string JobTitle { get; set; }
+        [DataType(DataType.DateTime)]
         public DateTime? JobStart { get; set; }
+        [DataType(DataType.DateTime)]
         public DateTime? JobEnd { get; set; }
+        [DataType(DataType.Text)]
         public string JobDescription { get; set; }
+        [Required]
         public int CustomerId { get; set; }
 
         public virtual Customer Customer { get; set; }

@@ -12,7 +12,7 @@ namespace Tp_Freelance.Models
         {
             Customers = new HashSet<Customer>();
         }
-
+        [Key]
         public int CatId { get; set; }
         [Required]
         public string CatName { get; set; }

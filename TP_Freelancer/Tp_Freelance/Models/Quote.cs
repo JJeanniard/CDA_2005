@@ -17,6 +17,7 @@ namespace Tp_Freelance.Models
         public int QuoteAmount { get; set; }
         public DateTime? QuoteFinalDate { get; set; }
         public int? QuoteFinalAmount { get; set; }
+        [Required]
         public int JobId { get; set; }
 
         public virtual Job Job { get; set; }
