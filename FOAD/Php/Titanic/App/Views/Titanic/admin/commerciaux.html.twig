@@ -1,13 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Administration | Commerciaux</title>
-</head>
-<body>
-
-<script src="./js/main.js"></script>
-</body>
-</html>
+{% extends('admin/layout.html.twig') %}
+{% block title %}{{ parent() }} Sales{% endblock %}
+{% block classBody %}class="body_grid"{% endblock %}
+{% block sous_title %}Sales Managment{% endblock %}
+{% block content %}
+<section class="content">
+</section>
+{% endblock %}

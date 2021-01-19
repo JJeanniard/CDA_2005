@@ -3,6 +3,7 @@ namespace Titanic\Controllers;
 
 use Titanic\Controller;
 use Titanic\Session;
+use Titanic\Validator;
 
 /**
  * Permet la gestion de connection d'un utilisateur
@@ -12,23 +13,44 @@ use Titanic\Session;
  */
 class LoginController extends Controller
 {
+    /**
+     * @route('/login', methode='post')
+     * @return string
+     * @throws \Twig\Error\LoaderError
+     * @throws \Twig\Error\RuntimeError
+     * @throws \Twig\Error\SyntaxError
+     */
     public function index() : string
     {
-        return $this->view('admin/login.html.twig');
-    }
-
-    public function login(){
-        //recuperation de la requet type post
-        //TODO verifier que le formulaire est bon, sinon retour avec message d'erreu
-
-
-        if(!empty($_REQUEST['POST'])){
-
-        }else{
+        if(Session::isLogged()){
             Session::addMessage('info', 'Hello les amies les sessions fonctionnes!');
-            return header('Location: /Login');
+            return header('Location: /Login/connection');
+            exit();
+        }else{
+            return header('Location: /Admin');
+            exit();
         }
 
-        return header('Location: Admin');
+    }
+
+    public function connection() : string
+    {
+
+
+        if(!empty($_POST)){
+            $username = $_POST['username'] ?? null;
+            $password = $_POST['password'] ?? null;
+
+            if(Validator::isAlphaNum($username, 4) && Validator::isPassword($password)){
+
+                header('Location: /admin');
+                exit();
+            }else{
+                Session::setMessage('error', 'Probleme dans de la soumission du formulaire!');
+                header('Location: /login/connection');
+                exit('admin/login.html.twig');
+            }
+        }
+        return $this->view('admin/login.html.twig');
     }
 }

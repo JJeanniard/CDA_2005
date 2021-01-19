@@ -3,20 +3,18 @@
 namespace Titanic;
 
 use Exception;
-
-use Titanic\Session;
-use Twig\Extension\DebugExtension;
-use Twig\Loader\FilesystemLoader;
 use Twig\Environment;
 use Twig\Error\LoaderError;
 use Twig\Error\RuntimeError;
 use Twig\Error\SyntaxError;
+use Twig\Loader\FilesystemLoader;
+use Twig\Extension\DebugExtension;
 
-abstract class Controller extends Session
+abstract class Controller
 {
     protected Router $router;
 
-    final public function __construct(Router $router)
+    public function __construct(Router $router)
     {
         $this->router = $router;
     }
@@ -39,11 +37,10 @@ abstract class Controller extends Session
     }
 
     /**
-     * Charge les templates et les retranscrire en cache pour l'utilisateur.
+     * Charge les templates et les retranscrires en cache pour l'utilisateur.
      * Ou leve des exception en cas d'erreur.
      * @param string $view Le nom du template ex: index.html.twig
      * @param array $data Les différentes données qui seront injecté dans le template
-     * @return string
      * @throws LoaderError
      * @throws RuntimeError
      * @throws SyntaxError
@@ -56,8 +53,15 @@ abstract class Controller extends Session
             'cache' => '../public/cache',
         ]);
         $twig->addExtension(new DebugExtension());
-        //TODO: attraper les erreurs avec try catch
-        return $twig->render($view, $data);
+        $twig->addGlobal('flashMsg', Session::getMessage());
+
+        try{
+            $view = $twig->render($view, $data);
+        }catch (Exception $e){
+            $view = "Error : $e";
+        }
+
+        return $view;
     }
 
     abstract public function index();

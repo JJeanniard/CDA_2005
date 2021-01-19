@@ -7,7 +7,8 @@ namespace Titanic\Models;
  * @version 0.0.1
  */
 
-use PDO;
+use \PDO;
+use \PDOException;
 
 class Clients
 {
@@ -29,5 +30,28 @@ class Clients
         return !empty($rows)? $rows : false;
     }
 
+    /**
+     * @param string $email
+     * @return mixed
+     */
+    public function getByClientEmail(string $email) : mixed
+    {
+        $user = false;
 
+        $values = ['email' => $email];
+
+        $stmt = $this->pdo->prepare("SELECT * FROM clients WHERE client_email = :email");
+
+        try{
+            if($stmt->execute($values)){
+                $user = $stmt->fetch();
+            }
+        }catch (PDOException $e){
+            echo "Error execute pdo clients: $e";
+        }
+
+        $stmt->closeCursor();
+
+        return $user;
+    }
 }

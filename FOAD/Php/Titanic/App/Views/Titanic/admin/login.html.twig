@@ -4,21 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="../css/admin.css">
     <title>Administration | Login</title>
 </head>
 <body>
-    <header class="header"><h1>Titanic Authentification</h1></header>
-    <section class="login">
-        <div class="image"><img src="https://via.placeholder.com/150" alt="login"></div>
-        <form action="Login/login" method="post">
-            <input type="text" name="username" id="username" placeholder="User Name" required autofocus>
-            <input type="password" name="password" id="password" placeholder="Password" required>
-            <button type="submit">Sign in</button>
-        </form>
-        <!--
-         TODO: message d'information ou d'erreur
-         <p>Logout Sucessfull</p>
-         <p>Incorrect Credentials</p>
-         -->
-    </section>
+<header class="header"><h1>Titanic Authentification</h1></header>
+<section class="login">
+    <div class="image"><img src="https://via.placeholder.com/150" alt="login"></div>
+    <form action="/Login/connection" method="post">
+        <input type="text" name="username" id="username" placeholder="User Name" required autofocus>
+        <input type="password" name="password" id="password" placeholder="Password" required>
+        <button type="submit">Sign in</button>
+    </form>
+    <p>{{ flashMsg.error }}</p>
+</section>
+</body>
+</html>
